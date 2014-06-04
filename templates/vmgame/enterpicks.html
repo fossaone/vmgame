@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+	
+	<head>
+		<title>EnterPicks></title>
+	</head>
+	
+	<body>
+		<h1>Enter picks</h1>
+		<form id="pick_from" method="post" action="/vmgame/enterpicks/">
+			{% csrf_token %}
+			{% for hidden in form.hidden_fields %}
+				{{ hidden }}
+			{% endfor %}
+			
+			{% for field in form.visible_fields %}
+				{{ field.errors }}
+				{{ field.help_text }}
+				{{ field }}
+				<br>
+			{% endfor %}
+			
+			<input type="submit" name="submit" value="Enter Picks" />
+			
+		<!--img src="{% static "mascot.jpg" %}" alt="Picture of Fuleco" /-->
+		</form>
+		<a href='/vmgame/'>Index</a>
+	</body>
+	
+</html>
