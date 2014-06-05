@@ -37,11 +37,11 @@ def register(request):
             # Now sort out the UserProfile instance.
             # Since we need to set the user attribute ourselves, we set commit=False.
             # This delays saving the model until we're ready to avoid integrity problems.
-            profile = profile_form.save(commit=False)
-            profile.user = user
+            #profile = profile_form.save(commit=False)
+            #profile.user = user
             
             # Now we save the UserProfile model instance.
-            profile.save()
+            #profile.save()
             
             # Update our variable and tell the template registration was succesful.
             registered = True
