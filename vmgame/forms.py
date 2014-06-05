@@ -11,9 +11,9 @@ class PickForm(forms.ModelForm):
                         help_text="Pick the winner of the 2014 world cup")
 #    GROUP_A_CHOICES = teams_in_group(teams, "A")
     def make_group_select(group_letter):
-       group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter))
-       GROUP_TEAM_CHOICES = [(t.__unicode__(),t.__unicode__()) for t in group_teams]
-       return forms.CharField(max_length=80, 
+           group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter))
+           GROUP_TEAM_CHOICES = [(t.__unicode__(),t.__unicode__()) for t in group_teams]
+           return forms.CharField(max_length=80, 
                               widget=forms.Select(choices=GROUP_TEAM_CHOICES), 
                               help_text="Pick the winner of Group {0}".format(group_letter))
 
@@ -32,7 +32,7 @@ class PickForm(forms.ModelForm):
     class Meta:
             # Provide an association between the ModelForm and a model
             model = Pick
-
+            model = Team
             #fields = ('group_winners', "champion")
             fields = ("champion","groupA","groupB","groupC",
                       "groupD","groupE","groupF","groupG","groupH")
