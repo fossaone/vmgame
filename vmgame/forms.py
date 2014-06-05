@@ -1,75 +1,35 @@
 from django import forms
 from django.contrib.auth.models import User
-from vmgame.models import Pick#, UserProfile
-
-teams = [
-    ("gre","Greece","C"),
-    ("rus","Russia","H"),
-    ("ned","Netherlands","B"),
-    ("ger","Germany","G"),
-    ("por","Portugal","G"),
-    ("esp","Spain","B"),
-    ("ita","Italy","D"),
-    ("cro","Croatia","A"),
-    ("fra","France","E"),
-    ("eng","England","D"),
-    ("sui","Switzerland","E"),
-    ("bel","Belgium","H"),
-    ("bih","Bosnia-Herzegovina","F"),
-    ("alg","Algeria","H"),
-    ("civ","Cote d'Ivoire","C"),
-    ("gha","Ghana","G"),
-    ("cmr","Cameroon","A"),
-    ("nga","Nigeria","F"),
-    ("mex","Mexico","A"),
-    ("usa","United States","G"),
-    ("hon","Honduras","E"),
-    ("crc","Costa Rica","D"),
-    ("arg","Argentina","F"),
-    ("bra","Brazil","A"),
-    ("chi","Chile","B"),
-    ("uru","Uruguay","D"),
-    ("col","Colombia","C"),
-    ("ecu","Ecuador","E"),
-    ("aus","Australia","B"),
-    ("jpn","Japan","C"),
-    ("kor","South Korea","H"),
-    ("irn","Iran","F"),
-]
-
-def teams_in_group(teams, group1, group2=None, group3=None, group4=None):
-    team_choices = []
-    for t in teams:
-        if t[2]==group1 or t[2]==group2 or t[2]==group3 or t[2]==group4:
-            team_choices.append(t[0:2])
-    return team_choices
-    
-    
-def all_teams(teams):
-    team_choices = []
-    for t in teams:
-        team_choices.append(t[0:2])
-    return team_choices
+#from vmgame.models import Pick#, UserProfile
+from vmgame.models import Team,Group,Player,Pick
 
 class PickForm(forms.ModelForm):    
-    TEAM_NAME_CHOICES = all_teams(teams)
-    winner = forms.CharField(max_length=3, 
+    TEAM_NAME_CHOICES = [(t.__unicode__(),t.__unicode__()) for t in Team.objects.all()]
+
+    champion = forms.CharField(max_length=3, 
                         widget=forms.Select(choices=TEAM_NAME_CHOICES), 
                         help_text="Pick the winner of the 2014 world cup")
-    GROUP_A_CHOICES = teams_in_group(teams, "A")
-    groupA_winner = forms.CharField(max_length=3, 
-                        widget=forms.Select(choices=GROUP_A_CHOICES), 
-                        help_text="Pick the winner of group A")
-    
+#    GROUP_A_CHOICES = teams_in_group(teams, "A")
+    group_winner={}
+    for group_name in ["A", "B", "C", "D", "E", "F", "G", "H"]:
+       gr = Group.objects.filter(name=group_name)
+       group_teams = Team.objects.filter(group=gr)
+       GROUP_TEAM_CHOICES = [(t.__unicode__(),t.__unicode__()) for t in group_teams]
+       #group_winner[group_name] = forms.CharField(max_length=3, 
+       group_winner_test = forms.CharField(max_length=3, 
+                        widget=forms.Select(choices=GROUP_TEAM_CHOICES), 
+                        help_text="Pick the winner of group {0}".format(group_name))
+
     points = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     completed = forms.BooleanField(widget=forms.HiddenInput(), initial=False)
-    
+
     class Meta:
             # Provide an association between the ModelForm and a model
             model = Pick
-            
-            fields = ('groupA_winner', "winner")
-    
+
+            #fields = ('group_winners', "champion")
+            fields = ("champion","group_winner_test")
+
     def clean(self):
         cleaned_data = self.cleaned_data
         url = cleaned_data.get('url')

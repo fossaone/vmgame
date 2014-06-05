@@ -64,7 +64,7 @@ def register(request):
         #{'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
         {'user_form': user_form, 'registered': registered},
         context)
-            
+
 def user_login(request):
     # obtain the context for the user's request.
     context = RequestContext(request)

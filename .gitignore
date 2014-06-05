@@ -1,5 +1,8 @@
+#Ignore secrets
 config/api_keys.py
 
+#Ignore compiled python
 *.pyc
 
-vmgame.db
+#Ignore db and backups
+vmgame.db*
