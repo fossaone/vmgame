@@ -1,0 +1,45 @@
+####################
+# Portugal
+# 
+# Coaching Staff
+# - Head Coach: Paulo Bento
+
+
+####################
+# Goal Keepers
+
+Eduardo                       ## Braga
+Rui Patrício                  ## Sporting
+Beto                          ## Sevilla
+
+####################
+# Defenders
+
+Bruno Alves                   ## Fenerbahçe
+Pepe                          ## Real Madrid
+Fábio Coentrão                ## Real Madrid
+Ricardo Costa                 ## Valencia
+Luís Neto                     ## Zenit Saint Petersburg
+André Almeida                 ## Benfica
+João Pereira                  ## Valencia
+
+####################
+# Midfielders
+
+Miguel Veloso                 ## Dynamo Kyiv
+William Carvalho              ## Sporting
+João Moutinho                 ## Monaco
+Vieirinha                     ## VfL Wolfsburg
+Rafa Silva                    ## Braga
+Raul Meireles                 ## Fenerbahçe
+Nani                          ## Manchester United
+Silvestre Varela              ## Porto
+Rúben Amorim                  ## Benfica
+
+####################
+# Forwards
+
+Cristiano Ronaldo (c)         ## Real Madrid
+Hugo Almeida                  ## Beşiktaş
+Éder                          ## Braga
+Hélder Postiga                ## Lazio
