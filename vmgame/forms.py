@@ -3,13 +3,15 @@ from django.contrib.auth.models import User
 #from vmgame.models import Pick#, UserProfile
 from vmgame.models import Team,Group,Player,Pick
 
-class PickForm(forms.ModelForm):    
+class PickForm(forms.ModelForm): 
+    pick_name = forms.CharField(max_length=80, help_text="Choose a name for this set of picks")
+       
     TEAM_NAME_CHOICES = [(t.__unicode__(),t.__unicode__()) for t in Team.objects.all()]
 
     champion = forms.CharField(max_length=80, 
                         widget=forms.Select(choices=TEAM_NAME_CHOICES), 
                         help_text="Pick the winner of the 2014 world cup")
-#    GROUP_A_CHOICES = teams_in_group(teams, "A")
+
     def make_group_select(group_letter):
            group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter))
            GROUP_TEAM_CHOICES = [(t.__unicode__(),t.__unicode__()) for t in group_teams]
@@ -33,9 +35,10 @@ class PickForm(forms.ModelForm):
             # Provide an association between the ModelForm and a model
             model = Pick
             model = Team
-            #fields = ('group_winners', "champion")
-            fields = ("champion","groupA","groupB","groupC",
+    
+            fields = ("pick_name","champion","groupA","groupB","groupC",
                       "groupD","groupE","groupF","groupG","groupH")
+            #exclude = ('user','pick_date','scoring','is_truth','points','completed')
 
     def clean(self):
         cleaned_data = self.cleaned_data
