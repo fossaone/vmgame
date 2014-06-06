@@ -14,19 +14,19 @@ package_directory = os.path.dirname(os.path.abspath(__file__))
 class UserProfile(models.Model):
     # This line is required.  Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
-    
+
     #These are additional attributes we wish to add
     country = models.CharField(max_length=100)
-    score = models.IntegerField(default=0)
-    #created = models.DateField()
-    picks = models.ManyToManyField("Pick",related_name="picks")
+    score = models.PositiveIntegerField(default=0)
+    created = models.DateField()
+    picks = models.ManyToManyField("Pick",related_name="picks",null=True)
 
     def __unicode__(self):
         return u"{0} : {1}".format(self.user.username,self.score)
 
 
 class Group(models.Model):
-    name = models.CharField(max_length=1)
+    name = models.CharField(max_length=80)
     def __unicode__(self):
         return self.name
 
@@ -92,8 +92,14 @@ class Pick(models.Model):
     third_place_team = models.ForeignKey(Team,related_name='third_place_team')
     total_goals = models.PositiveIntegerField(default=0)
 
-    #Points for various choices
+    #Validation
+    completed = models.BooleanField(default=False)
+
+    #How many points for each selection
     scoring = models.ForeignKey(Scoring)
+
+    #The score for this pick
+    score = models.PositiveIntegerField(default=0)
 
     #Actual results.  May not be necessary?
     is_truth = models.BooleanField(default=False)

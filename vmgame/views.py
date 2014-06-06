@@ -1,3 +1,7 @@
+#python lib
+import datetime
+
+#django
 from django.shortcuts import render_to_response
 #from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
@@ -5,9 +9,10 @@ from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+#vmgame
+from vmgame.models import Team, User, Scoring, UserProfile
+from vmgame.forms import PickForm, UserForm, UserProfileForm
 
-from vmgame.models import Team#, UserProfile
-from vmgame.forms import PickForm, UserForm#, UserProfileForm
 
 def register(request):
     # Like before, get the request's context.
@@ -22,10 +27,10 @@ def register(request):
         # Attempt to grab info from the raw form information.
         # Note that we make use of both UserForm and UserProfileForm.
         user_form = UserForm(data=request.POST)
-        #profile_form = UserProfileForm(data=request.POST)
+        profile_form = UserProfileForm(data=request.POST)
         
         # If the two forms are valid...
-        if user_form.is_valid(): # and profile_form.is_valid():
+        if user_form.is_valid() and profile_form.is_valid():
             # Save the user's form data to the database.
             user = user_form.save()
             
@@ -37,11 +42,12 @@ def register(request):
             # Now sort out the UserProfile instance.
             # Since we need to set the user attribute ourselves, we set commit=False.
             # This delays saving the model until we're ready to avoid integrity problems.
-            #profile = profile_form.save(commit=False)
-            #profile.user = user
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            profile.created = datetime.datetime.now() 
             
             # Now we save the UserProfile model instance.
-            #profile.save()
+            profile.save()
             
             # Update our variable and tell the template registration was succesful.
             registered = True
@@ -50,19 +56,19 @@ def register(request):
         # Print problems to teh terminal.
         # They'll also be shown to the user.
         else:
-            print user_form.errors#, profile_form.errors
+            print user_form.errors, profile_form.errors
             
     # Not a HTTP POST, so we render our form using two ModelForm instances.
     # These forms will be blank, ready for user input.
     else: 
         user_form = UserForm()
-        #profile_form = UserProfileForm()
+        profile_form = UserProfileForm()
         
     # Render the template depending on the context.
     return render_to_response(
         'vmgame/register.html',
-        #{'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
-        {'user_form': user_form, 'registered': registered},
+        {'user_form': user_form, 'profile_form': profile_form, 'registered': registered},
+        #{'user_form': user_form, 'registered': registered},
         context)
 
 def user_login(request):
@@ -128,7 +134,9 @@ def index(request):
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
     return render_to_response('vmgame/index.html', context_dict, context)    
-    
+
+
+@login_required  
 def enterpicks(request):
     
     # Request the context of the request.
@@ -137,13 +145,34 @@ def enterpicks(request):
     
     #A HTTP POST
     if request.method == 'POST':
-        form = PickForm(request.POST)
-        
+        pick_form = PickForm(request.POST)
+        pick = pick_form.save(commit=False)
+
+        #user = models.ForeignKey(UserProfile)
+        pick.user = UserProfile.objects.get(user=request.user)
+
+        #pick_date = models.DateTimeField('date entered')
+        pick.pick_date =  datetime.datetime.now()
+
+        #pick_name = models.CharField(max_length=80)
+        if pick.pick_name == "":
+            pick.pick_name =  "{0}'s pick (at {1})".format(pick.user.username,pick.pick_date)
+
+        #scoring = models.ForeignKey(Scoring)
+        pick.scoring = Scoring.objects.get(name="ORIGINAL")
+
+        #Leave score and is_truth default
+        #score = models.PositiveIntegerField(default=0)
+        #is_truth = models.BooleanField(default=False)
+
         # Have we been provided witha a valid form?
-        if form.is_valid():
+        if pick_form.is_valid():
+            #completed = models.BooleanField(default=False)
+            pick.completed = True
+
             # Save the new category to the database.
-            form.save(commit=True)
-            
+            pick.save()
+
             # Now call the index() view.
             # The user will be shown the homepage.
             return index(request)
@@ -159,8 +188,10 @@ def enterpicks(request):
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
     return render_to_response('vmgame/enterpicks.html', {'form': form}, context)
-    
-@login_required    
-def restricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")    
-    
+
+
+#Not necessary
+#@login_required    
+#def restricted(request):
+#    return HttpResponse("Since you're logged in, you can see this text!")    
+

@@ -17,14 +17,14 @@
 		
 		
 		{% if user.is_authenticated %}
-		<a href="/vmgame/restricted/">Restricted Page</a><br />
+<!--		<a href="/vmgame/restricted/">Restricted Page</a><br /> -->
 		<a href="/vmgame/logout/">Logout</a><br />
 		{% else %}
 		<a href="/vmgame/register/">Register Here</a><br />
 		<a href="/vmgame/login/">Login</a><br />
+		<a href="/vmgame/enterpicks/">Enter picks</a><br />
 		{% endif %}
 		
-		<a href="/vmgame/enterpicks/">Enter picks</a><br />
 		<img src={% static "mascot.jpg" %} alt= "Picture of Fuleco" />
     </body>
 
