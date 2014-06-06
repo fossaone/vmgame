@@ -54,5 +54,11 @@ def populate_players_and_teams():
 if __name__ == '__main__':
     print "Starting VM Game population script..."
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vmgame_website.settings')
-    from vmgame.models import Team,Player,Group
+    from vmgame.models import Team,Player,Group,Scoring
     populate_players_and_teams()
+
+    #make Scoring
+    try: Scoring.objects.all().delete()
+    except: pass
+    scoring = Scoring(name="ORIGINAL")
+    scoring.save()
