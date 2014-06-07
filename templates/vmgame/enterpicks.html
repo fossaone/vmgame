@@ -15,14 +15,98 @@
 			{% for hidden in form.hidden_fields %}
 				{{ hidden }}
 			{% endfor %}
-			
+
+<!--  Pick Name -->			
+                        <div class="fieldWrapper">
+                          {{ form.pick_name.errors }}
+                          <label for="id_pick_name">Enter a pick name:</label>
+                          {{ form.pick_name}}
+                        </div>
+<!--  Group Ranks -->			
 			{% for field in form.visible_fields %}
+                          {%if "sp_" in field.name %}
+				{{ field.errors }}
+                            {%if "_start" in field.name %}
+				{{ field.help_text }}
+				{{ field }}
+                            {% else %}
+				{{ field }}
+                            {% endif %}
+                            {% if "_br" in field.name %}
+				<br>
+                            {% endif %}
+                            {% if "_end" in field.name %}
+				<br>
+                            {% endif %}
+                          {% endif %}
+			{% endfor %}
+				<br>
+<!--  Non-Group fields -->			
+			{% for field in form.visible_fields %}
+                          {%if "sp_" not in field.name and "pick_name" not in field.name %}
 				{{ field.errors }}
 				{{ field.help_text }}
 				{{ field }}
 				<br>
+                          {% endif %}
 			{% endfor %}
-			
+<!--
+                        <div class="fieldWrapper">
+                          {{ form.third_place_team.errors }}
+                          <label for="id_third_place_team">Third Place:</label>
+                          {{ form.third_place_team }}
+                        </div>
+                        <div class="fieldWrapper">
+                          {{ form.third_place_team.errors }}
+                          <label for="id_third_place_team">Third Place:</label>
+                          {{ form.third_place_team }}
+                        </div>
+                        <div class="fieldWrapper">
+                          {{ form.champion.errors }}
+                          <label for="id_champion">Champion:</label>
+                          {{ form.champion }}
+                        </div>
+                        <div class="fieldWrapper">
+                          {{ form.defensive_team.errors }}
+                          <label for="id_defensive_team">Defensive Team:</label>
+                          {{ form.defensive_team }}
+                        </div>
+                        <div class="fieldWrapper">
+                          {{ form.striker1.errors }}
+                          <label for="id_striker1">Striker 1:</label>
+                          {{ form.striker1 }}
+                        </div>
+                        <div class="fieldWrapper">
+                          {{ form.striker2.errors }}
+                          <label for="id_striker2">Striker 2:</label>
+                          {{ form.striker2 }}
+                        </div>
+                        <div class="fieldWrapper">
+                          {{ form.striker3.errors }}
+                          <label for="id_striker3">Striker 3:</label>
+                          {{ form.striker3 }}
+                        </div>
+                        <div class="fieldWrapper">
+                          {{ form.total_goals.errors }}
+                          <label for="id_total_goals">Total Goals:</label>
+                          {{ form.total_goals }}
+                        </div>
+-->
+
+<!--
+    defensive_team = models.ForeignKey(Team,related_name='defensive_team')
+    strikers = models.ManyToManyField(Player,related_name='strikers')
+    group_winners = models.ManyToManyField(Team,related_name='group_winners')
+    group_runners_up = models.ManyToManyField(Team,related_name='group_runners_up')
+    group_third  = models.ManyToManyField(Team,related_name='group_third')
+    group_fourth = models.ManyToManyField(Team,related_name='group_fourth')
+    quarterfinal_teams = models.ManyToManyField(Team,related_name='quarterfinal_teams')
+    semifinal_teams = models.ManyToManyField(Team,related_name='semifinal_teams')
+    final_teams = models.ManyToManyField(Team,related_name='final_teams')
+    champion = models.ForeignKey(Team,related_name='champion')
+    third_place_team = models.ForeignKey(Team,related_name='third_place_team')
+    total_goals = models.PositiveIntegerField(default=0) -->
+
 			<input type="submit" name="submit" value="Enter Picks" />
 			
 		<!--img src="{% static "mascot.jpg" %}" alt="Picture of Fuleco" /-->

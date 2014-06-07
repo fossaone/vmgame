@@ -68,7 +68,8 @@ class Player(models.Model):
     goals_scored = models.IntegerField(default=0)
     def __unicode__(self):
         #return u"{0} ({1}) : {2}, Goals: {3}".format(self.name,self.position,self.team,self.goals_scored)
-        return u"{0} ({1})".format(self.name,self.team)
+        #return u"{0} ({1})".format(self.name,self.team)
+        return self.name
 
 
 class Pick(models.Model):

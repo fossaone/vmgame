@@ -10,8 +10,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 #vmgame
-from vmgame.models import Team, User, Scoring, UserProfile
-from vmgame.forms import PickForm, UserForm, UserProfileForm
+from vmgame.models import Team, Player, Group, User, Scoring, UserProfile
+from vmgame.forms import PickForm, UserForm, UserProfileForm,GROUP_LETTERS,GROUP_RANKS
 
 
 def register(request):
@@ -146,29 +146,52 @@ def enterpicks(request):
     #A HTTP POST
     if request.method == 'POST':
         pick_form = PickForm(request.POST)
-        pick = pick_form.save(commit=False)
-
-        #user = models.ForeignKey(UserProfile)
-        pick.user = UserProfile.objects.get(user=request.user)
-
-        #pick_date = models.DateTimeField('date entered')
-        pick.pick_date =  datetime.datetime.now()
-
-        #pick_name = models.CharField(max_length=80)
-        if pick.pick_name == "":
-            pick.pick_name =  "{0}'s pick (at {1})".format(pick.user.username,pick.pick_date)
-
-        #scoring = models.ForeignKey(Scoring)
-        pick.scoring = Scoring.objects.get(name="ORIGINAL")
-
-        #Leave score and is_truth default
-        #score = models.PositiveIntegerField(default=0)
-        #is_truth = models.BooleanField(default=False)
 
         # Have we been provided witha a valid form?
         if pick_form.is_valid():
+            pick = pick_form.save(commit=False)
+
+            #user = models.ForeignKey(UserProfile)
+            pick.user = UserProfile.objects.get(user=request.user)
+
+            #pick_date = models.DateTimeField('date entered')
+            pick.pick_date =  datetime.datetime.now()
+
+
+            #pick_name = models.CharField(max_length=80)
+            if pick.pick_name == "":
+                pick.pick_name =  "{0}'s pick (at {1})".format(pick.user.username,pick.pick_date)
+
+            #scoring = models.ForeignKey(Scoring)
+            pick.scoring = Scoring.objects.get(name="ORIGINAL")
+
+            #Leave score and is_truth default
+            #score = models.PositiveIntegerField(default=0)
+            #is_truth = models.BooleanField(default=False)
             #completed = models.BooleanField(default=False)
+
             pick.completed = True
+
+            #Have to save before we can add the odd form data            
+            pick.save()
+            for name,value in pick_form.cleaned_data.items():
+                if '1st' in name:
+                    pick.group_winners.add(Team.objects.get(country=value))
+                if '2nd' in name:
+                    pick.group_runners_up.add(Team.objects.get(country=value))
+                if '3rd' in name:
+                    pick.group_third.add(Team.objects.get(country=value))
+                if '4th' in name:
+                    pick.group_fourth.add(Team.objects.get(country=value))
+                if 'sp_qf_' in name:
+                    pick.quarterfinal_teams.add(Team.objects.get(country=value))
+                if 'sp_sf_' in name:
+                    pick.semifinal_teams.add(Team.objects.get(country=value))
+                if 'sp_f_' in name:
+                    pick.final_teams.add(Team.objects.get(country=value))
+                if 'striker' in name:
+                    pick.strikers.add(Player.objects.get(name=value))
+
 
             # Save the new category to the database.
             pick.save()
@@ -179,7 +202,8 @@ def enterpicks(request):
         else:
             # If the request form contained  errors - just print them in the terminal.
             print pick_form.errors
-            
+#            form = PickForm()
+
     else:
         # If the request was not a POST, display the form to enter details.
         pick_form = PickForm()
