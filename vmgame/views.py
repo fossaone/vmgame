@@ -9,6 +9,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.forms.util import ErrorList
+from django.forms.forms import NON_FIELD_ERRORS
 
 #vmgame
 from vmgame.models import Team, Player, Group, User, Scoring, UserProfile,GROUP_LETTERS,GROUP_RANKS
@@ -175,8 +177,6 @@ def enterpicks(request):
             #is_truth = models.BooleanField(default=False)
             #completed = models.BooleanField(default=False)
 
-            pick.completed = True
-
             #Have to save before we can add the odd form data            
             pick.save()
             for name,value in pick_form.cleaned_data.items():
@@ -199,17 +199,28 @@ def enterpicks(request):
 
             
             #TODO: validate
-            completed = pick.completed
-            #pick_form.completed = True
-            #TODO if not valid pick.delete
-            
-            # Save the new category to the database.
-            pick.save()
+            err = pick.validate()
+            if err is not None:
+                logger.info("PICK ERROR: {0}".format(err))
+                #Add a custom error to the form
+                errors = pick_form._errors.setdefault(NON_FIELD_ERRORS, ErrorList())
+                errors.append(err)
+                pick_form._errors[NON_FIELD_ERRORS] = errors
+                #pick_form._errors[err[0]] = ErrorList([err[1]])
 
-            logger.info(pick.print_detail())
-            # Now call the index() view.
-            # The user will be shown the homepage.
-            #return index(request)
+                pick.delete()
+                completed = False
+            else:
+                pick.completed = True
+                completed = pick.completed
+
+                # Save the new category to the database.
+                pick.save()
+
+                logger.info(pick.print_detail())
+                # Now call the index() view.
+                # The user will be shown the homepage.
+                #return index(request)
         else:
             # If the request form contained  errors - just print them in the terminal.
             print pick_form.errors
@@ -217,7 +228,7 @@ def enterpicks(request):
     else:
         # If the request was not a POST, display the form to enter details.
         pick_form = PickForm()
-    
+
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.

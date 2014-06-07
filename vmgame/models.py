@@ -152,128 +152,118 @@ class Pick(models.Model):
     def validate(self):
         #Make sure choices are consistent
 
-        #Note: defensive team and golden boot should be automatically satisfied
-        ok=self.validate_strikers()
-        if not ok : return ok
-        ok=self.validate_group()
-        if not ok : return ok
-        ok=self.validate_quarters()
-        if not ok : return ok
-        ok=self.validate_semis()
-        if not ok : return ok
-        ok=self.validate_finals()
-        if not ok : return ok
+        err = self.validate_groups()
+        if err is not None: return err
+        err = self.validate_quarters()
+        if err is not None: return err
+        err = self.validate_semis()
+        if err is not None: return err
+        err = self.validate_finals()
+        if err is not None: return err
+        err = self.validate_strikers()
+        if err is not None: return err
 
 
     def validate_strikers(self):
 
-        num_strikers = self.strikers.objects.all().count()
+        num_strikers = self.strikers.all().count()
         if(num_strikers != 3):
-           print "error strikers"
-           return False
+           return "Please choose 3 unique strikers"
 
 
-    def validate_group(self):
+    def validate_groups(self):
 
         #8 Group Winners
-        num_group_winners = self.group_winners.objects.all().count()
+        num_group_winners = self.group_winners.all().count()
         if(num_group_winners != 8):
-           print "error ngw"
-           return False
+           return "incorrect number of group winners"
         #8 Group Runners Up 
-        num_group_runners_up = self.group_runners_up.objects.all().count()
+        num_group_runners_up = self.group_runners_up.all().count()
         if(num_group_runners_up != 8):
-           print "error ngru"
-           return False
+           return "incorrect number of group runners up"
 
-        num_group_thirds = self.group_third.objects.all().count()
+        num_group_thirds = self.group_third.all().count()
         if(num_group_thirds != 8):
-           print "error ngtds"
-           return False
+           return "incorrect number of group third place teams"
 
-        num_group_fourths = self.group_fourth.objects.all().count()
+        num_group_fourths = self.group_fourth.all().count()
         if(num_group_fourths != 8):
-           print "error ngfts"
-           return False
+           return "incorrect number of group fourth place teams"
 
         #One group winner for each group
         #One group runner up for each group
         for g in Group.objects.all():
-           num_group_winners = self.group_winners.objects.filter(group = g).count()
+           num_group_winners = self.group_winners.filter(group = g).count()
            if num_group_winners != 1: 
-                print "error ngw2"
-                return False
-           num_group_runners_up = self.group_runners_up.objects.filter(group = g).count()
+                return "More than one group winner for {0}".format(g)
+           num_group_runners_up = self.group_runners_up.filter(group = g).count()
            if num_group_runners_up != 1: 
-                print "error ngru2"
-                return False
+                return "More than one group runner up for {0}".format(g)
 
-           num_group_thirds = self.group_third.objects.filter(group = g).count()
+           num_group_thirds = self.group_third.filter(group = g).count()
            if num_group_thirds != 1: 
-                print "error ngtds2"
-                return False
+                return "More than one group third place up for {0}".format(g)
 
-           num_group_fourths = self.group_fourth.objects.filter(group = g).count()
+           num_group_fourths = self.group_fourth.filter(group = g).count()
            if num_group_fourths != 1: 
-                print "error ngfts2"
-                return False
-        return True
+                return "More than one group fourth place up for {0}".format(g)
+
+           g1 = self.group_winners.get(group = g)
+           g2 = self.group_runners_up.get(group = g)
+           g3 = self.group_third.get(group = g)
+           g4 = self.group_fourth.get(group = g)
+           if (g1 == g2 or g1 == g3 or g1 == g4 or
+               g2 == g3 or g2 == g4 or
+               g3 == g4):
+                return "Inconsistent group ranking for {0}".format(g)
 
 
     def validate_quarters(self):
         #8 Quarterfinal teams
-        num_qf_teams = self.quarterfinal_teams.objects.all().count()
+        num_qf_teams = self.quarterfinal_teams.all().count()
         if(num_qf_teams != 8):
-           print "error nqft"
-           return False
+           return "Please choose 8 unique quarter final teams"
 
-        #Quarterfinal teams are from group advancers
-        for qft in self.quarterfinal_teams.objects.all():
-            if (qft not in self.group_winners.objects.all() or
-               qft not in self.group_runners_up.objects.all()):
-                print "error qft"
-                return False
-        return True
+#TODO: Decide if we want to make sure picks are completely consistent
+#        #Quarterfinal teams are from group advancers
+#        for qft in self.quarterfinal_teams.all():
+#            if (qft not in self.group_winners.all() or
+#               qft not in self.group_runners_up.all()):
+#                return "Quarterfinal team {0} not picked to advance from group".format(qft)
 
 
     def validate_semis(self):
         #4 Semifinal teams
-        num_sf_teams = self.semifinal_teams.objects.all().count()
+        num_sf_teams = self.semifinal_teams.all().count()
         if(num_sf_teams != 4):
-           print "error nsft"
-           return False
+           return "Please choose 4 unique semi-final teams"
 
-        #Semifinal teams are from quarterfinal teams
-        for sft in self.semifinal_teams.objects.all():
-            if sft not in self.quarterfinal_teams.objects.all():
-                print "error sft"
-                return False
-        return True
+#TODO: Decide if we want to make sure picks are completely consistent
+#        #Semifinal teams are from quarterfinal teams
+#        #for sft in self.semifinal_teams.all():
+#            if sft not in self.quarterfinal_teams.all():
+#                return "Semi-final team {0} not picked to advance to quarters".format(sft)
 
 
     def validate_finals(self):
         #2 Final teams
-        num_f_teams = self.final_teams.objects.all().count()
-        if(num_f_teams != 4):
-           print "error nft"
-           return False
+        num_f_teams = self.final_teams.all().count()
+        if(num_f_teams != 2):
+           return "Please choose 2 unique final teams"
 
-        #Semifinal teams are from quarterfinal teams
-        for ft in self.final_teams.objects.all():
-            if sft not in self.semifinal_teams.objects.all():
-                print "error ft"
-                return False
-
-        #Third place is from semifinal teams
-        if self.third_place_team not in self.semifinal_teams.objects.all():
-            print "error tpt"
-            return False
-
-        #Champion is from final teams
-        if self.champion not in self.final_teams.objects.all():
-            print "error champ"
-            return False
-        return True
+#TODO: Decide if we want to make sure picks are completely consistent
+#        #Final teams are from semi-final teams
+#        for ft in self.final_teams.all():
+#            if ft not in self.semifinal_teams.all():
+#                return "Final team {0} not picked to advance to semis".format(ft)
+#
+#        #Third place is from semifinal teams
+#        if self.third_place_team not in self.semifinal_teams.all():
+#            return "Third plac team {0} not picked to advance to semis".format(self.third_place_team)
+#
+#        #Champion is from final teams
+#        if self.champion not in self.final_teams.all():
+#                return "Champion {0} not picked to be in finals".format(self.champion)
 
 
     def calculate_score(self):
