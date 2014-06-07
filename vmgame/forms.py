@@ -1,12 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
 #from vmgame.models import Pick#, UserProfile
-from vmgame.models import Team,Group,Player,Pick,UserProfile
+from vmgame.models import Team,Group,Player,Pick,UserProfile,GROUP_LETTERS,GROUP_RANKS
 from django.utils.translation import ugettext_lazy as _
 
 
-GROUP_LETTERS = ["A","B","C","D","E","F","G","H"]
-GROUP_RANKS = ["1st","2nd","3rd","4th"]
 
 class PickForm(forms.ModelForm): 
 

@@ -5,11 +5,12 @@ from django.db import models
 from django.contrib.auth.models import User
 import django.core.exceptions
 
+
+
 package_directory = os.path.dirname(os.path.abspath(__file__))
 
-
-#Notes:
-# * Need to make sure scoring is assigned to each pick
+GROUP_LETTERS = ["A","B","C","D","E","F","G","H"]
+GROUP_RANKS = ["1st","2nd","3rd","4th"]
 
 class UserProfile(models.Model):
     # This line is required.  Links UserProfile to a User model instance.
@@ -108,6 +109,45 @@ class Pick(models.Model):
     def __unicode__(self):
         return u"{0}'s pick".format(self.user)
 
+    def print_detail(self):
+        detail_str = ""
+        detail_str += "====================PICK START======================\n"
+        detail_str += "User: {0}\n".format(self.user)
+        detail_str += "Date: {0}\n".format(self.pick_date)
+        detail_str += "Pick name: {0}\n".format(self.pick_name)
+
+        detail_str += "Groups :\n"
+        for group_letter in GROUP_LETTERS:
+            g1 = self.group_winners.get(group__name='Group {0}'.format(group_letter))
+            g2 = self.group_runners_up.get(group__name='Group {0}'.format(group_letter))
+            g3 = self.group_third.get(group__name='Group {0}'.format(group_letter))
+            g4 = self.group_fourth.get(group__name='Group {0}'.format(group_letter))
+            detail_str += "   Group {0}\n".format(group_letter)
+            detail_str += "    1 : {0}\n".format(g1)
+            detail_str += "    2 : {0}\n".format(g2)
+            detail_str += "    3 : {0}\n".format(g3)
+            detail_str += "    4 : {0}\n".format(g4)
+
+        detail_str += "   Quarterfinal Teams:\n"
+        for qft in self.quarterfinal_teams.all():
+            detail_str += "    {0}\n".format(qft)
+
+        detail_str += "   Semifinal Teams:\n"
+        for sft in self.semifinal_teams.all():
+            detail_str += "    {0}\n".format(sft)
+
+        detail_str += "   Final Teams:\n"
+        for ft in self.final_teams.all():
+            detail_str += "    {0}\n".format(ft)
+
+        detail_str += "   Third Place Team: {0}\n".format(self.third_place_team)
+        detail_str += "   Champion: {0}\n".format(self.champion)
+        detail_str += "   Defensive Team: {0}\n".format(self.defensive_team)
+        detail_str += "   Strikers:\n"
+        for s in self.strikers.all():
+            detail_str += "    {0}\n".format(s)
+        detail_str += "====================PICK STOP=======================\n"
+        return detail_str
 
     def validate(self):
         #Make sure choices are consistent

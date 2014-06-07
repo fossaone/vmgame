@@ -6,3 +6,6 @@ config/api_keys.py
 
 #Ignore db and backups
 vmgame.db*
+
+#Ignore log file
+vmgame_website.log

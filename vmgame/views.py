@@ -1,5 +1,6 @@
 #python lib
 import datetime
+import logging
 
 #django
 from django.shortcuts import render_to_response
@@ -10,11 +11,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 #vmgame
-from vmgame.models import Team, Player, Group, User, Scoring, UserProfile
-from vmgame.forms import PickForm, UserForm, UserProfileForm,GROUP_LETTERS,GROUP_RANKS
+from vmgame.models import Team, Player, Group, User, Scoring, UserProfile,GROUP_LETTERS,GROUP_RANKS
+from vmgame.forms import PickForm, UserForm, UserProfileForm
 
+logger = logging.getLogger(__name__)
 
 def register(request):
+    logger.info('In request view')
     # Like before, get the request's context.
     context = RequestContext(request)
     
@@ -138,6 +141,7 @@ def index(request):
 
 @login_required  
 def enterpicks(request):
+    logger.info('In enterpicks view, user = {0}'.format(request.user.username))
     
     # Request the context of the request.
     # The context contains information such as the client's machine details, for example.
@@ -199,6 +203,7 @@ def enterpicks(request):
             # Save the new category to the database.
             pick.save()
 
+            logger.info(pick.print_detail())
             # Now call the index() view.
             # The user will be shown the homepage.
             #TODO: Should notify user that pick was successfully entered

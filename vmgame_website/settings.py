@@ -101,3 +101,54 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/vmgame/login/'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+#    'filters': {
+#        'special': {
+#            '()': 'project.logging.SpecialFilter',
+#            'foo': 'bar',
+#        }
+#    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(PROJECT_PATH,'vmgame_website.log'),
+        },
+#        'mail_admins': {
+#            'level': 'ERROR',
+#            'class': 'django.utils.log.AdminEmailHandler',
+#            'filters': ['special']
+#        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'propagate': True,
+            'level': 'INFO',
+        },
+#        'django.request': {
+#            'handlers': ['mail_admins'],
+#            'level': 'ERROR',
+#            'propagate': False,
+#        },
+        'vmgame': {
+#            'handlers': ['console', 'file'],
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+#            'filters': ['special']
+        }
+    }
+}
