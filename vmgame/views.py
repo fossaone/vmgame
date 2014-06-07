@@ -178,16 +178,16 @@ def enterpicks(request):
             return index(request)
         else:
             # If the request form contained  errors - just print them in the terminal.
-            print pick.errors
+            print pick_form.errors
             
     else:
         # If the request was not a POST, display the form to enter details.
-        pick = PickForm()
+        pick_form = PickForm()
     
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/enterpicks.html', {'pick': pick}, context)
+    return render_to_response('vmgame/enterpicks.html', {'form': pick_form}, context)
 
 
 #Not necessary
