@@ -193,16 +193,19 @@ def enterpicks(request):
                     pick.strikers.add(Player.objects.get(name=value))
 
 
+            #TODO: validate
+
+            #TODO if not valid pick.delete
             # Save the new category to the database.
             pick.save()
 
             # Now call the index() view.
             # The user will be shown the homepage.
+            #TODO: Should notify user that pick was successfully entered
             return index(request)
         else:
             # If the request form contained  errors - just print them in the terminal.
             print pick_form.errors
-#            form = PickForm()
 
     else:
         # If the request was not a POST, display the form to enter details.
