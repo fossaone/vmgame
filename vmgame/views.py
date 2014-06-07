@@ -143,6 +143,7 @@ def enterpicks(request):
     # The context contains information such as the client's machine details, for example.
     context = RequestContext(request)
     
+    completed = False
     #A HTTP POST
     if request.method == 'POST':
         pick_form = PickForm(request.POST)
@@ -192,17 +193,18 @@ def enterpicks(request):
                 if 'striker' in name:
                     pick.strikers.add(Player.objects.get(name=value))
 
-
+            
             #TODO: validate
-
+            completed = pick.completed
+            #pick_form.completed = True
             #TODO if not valid pick.delete
+            
             # Save the new category to the database.
             pick.save()
 
             # Now call the index() view.
             # The user will be shown the homepage.
-            #TODO: Should notify user that pick was successfully entered
-            return index(request)
+            #return index(request)
         else:
             # If the request form contained  errors - just print them in the terminal.
             print pick_form.errors
@@ -214,7 +216,7 @@ def enterpicks(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/enterpicks.html', {'form': pick_form}, context)
+    return render_to_response('vmgame/enterpicks.html', {'form': pick_form, 'completed':completed}, context)
 
 
 #Not necessary

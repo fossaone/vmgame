@@ -10,6 +10,12 @@
 	
 	<body>
 		<h1>Enter picks</h1>
+		
+		{% if completed %}
+		Your picks have been succesfully entered.
+		<a href="/vmgame/">Return to the homepage.</a><br />
+		
+		{% else %}
 		<form id="pick_from" method="post" action="/vmgame/enterpicks/">
 			{% csrf_token %}
 			{% for hidden in form.hidden_fields %}
@@ -111,7 +117,8 @@
 			
 		<!--img src="{% static "mascot.jpg" %}" alt="Picture of Fuleco" /-->
 		</form>
-		<a href='/vmgame/'>Index</a>
+		<!-- <a href='/vmgame/'>Index</a> -->
+		{% endif %}
 	</body>
 	
 </html>
