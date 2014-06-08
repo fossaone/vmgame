@@ -9,16 +9,38 @@ from vmgame.models import Team,Group,Player,Pick,UserProfile
 
 class PickForm(forms.ModelForm): 
 
+    strikers = Player.objects.filter(position="Forwards").order_by("name","team__country")
+    midfielders = Player.objects.filter(position="Midfielders").order_by("name","team__country")
+    defenders = Player.objects.filter(position="Defenders").order_by("name","team__country")
+    keepers = Player.objects.filter(position="Goal Keepers").order_by("name","team__country")
+    STRIKER_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in strikers]
+    MIDFIELD_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in midfielders]
+    DEFENSE_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in defenders]
+    GK_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in keepers]
+    CHOICES = (
+                  ('Strikers',
+                     STRIKER_CHOICES
+                  ),
+                  ('Midfielders',
+                     MIDFIELD_CHOICES
+                  ),
+                  ('Defenders',
+                     DEFENSE_CHOICES
+                  ),
+                  ('Goal Keepers',
+                     GK_CHOICES
+                  ),
+              )
     #Striker fields
-    striker1 = forms.CharField(max_length=80, 
-                               widget=forms.Select(choices=[(p,p) for p in Player.objects.all()]), 
-                               help_text="Pick a striker 1")
-    striker2 = forms.CharField(max_length=80, 
-                               widget=forms.Select(choices=[(p,p) for p in Player.objects.all()]), 
-                               help_text="Pick a striker 2")
-    striker3 = forms.CharField(max_length=80, 
-                               widget=forms.Select(choices=[(p,p) for p in Player.objects.all()]), 
-                               help_text="Pick a striker 3")
+    striker1 = forms.CharField(max_length=80,
+                               widget=forms.Select(choices=CHOICES),
+                               help_text="Pick three top goal scorers")
+    striker2 = forms.CharField(max_length=80,
+                               widget=forms.Select(choices=CHOICES),
+                               help_text="")
+    striker3 = forms.CharField(max_length=80,
+                               widget=forms.Select(choices=CHOICES),
+                               help_text="")
 
     #Some python/django kung-fu here.
     def __init__(self, *args, **kwargs):
