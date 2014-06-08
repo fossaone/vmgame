@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>VM Game</title>
+		<title>VM Game - {% block title %}{% endblock %}</title>
 	</head>
 	
 	<body>
-			<!-- Page specific content goes here -->
+		<div>
+			{% block body_block %}{% endblock %}
+		</div>
+		
+		<hr />
+		
+		<div>
+			<u1>
+			{% if user.is_authenticated %}
+				<li><a href="/vmgame/enterpicks/">Enter picks</a></li>
+				<!--li><a href="/vmgame/displaypicks/">Enter picks</a></li-->
+				<li><a href="/vmgame/logout/">Logout</a></li>
+			{% else %}
+				<li><a href="/vmgame/register/">Register Here</a></li>
+				<li><a href="/vmgame/login/">Login</a></li>
+			{% endif %}
+			</u1>
+		</div>
 	</body>
 </html>

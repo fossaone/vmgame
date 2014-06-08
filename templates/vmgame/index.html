@@ -1,31 +1,15 @@
-<!DOCTYPE html>
+{% extends 'vmgame/base.html' %}
 
 {% load static %}
 
-<html>
-    <head>
-        <title>VM Game</title>
-		<!--link rel="stylesheet" href="{% static "css/base.css" %}" /--> <!-- CSS -->
-    </head>
+{% block title %}VM Game{% endblock %}
 
-    <body>
-		{% if user.is_authenticated %}
-        <h1>Hello {{ user.username }}!</h1>
-		{% else %}
-		<h1> You are at the VM Game homepage</h1>
-		{% endif %} 
+{% block body_block %}
+	{% if user.is_authenticated %}
+    <h1>Hello {{ user.username }}!</h1>
+	{% else %}
+	<h1> You are at the VM Game homepage</h1>
+	{% endif %} 
 		
-		
-		{% if user.is_authenticated %}
-<!--		<a href="/vmgame/restricted/">Restricted Page</a><br /> -->
-		<a href="/vmgame/enterpicks/">Enter picks</a><br />
-		<a href="/vmgame/logout/">Logout</a><br />
-		{% else %}
-		<a href="/vmgame/register/">Register Here</a><br />
-		<a href="/vmgame/login/">Login</a><br />
-		{% endif %}
-		
-		<img src={% static "mascot.jpg" %} alt= "Picture of Fuleco" />
-    </body>
-
-</html>
+	<img src={% static "mascot.jpg" %} alt= "Picture of Fuleco" />
+{% endblock %}
