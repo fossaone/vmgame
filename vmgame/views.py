@@ -167,7 +167,7 @@ def enterpicks(request):
             pick.pick_date =  datetime.datetime.now()
 
 
-            #pick_name = models.CharField(max_length=80)
+            #pick.pick_name = models.CharField(max_length=80)
             if pick.pick_name == "":
                 pick.pick_name =  "{0}'s pick (at {1})".format(pick.user.username,pick.pick_date)
 
@@ -239,8 +239,14 @@ def enterpicks(request):
     return render_to_response('vmgame/enterpicks.html', {'form': pick_form, 'completed':completed}, context)
 
 
-#Not necessary
+'''
 #@login_required    
-#def restricted(request):
-#    return HttpResponse("Since you're logged in, you can see this text!")    
+def display_picks(request):
+    context = RequestContext(request)
+    
+    completed = False
+    #A HTTP POST
+    if request.method == 'POST':
+        pick_form = PickForm(request.POST)
+'''
 

@@ -1,23 +1,83 @@
-<!DOCTYPE html>
+{% extends 'vmgame/base.html' %}
 
-{% load static %}
+{% block title %}EnterPicks{% endblock %}
 
-<html>
+{% block body_block %}
 	
-	<head>
-		<title>EnterPicks></title>
-	</head>
-	
-	<body>
 		<h1>Enter picks</h1>
 		
+			{% csrf_token %}
+		
 		{% if completed %}
-		Your picks have been succesfully entered.
-		<a href="/vmgame/">Return to the homepage.</a><br />
+			{{ form.pick_name.value }} picks have been succesfully entered.
+			Here they are. <br />
+		<form id="pick_form" method="post" action="/vmgame/enterpicks/">
+			
+			{% for hidden in form.hidden_fields %}
+				{{ hidden }}
+			{% endfor %}
+
+			{{ form.non_field_errors }}
+<!--  Pick Name -->			
+                        <table>
+                        <tr>
+                          <td>
+                          {{ form.pick_name.errors }}
+                          {{ form.pick_name.help_text }}
+                          </td>
+                          <td>
+                          {{ form.pick_name.value}}
+                          </td>
+                        </tr>
+<!--  Group Ranks -->		
+			{% for field in form.visible_fields %}
+                          {%if "sp_" in field.name %}
+                            {%if field.help_text != "" and field.help_text != "end" %}
+                            <tr>	
+                            <td>
+				{{ field.errors }}
+				{{ field.help_text }}
+                            </td>
+                            <td>
+				{{ field.value }}
+                            {%elif field.help_text != "end" %}
+				{{ field.value }}
+                            {% else %}
+				{{ field.value }}
+                            </td>
+                            </tr>
+                            {% endif %}
+                          {% endif %}
+			{% endfor %}
+<!--  Non-Group fields -->			
+			{% for field in form.visible_fields %}
+                          {%if "sp_" not in field.name and "pick_name" not in field.name %}
+                            {%if field.help_text != "" and field.help_text != "end" %}
+                            <tr>
+                            <td>
+				{{ field.errors }}
+				{{ field.help_text }}
+                            </td>
+                            <td>
+				{{ field.value }}
+                            {%elif field.help_text != "end" %}
+				{{ field.value }}
+                            {% else %}
+				{{ field.value }}
+                            </td>
+                            </tr>
+                            {% endif %}
+                          {% endif %}
+			{% endfor %}
+                        </table>
+
+			<a href="/vmgame/">Return to the homepage.</a><br />
+			
+		</form>		         
 		
 		{% else %}
-		<form id="pick_from" method="post" action="/vmgame/enterpicks/">
-			{% csrf_token %}
+		<form id="pick_form" method="post" action="/vmgame/enterpicks/">
+			
 			{% for hidden in form.hidden_fields %}
 				{{ hidden }}
 			{% endfor %}
@@ -78,10 +138,6 @@
 
 			<input type="submit" name="submit" value="Enter Picks" />
 			
-		<!--img src="{% static "mascot.jpg" %}" alt="Picture of Fuleco" /-->
 		</form>
-		<!-- <a href='/vmgame/'>Index</a> -->
 		{% endif %}
-	</body>
-	
-</html>
+{% endblock %}
