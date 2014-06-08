@@ -17,7 +17,7 @@ class PickForm(forms.ModelForm):
     MIDFIELD_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in midfielders]
     DEFENSE_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in defenders]
     GK_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in keepers]
-    CHOICES = (
+    PLAYER_CHOICES = (
                   ('Strikers',
                      STRIKER_CHOICES
                   ),
@@ -33,25 +33,29 @@ class PickForm(forms.ModelForm):
               )
     #Striker fields
     striker1 = forms.CharField(max_length=80,
-                               widget=forms.Select(choices=CHOICES),
+                               widget=forms.Select(choices=PLAYER_CHOICES),
                                help_text="Pick three top goal scorers")
     striker2 = forms.CharField(max_length=80,
-                               widget=forms.Select(choices=CHOICES),
+                               widget=forms.Select(choices=PLAYER_CHOICES),
                                help_text="")
     striker3 = forms.CharField(max_length=80,
-                               widget=forms.Select(choices=CHOICES),
+                               widget=forms.Select(choices=PLAYER_CHOICES),
                                help_text="")
+
 
     #Some python/django kung-fu here.
     def __init__(self, *args, **kwargs):
         super(PickForm, self).__init__(*args, **kwargs)
 
         #Make the group fields
+        ALL_TEAM_CHOICES = []
         for group_letter in vmgame.GROUP_LETTERS:
-            group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter)).order_by("country")
-            GROUP_TEAM_CHOICES = [(t,t) for t in group_teams]
+            group_name = "Group {0}".format(group_letter)
+            group_teams = Team.objects.filter(group__name=group_name).order_by("country")
+            GROUP_TEAM_CHOICES = [ (t,t) for t in group_teams ]
+            ALL_TEAM_CHOICES.extend( [ (group_name, GROUP_TEAM_CHOICES) ] )
             for i,group_rank in enumerate(vmgame.GROUP_RANKS):
-                help_text = "Pick the finishing order of Group {0}".format(group_letter)
+                help_text = "Pick the finishing order of {0}".format(group_name)
                 help_text = (help_text if i==0 else "")
                 help_text = (help_text if i!=3 else "end")
                 self.fields["sp_group{0}{1}".format(group_letter,group_rank)] = (
@@ -59,7 +63,6 @@ class PickForm(forms.ModelForm):
                               widget=forms.Select(choices=GROUP_TEAM_CHOICES), 
                               help_text=help_text))
 
-        ALL_TEAM_CHOICES = [(t,t) for t in Team.objects.all().order_by("country")]
         #Quarterfinal teams
         for i in range(8):
             help_text = "Pick 8 quarterfinal teams"
