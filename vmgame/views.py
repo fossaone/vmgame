@@ -13,7 +13,9 @@ from django.forms.util import ErrorList
 from django.forms.forms import NON_FIELD_ERRORS
 
 #vmgame
-from vmgame.models import Team, Player, Group, User, Scoring, UserProfile,GROUP_LETTERS,GROUP_RANKS
+import vmgame
+from vmgame.models import (Team, Player, Group, User, Scoring,
+                           UserProfile)
 from vmgame.forms import PickForm, UserForm, UserProfileForm
 
 logger = logging.getLogger(__name__)
@@ -198,7 +200,6 @@ def enterpicks(request):
                     pick.strikers.add(Player.objects.get(name=value))
 
             
-            #TODO: validate
             err = pick.validate()
             if err is not None:
                 logger.info("PICK ERROR: {0}".format(err))
@@ -206,6 +207,7 @@ def enterpicks(request):
                 errors = pick_form._errors.setdefault(NON_FIELD_ERRORS, ErrorList())
                 errors.append(err)
                 pick_form._errors[NON_FIELD_ERRORS] = errors
+                #If you want to add an error to a field
                 #pick_form._errors[err[0]] = ErrorList([err[1]])
 
                 pick.delete()
@@ -218,6 +220,8 @@ def enterpicks(request):
                 pick.save()
 
                 logger.info(pick.print_detail())
+                pick.write_file()
+
                 # Now call the index() view.
                 # The user will be shown the homepage.
                 #return index(request)

@@ -1,0 +1,4 @@
+#Don't put the picks into repo
+*
+#But do keep the .gitignore file
+!.gitignore

@@ -1,16 +1,13 @@
-import os,sys
+import os,sys,logging
 
 
 from django.db import models
 from django.contrib.auth.models import User
 import django.core.exceptions
 
+import vmgame
 
-
-package_directory = os.path.dirname(os.path.abspath(__file__))
-
-GROUP_LETTERS = ["A","B","C","D","E","F","G","H"]
-GROUP_RANKS = ["1st","2nd","3rd","4th"]
+logger = logging.getLogger(__name__)
 
 class UserProfile(models.Model):
     # This line is required.  Links UserProfile to a User model instance.
@@ -117,7 +114,7 @@ class Pick(models.Model):
         detail_str += "Pick name: {0}\n".format(self.pick_name)
 
         detail_str += "Groups :\n"
-        for group_letter in GROUP_LETTERS:
+        for group_letter in vmgame.GROUP_LETTERS:
             g1 = self.group_winners.get(group__name='Group {0}'.format(group_letter))
             g2 = self.group_runners_up.get(group__name='Group {0}'.format(group_letter))
             g3 = self.group_third.get(group__name='Group {0}'.format(group_letter))
@@ -148,6 +145,13 @@ class Pick(models.Model):
             detail_str += "    {0}\n".format(s)
         detail_str += "====================PICK STOP=======================\n"
         return detail_str
+
+    def write_file(self):
+        pick_file = "{0}-{1}".format(self.user.user.username,self.pick_date.strftime("%Y%m%d%H%M%S"))
+        pick_file = os.path.join(vmgame.package_directory,'pick_records',pick_file)
+        logger.info("Writing pick to file : {0}".format(pick_file))
+        with open(pick_file,'w') as f:
+            f.write(self.print_detail())
 
     def validate(self):
         #Make sure choices are consistent

@@ -1,8 +1,9 @@
 from django import forms
 from django.contrib.auth.models import User
-#from vmgame.models import Pick#, UserProfile
-from vmgame.models import Team,Group,Player,Pick,UserProfile,GROUP_LETTERS,GROUP_RANKS
 from django.utils.translation import ugettext_lazy as _
+
+import vmgame
+from vmgame.models import Team,Group,Player,Pick,UserProfile
 
 
 
@@ -24,10 +25,10 @@ class PickForm(forms.ModelForm):
         super(PickForm, self).__init__(*args, **kwargs)
 
         #Make the group fields
-        for group_letter in GROUP_LETTERS:
+        for group_letter in vmgame.GROUP_LETTERS:
             group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter))
             GROUP_TEAM_CHOICES = [(t,t) for t in group_teams]
-            for group_rank in GROUP_RANKS:
+            for group_rank in vmgame.GROUP_RANKS:
                 start = ("__start" if group_rank == "1st" else "")
                 end   = ("__end" if group_rank == "4th" else "")
                 self.fields["sp_group{0}{1}{2}".format(group_letter,group_rank,start+end)] = forms.CharField(max_length=80, 
@@ -65,7 +66,6 @@ class PickForm(forms.ModelForm):
         model = Pick
 
         fields = ['pick_name','third_place_team','champion','defensive_team','striker1','striker2','striker3','total_goals']
-        #fields.extend(['group{0}{1}'.format(gl,gr) for gl in GROUP_LETTERS for gr in GROUP_RANKS])
 
         help_texts = {
             'pick_name': _('Provide a name for this pick.'),
