@@ -48,40 +48,44 @@ class PickForm(forms.ModelForm):
 
         #Make the group fields
         for group_letter in vmgame.GROUP_LETTERS:
-            group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter))
+            group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter)).order_by("country")
             GROUP_TEAM_CHOICES = [(t,t) for t in group_teams]
-            for group_rank in vmgame.GROUP_RANKS:
-                start = ("__start" if group_rank == "1st" else "")
-                end   = ("__end" if group_rank == "4th" else "")
-                self.fields["sp_group{0}{1}{2}".format(group_letter,group_rank,start+end)] = forms.CharField(max_length=80, 
+            for i,group_rank in enumerate(vmgame.GROUP_RANKS):
+                help_text = "Pick the finishing order of Group {0}".format(group_letter)
+                help_text = (help_text if i==0 else "")
+                help_text = (help_text if i!=3 else "end")
+                self.fields["sp_group{0}{1}".format(group_letter,group_rank)] = (
+                              forms.CharField(max_length=80, 
                               widget=forms.Select(choices=GROUP_TEAM_CHOICES), 
-                              help_text="Pick the finishing order of Group {0}".format(group_letter,group_rank))
+                              help_text=help_text))
 
-        ALL_TEAM_CHOICES = [(t,t) for t in Team.objects.all()]
+        ALL_TEAM_CHOICES = [(t,t) for t in Team.objects.all().order_by("country")]
         #Quarterfinal teams
-        
         for i in range(8):
-            start = ("__start" if i==0 else "")
-            br   = ("__br" if (i+1)%4==0 else "")
-            self.fields["sp_qf_pick{0}{1}".format(i+1,start+br)] = forms.CharField(max_length=80, 
+            help_text = "Pick 8 quarterfinal teams"
+            help_text = (help_text if i==0 else "")
+            help_text = (help_text if i!=7 else "end")
+            self.fields["sp_qf_pick{0}".format(i+1)] = forms.CharField(max_length=80, 
                               widget=forms.Select(choices=ALL_TEAM_CHOICES), 
-                              help_text="Pick 8 quarterfinal teams")
+                              help_text=help_text)
 
         #Semifinal teams
         for i in range(4):
-            start = ("__start" if i==0 else "")
-            end   = ("__end" if i==3 else "")
-            self.fields["sp_sf_pick{0}{1}".format(i+1,start+end)] = forms.CharField(max_length=80, 
+            help_text = "Pick 4 semifinal teams"
+            help_text = (help_text if i==0 else "")
+            help_text = (help_text if i!=3 else "end")
+            self.fields["sp_sf_pick{0}".format(i+1)] = forms.CharField(max_length=80, 
                               widget=forms.Select(choices=ALL_TEAM_CHOICES), 
-                              help_text="Pick 4 semifinal teams")
+                              help_text=help_text)
 
         #Final teams
         for i in range(2):
-            start = ("__start" if i==0 else "")
-            end   = ("__end" if i==1 else "")
-            self.fields["sp_f_pick{0}{1}".format(i+1,start+end)] = forms.CharField(max_length=80, 
-                              widget=forms.Select(choices=ALL_TEAM_CHOICES), 
-                              help_text="Pick 2 final teams")
+            help_text = "Pick 2 final teams"
+            help_text = (help_text if i==0 else "")
+            help_text = (help_text if i!=1 else "end")
+            self.fields["sp_f_pick{0}".format(i+1)] = forms.CharField(max_length=80, 
+                              widget=forms.Select(choices=ALL_TEAM_CHOICES),
+                              help_text=help_text)
 
     class Meta:
         # Provide an association between the ModelForm and a model
