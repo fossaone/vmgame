@@ -10,10 +10,10 @@
 			<br />
 			Here they are... <br />
 			<br />
-		<form id="pick_form" method="get" action="/vmgame/enterpicks/">
+<!--		<form id="pick_form" method="get" action="/vmgame/enterpicks/">
 				{% csrf_token %}
 			
-<!--  Group Ranks -->		
+<!--  Group Ranks		
 			{% for field in form.visible_fields %}
                           {%if "sp_" in field.name %}
                             {%if field.help_text != "" and field.help_text != "end" %}
@@ -35,7 +35,7 @@
                           {% endif %}
 			{% endfor %}
                         	</table>
-<!-- Second try at Non-Group fields -->
+<!-- Second try at Non-Group fields
 			The winner of the 2014 world cup: {{ pick.champion }} </br>
 			The team that will finish in third place: {{ pick.third_place_team }} </br>
 			The team that will create the most shutouts: {{ pick.defensive_team }} </br>
@@ -44,7 +44,9 @@
 			Enter the total number of goals that will be scored in the 2014 World Cup: 
 				{{ form.total_goals.value }} </br>
 			
-		</form>		         
+		</form>	-->	   
+
+                        <pre> {{ pick.print_detail }} </pre>
 		
 		{% else %}
 		<h1>Enter picks</h1>
