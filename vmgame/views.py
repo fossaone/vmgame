@@ -224,7 +224,7 @@ def enterpicks(request):
 
                 # Now call the index() view.
                 # The user will be shown the homepage.
-                #return index(request)
+                #return displaypicks(request)
         else:
             # If the request form contained  errors - just print them in the terminal.
             print pick_form.errors
@@ -232,20 +232,23 @@ def enterpicks(request):
     else:
         # If the request was not a POST, display the form to enter details.
         pick_form = PickForm()
+        pick = PickForm()
 
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/enterpicks.html', {'form': pick_form, 'completed':completed}, context)
+    return render_to_response('vmgame/enterpicks.html', {'form': pick_form, 'completed':completed, 'pick':pick}, context)
 
 
-'''   
-def display_picks(request):
+   
+def displaypicks(request):
     context = RequestContext(request)
     
 
     #A HTTP POST
     if request.method == 'GET':
         pick_form = PickForm(request.GET)
-'''
+        
+    return render_to_response('vmgame/displaypicks.html', {}, context)
+    
 
