@@ -4,44 +4,29 @@
 
 {% block body_block %}
 	
-		<h1>Enter picks</h1>
-		
-			{% csrf_token %}
 		
 		{% if completed %}
-			{{ form.pick_name.value }} picks have been succesfully entered.
-			Here they are. <br />
-		<form id="pick_form" method="post" action="/vmgame/enterpicks/">
+			{{ user.username }} your picks named {{ form.pick_name.value }} have been succesfully entered. <br />
+			<br />
+			Here they are... <br />
+			<br />
+		<form id="pick_form" method="get" action="/vmgame/enterpicks/">
+				{% csrf_token %}
 			
-			{% for hidden in form.hidden_fields %}
-				{{ hidden }}
-			{% endfor %}
-
-			{{ form.non_field_errors }}
-<!--  Pick Name -->			
-                        <table>
-                        <tr>
-                          <td>
-                          {{ form.pick_name.errors }}
-                          {{ form.pick_name.help_text }}
-                          </td>
-                          <td>
-                          {{ form.pick_name.value}}
-                          </td>
-                        </tr>
 <!--  Group Ranks -->		
 			{% for field in form.visible_fields %}
                           {%if "sp_" in field.name %}
                             {%if field.help_text != "" and field.help_text != "end" %}
-                            <tr>	
+                			<table>
+							<tr>	
                             <td>
 				{{ field.errors }}
-				{{ field.help_text }}
+				{{ field.help_text }}:
                             </td>
                             <td>
-				{{ field.value }}
+				{{ field.value }},
                             {%elif field.help_text != "end" %}
-				{{ field.value }}
+				{{ field.value }},
                             {% else %}
 				{{ field.value }}
                             </td>
@@ -49,35 +34,22 @@
                             {% endif %}
                           {% endif %}
 			{% endfor %}
-<!--  Non-Group fields -->			
-			{% for field in form.visible_fields %}
-                          {%if "sp_" not in field.name and "pick_name" not in field.name %}
-                            {%if field.help_text != "" and field.help_text != "end" %}
-                            <tr>
-                            <td>
-				{{ field.errors }}
-				{{ field.help_text }}
-                            </td>
-                            <td>
-				{{ field.value }}
-                            {%elif field.help_text != "end" %}
-				{{ field.value }}
-                            {% else %}
-				{{ field.value }}
-                            </td>
-                            </tr>
-                            {% endif %}
-                          {% endif %}
-			{% endfor %}
-                        </table>
-
+                        	</table>
+<!-- Second try at Non-Group fields -->
+			The winner of the 2014 world cup: {{ form.champion }} </br>
+			The team that will finish in third place: {{ form.third_place_team }} </br>
+			The team that will create the most shutouts: {{ form.defensive_team }} </br>
+			Enter the total number of goals that will be scored in the 2014 World Cup: 
+			{{ form.total_goals.value }} </br>
+						
 			<a href="/vmgame/">Return to the homepage.</a><br />
 			
 		</form>		         
 		
 		{% else %}
+		<h1>Enter picks</h1>
 		<form id="pick_form" method="post" action="/vmgame/enterpicks/">
-			
+				{% csrf_token %}
 			{% for hidden in form.hidden_fields %}
 				{{ hidden }}
 			{% endfor %}

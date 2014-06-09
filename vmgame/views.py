@@ -239,14 +239,13 @@ def enterpicks(request):
     return render_to_response('vmgame/enterpicks.html', {'form': pick_form, 'completed':completed}, context)
 
 
-'''
-#@login_required    
+'''   
 def display_picks(request):
     context = RequestContext(request)
     
-    completed = False
+
     #A HTTP POST
-    if request.method == 'POST':
-        pick_form = PickForm(request.POST)
+    if request.method == 'GET':
+        pick_form = PickForm(request.GET)
 '''
 
