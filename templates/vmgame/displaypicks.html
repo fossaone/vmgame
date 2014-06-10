@@ -6,16 +6,19 @@
 
 	<h1>Registered VM Game players</h1>
 	
-	{% if username %}
+	{% if user_picks != None %}
 	            <ul>
-	                {% for username in users %}
-	                <!-- Following line changed to add an HTML hyperlink -->
-					<li><a href="/vmgame/displaypicks/{{username.url}}">Display picks</a></li>
+	                {% for pick in user_picks%}
+			<li><a href="/vmgame/displaypicks/{{pick.id}}">Display pick {{pick.pick_name}}</a></li>
+	                {% empty %}
+                        <strong>There are no picks on record.</strong>
 	                {% endfor %}
 	            </ul>
-	       {% else %}
-	            <strong>There are no categories present.</strong>
-	       {% endif %}
+	{% elif display_pick != None  %}
+                 <pre> {{ display_pick.print_detail }} </pre>
+	{% else  %}
+	            <strong>There are no picks on record.</strong>
+	{% endif %}
 	
 	
         
