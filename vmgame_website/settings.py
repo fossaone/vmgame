@@ -37,12 +37,12 @@ print STATICFILES_DIRS
 SECRET_KEY = '!k&#8($@c7$sr=mp86%&r!em_i1gvjrw&q#c-jp!dr*p2j&&r&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['vmgame2014.pythonanywhere.com']
+#ALLOWED_HOSTS = []
 
 # Application definition
 

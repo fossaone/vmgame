@@ -229,7 +229,7 @@ def enterpicks(request):
         else:
             # If the request form contained  errors - just print them in the terminal.
             print pick_form.errors
-
+            pick = PickForm()
     else:
         # If the request was not a POST, display the form to enter details.
         pick_form = PickForm()
