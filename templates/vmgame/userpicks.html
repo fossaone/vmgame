@@ -1,0 +1,37 @@
+{% extends 'vmgame/base.html' %}
+
+{% block title %}EnterPicks{% endblock %}
+
+{% block body_block %}
+
+	<h1>{{ user_name }}</h1>
+        {% if user_name %}
+            {% if user_picks %}
+            <ul>
+                {% for pick in userpicks %}
+                <!--li><a href="{{ pick.url }}">{{ pick.title }}</a></li-->
+				<pre> {{ pick.print_detail }} </pre>
+				<br />
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No picks by this user.</strong>
+            {% endif %}
+        {% else %}
+            The specified user {{ user_name }} does not exist!
+        {% endif %}
+
+		
+	<!--	{% if pick.completed %}
+				{% csrf_token %}
+			{{ user.username }} here are your picks... 
+			<br />
+			<br />
+			<pre> {{ pick.print_detail }} </pre>
+			
+		{% else %}
+				{% csrf_token %}
+			You have no picks to view, please <a href="/vmgame/enterpicks/">enter picks</a>
+
+		{% endif %} -->
+{% endblock %}

@@ -241,19 +241,6 @@ def enterpicks(request):
     return render_to_response('vmgame/enterpicks.html', {'form': pick_form, 'completed':completed, 'pick':pick}, context)
 
 
-   
-def displayusers(request):
-    context = RequestContext(request)
-    
-    user_list = User.username.order_by('username')
-    context_dict = {'users': user_list}
-    
-    for u in user_list:
-        users.url = u.name.replace(' ', '_')
-
-    # Render the response and return to the client.
-    return render_to_response('vmgame/displayusers.html', context_dict, context)    
-
 
 @login_required  
 def displaypicks(request,user_pick_id=None):
