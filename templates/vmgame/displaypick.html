@@ -1,0 +1,15 @@
+{% extends 'vmgame/base.html' %}
+
+{% block body_block %}
+
+	<h1>Here are their picks</h1>
+	
+		{% if pick %}
+	            <pre> {{ pick.print_detail }}</pre>
+	    {% else %}
+	            <strong>There is no pick.</strong>
+	    {% endif %}
+	
+	
+        
+{% endblock %}

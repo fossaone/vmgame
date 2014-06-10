@@ -1,21 +1,19 @@
 {% extends 'vmgame/base.html' %}
 
-{% block title %}EnterPicks{% endblock %}
+{% block title %} Registered VM Game players {% endblock %}
 
 {% block body_block %}
-
-	<h1>Registered VM Game players</h1>
 	
-	{% if username %}
+		{% if picks %}
 	            <ul>
-	                {% for username in users %}
+	                {% for p in picks %}
 	                <!-- Following line changed to add an HTML hyperlink -->
-					<li><a href="/vmgame/displaypicks/{{username.url}}">Display picks</a></li>
+					<li><a href="/vmgame/displaypicks/{{p.url}}">{{ p.pick_name }}</a></li>
 	                {% endfor %}
 	            </ul>
-	       {% else %}
-	            <strong>There are no categories present.</strong>
-	       {% endif %}
+	    {% else %}
+	            <strong>There are no picks in the database.</strong>
+	    {% endif %}
 	
 	
         

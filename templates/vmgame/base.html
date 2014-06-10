@@ -14,9 +14,10 @@
 		<div>
 			<u1>
 				<li><a href="/vmgame/">Return to the homepage</a></li>
+				<li><a href="/vmgame/displaypicks/">Display picks</a></li>
 			{% if user.is_authenticated %}
 				<li><a href="/vmgame/enterpicks/">Enter picks</a></li>
-				<li><a href="/vmgame/displaypicks/{{user.username.url}}">Display picks</a></li>
+				<!--li><a href="/vmgame/displaypicks/{{user.username.url}}">Display picks</a></li-->
 				<li><a href="/vmgame/logout/">Logout</a></li>
 			{% else %}
 				<li><a href="/vmgame/register/">Register Here</a></li>

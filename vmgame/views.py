@@ -14,8 +14,7 @@ from django.forms.forms import NON_FIELD_ERRORS
 
 #vmgame
 import vmgame
-from vmgame.models import (Team, Player, Group, User, Scoring,
-                           UserProfile, Pick)
+from vmgame.models import Team, Player, Group, User, Scoring, UserProfile, Pick
 from vmgame.forms import PickForm, UserForm, UserProfileForm
 
 logger = logging.getLogger(__name__)
@@ -228,7 +227,7 @@ def enterpicks(request):
         else:
             # If the request form contained  errors - just print them in the terminal.
             print pick_form.errors
-
+            pick = PickForm()
     else:
         # If the request was not a POST, display the form to enter details.
         pick_form = PickForm()
@@ -244,32 +243,35 @@ def enterpicks(request):
 def displaypicks(request):
     context = RequestContext(request)
     
-    user_list = User.username.order_by('username')
-    context_dict = {'users': user_list}
+    pick_list = Pick.objects.order_by('user')
+    #user_list = User.username.order_by('username')
+    context_dict = {'picks': pick_list}
     
-    for u in user_list:
-        users.url = u.name.replace(' ', '_')
+    for p in pick_list:
+        p.url = p.pick_name.replace(' ', '_')
 
     # Render the response and return to the client.
-    return render_to_response('vmgame/displayusers.html', context_dict, context)    
-    
-def userpicks(request, username_name):
+    return render_to_response('vmgame/displaypicks.html', context_dict, context)    
+
+ 
+def displaypick(request, displaypick_name_url):
     context = RequestContext(request)
     # Change underscores in the category name to spaces.
     # URLs don't handle spaces well, so we encode them as underscores.
     # We can then simply replace the underscores with spaces again to get the name.
-    username_name = username_name_url.replace('_', ' ')
+    displaypick_name = displaypick_name_url.replace('_', ' ')
     
     # Create a context dictionary which we can pass to the template rendering engine.
     # We start by containing the name of the category passed by the user.
-    context_dict = {'user_name': user_name}
+    pick = Pick.objects.get(pick_name=displaypick_name)
+    context_dict = {'displaypick_name': displaypick_name, 'pick': pick}
     
-
+    '''
     try:
         # Can we find a user with the given name?
         # If we can't, the .get() method raises a DoesNotExist exception.
         # So the .get() method returns one model instance or raises an exception.
-        user_picks = Pick.object.get(user=user_name)
+        displaypick = Pick.objects.get(pick.pick_name=displaypick_name)
 
         # Retrieve all of the associated pages.
         # Note that filter returns >= 1 model instance.
@@ -284,13 +286,12 @@ def userpicks(request, username_name):
         # We get here if we didn't find the specified category.
         # Don't do anything - the template displays the "no category" message for us.
         pass
-    
+    '''
     
     
     #A HTTP POST
     #if request.method == 'GET':
     #    pick = Pick(request.GET)
         
-    return render_to_response('vmgame/displaypicks.html', context_dict, context)
-    
+    return render_to_response('vmgame/displaypick.html', context_dict, context)   
 

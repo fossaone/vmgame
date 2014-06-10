@@ -76,6 +76,7 @@ class Pick(models.Model):
     #When did they pick
     pick_date = models.DateTimeField('date entered')
     pick_name = models.CharField(max_length=80)
+    url = models.URLField()
 
     #Choices
     defensive_team = models.ForeignKey(Team,related_name='defensive_team')

@@ -94,7 +94,7 @@ class PickForm(forms.ModelForm):
         fields = ['pick_name','third_place_team','champion','defensive_team','striker1','striker2','striker3','total_goals']
 
         help_texts = {
-            'pick_name': _('Provide a name for this pick:'),
+            'pick_name': _('Provide a name for this pick, please only use alphanumeric characters or spaces:'),
             'champion': _('The winner of the 2014 world cup:'),
             'third_place_team': _('The team that will finish in third place:'),
             'defensive_team': _('The team that will create the most shutouts:'),
