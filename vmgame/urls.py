@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^enterpicks/', views.enterpicks, name='enterpicks'),
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.user_login, name='login'),
+    url(r'^displaypicks/(?P<user_picks_url>\w+)/$', views.displaypicks, name='displaypicks'),
     url(r'^displaypicks/', views.displaypicks, name='displaypicks'),
     url(r'^logout/$', views.user_logout, name='logout'),
     

@@ -1,55 +1,26 @@
 {% extends 'vmgame/base.html' %}
 
+{% load static %}
+
 {% block title %}EnterPicks{% endblock %}
 
 {% block body_block %}
 	
 		
 		{% if completed %}
-			{{ user.username }} your picks named {{ form.pick_name.value }} have been succesfully entered. <br />
+			{% csrf_token %}
+			
+			{{ user.username }} your picks named {{ form.pick_name.value }} have been succesfully entered. 
+			<br />
 			<br />
 			Here they are... <br />
 			<br />
-		<form id="pick_form" method="get" action="/vmgame/enterpicks/">
-				{% csrf_token %}
-			
-<!--  Group Ranks -->		
-			{% for field in form.visible_fields %}
-                          {%if "sp_" in field.name %}
-                            {%if field.help_text != "" and field.help_text != "end" %}
-                			<table>
-							<tr>	
-                            <td>
-				{{ field.errors }}
-				{{ field.help_text }}:
-                            </td>
-                            <td>
-				{{ field.value }},
-                            {%elif field.help_text != "end" %}
-				{{ field.value }},
-                            {% else %}
-				{{ field.value }}
-                            </td>
-                            </tr>
-                            {% endif %}
-                          {% endif %}
-			{% endfor %}
-                        	</table>
-<!-- Second try at Non-Group fields -->
-			The winner of the 2014 world cup: {{ pick.champion }} </br>
-			The team that will finish in third place: {{ pick.third_place_team }} </br>
-			The team that will create the most shutouts: {{ pick.defensive_team }} </br>
-			Three top goal scorers: {{ form.striker1.value }}, {{ form.striker2.value }},  
-				and {{ form.striker3.value }} </br>
-			Enter the total number of goals that will be scored in the 2014 World Cup: 
-				{{ form.total_goals.value }} </br>
-			
-		</form>		         
+			<pre> {{ pick.print_detail }} </pre>         
 		
 		{% else %}
 		<h1>Enter picks</h1>
 		<form id="pick_form" method="post" action="/vmgame/enterpicks/">
-				{% csrf_token %}
+			{% csrf_token %}
 			{% for hidden in form.hidden_fields %}
 				{{ hidden }}
 			{% endfor %}
