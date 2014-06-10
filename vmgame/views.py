@@ -241,7 +241,7 @@ def enterpicks(request):
 
 
    
-def displayusers(request):
+def displaypicks(request):
     context = RequestContext(request)
     
     user_list = User.username.order_by('username')
