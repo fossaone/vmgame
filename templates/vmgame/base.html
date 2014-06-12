@@ -17,7 +17,7 @@
 				<li><a href="http://diabolics.com/VMgame2010/VM10.htm">Scoring</a></li>
 				
 			{% if user.is_authenticated %}
-				<li><a href="/vmgame/enterpicks/">Enter picks</a></li>
+				<!-- li><a href="/vmgame/enterpicks/">Enter picks</a></li-->
 				<li><a href="/vmgame/displaypicks/{{user.username.url}}">Display picks</a></li>
 				<li><a href="/vmgame/logout/">Logout</a></li>
 			{% else %}
