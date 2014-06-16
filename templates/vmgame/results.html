@@ -1,0 +1,41 @@
+{% extends 'vmgame/base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{% block body_block %}
+
+        {% if result_pick != None %}
+			Here are {{ result_pick.user}}'s picks.
+			</br>
+            <pre> {{ result_pick.print_detail }} </pre>
+		{% elif picks != None  %}	
+            <ul>
+				Here is a list of all VM game 2014 players.  </br>
+				Click on their user name to see their picks. 
+				</br>
+				</br>
+				<table>
+					<tr>
+						<td> User name </td>
+						<!--td> Country </td-->
+						<td> score </td>
+                {% for p in picks %}
+                <!--li><a href="{{ pick.url }}">{{ pick.title }}</a></li-->
+				
+				<tr>
+					<!--td>{{ p.user }}</td-->
+					<td><a href="/vmgame/results/{{p.id}}">{{ p.user }}</a></td> 
+					<!--td>{{ User.country }}</td--> 
+						
+					<td>{{ p.score }}</td>
+				</tr>
+					
+                {% endfor %}
+				</table>
+            </ul>
+        {% else %}
+        	No users are registered.
+        {% endif %}
+		
+		
+{% endblock %}

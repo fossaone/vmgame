@@ -18,11 +18,12 @@
 				
 			{% if user.is_authenticated %}
 				<!-- li><a href="/vmgame/enterpicks/">Enter picks</a></li-->
-				<li><a href="/vmgame/displaypicks/{{user.username.url}}">Display picks</a></li>
+				<li><a href="/vmgame/displaypicks/{{user.username.url}}">Display your picks</a></li>
 				<li><a href="/vmgame/logout/">Logout</a></li>
 			{% else %}
 				<li><a href="/vmgame/register/">Register Here</a></li>
 				<li><a href="/vmgame/login/">Login</a></li>
+				<li><a href="/vmgame/results/">Results</a></li>
 			{% endif %}
 			</u1>
 		</div>
