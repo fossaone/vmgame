@@ -20,7 +20,8 @@ class UserProfile(models.Model):
     picks = models.ManyToManyField("Pick",related_name="picks",null=True)
 
     def __unicode__(self):
-        return u"{0} : {1}".format(self.user.username,self.score)
+        #return u"{0} : {1}".format(self.user.username,self.score)
+        return self.user.username
 
 
 class Group(models.Model):

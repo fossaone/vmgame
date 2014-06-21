@@ -290,4 +290,46 @@ def displaypicks(request,user_pick_id=None):
         
     return render_to_response('vmgame/displaypicks.html', context_dict, context)
     
+ 
+def results(request, pick_id=None):
+    context = RequestContext(request)
+    
+    # Create a context dictionary which we can pass to the template rendering engine.
+    #user_list = UserProfile.objects.order_by('score')
+    #context_dict = {'users': user_list}
+    pick_list = Pick.objects.order_by('score')
+    context_dict = {'picks': pick_list}
+    
+    
+    if pick_id is not None:
+        try:
+            result_pick = Pick.objects.get(id=pick_id)
+            context_dict['result_pick'] = result_pick 
+        except Pick.DoesNotExist:
+            pass
+    '''
+    else:
+        try:
+            # Can we find a user with the given name?
+            # If we can't, the .get() method raises a DoesNotExist exception.
+            # So the .get() method returns one model instance or raises an exception.
+            p = Pick.objects.filter(id=pick_id)
+
+            # Retrieve all of the associated pages.
+            # Note that filter returns >= 1 model instance.
+            #picks = Page.objects.filter(category=category)
+
+            # Adds our results list to the template context under name pages.
+            context_dict['picks'] = p
+            # We also add the category object from the database to the context dictionary.
+            # We'll use this in the template to verify that the category exists.
+            #context_dict['category'] = category
+        except Pick.DoesNotExist:
+            # We get here if we didn't find the specified category.
+            # Don't do anything - the template displays the "no category" message for us.
+            pass
+    '''    
+    return render_to_response('vmgame/results.html', context_dict, context)
+    
+
 
