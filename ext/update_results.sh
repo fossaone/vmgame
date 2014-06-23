@@ -31,4 +31,9 @@ sed -i "s/Juan Quintero/Juan Fernando Quintero/g" $result_dir/all_players.txt
 sed -i "s/Lee Keun-ho/Lee Keun-Ho/g" $result_dir/goalscorers.txt
 sed -i "s/Lee Keun-ho/Lee Keun-Ho/g" $result_dir/all_players.txt
 
+sed -i "s/Koo Ja-cheol/Koo Ja-Cheol/g" $result_dir/goalscorers.txt
+sed -i "s/Koo Ja-cheol/Koo Ja-Cheol/g" $result_dir/all_players.txt
+
+sed -i "s/Son Heung-min/Son Heung-Min/g" $result_dir/goalscorers.txt
+sed -i "s/Son Heung-min/Son Heung-Min/g" $result_dir/all_players.txt
 
