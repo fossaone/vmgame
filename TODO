@@ -2,15 +2,9 @@
 *** Features that will make this thing function better and be nicer to hack on
 
 ** DATABASE/models changes
-* Add regularized player/team names to database
-  (unidecode.unidecode(player_name).lower())
-  (this will save head-aches with inconsistent naming when we pull in data)
 * Re-work Pick model so that it better maps to scoring criteria
 
 ** Results update
-* Fix player/team score updates to match based on regularized names.
-  (This will require a bit of a hack until/unless we add the regularized names
-  to the database.)
 * Add knock-out stage to the updater/scraper.
 
 ** views
