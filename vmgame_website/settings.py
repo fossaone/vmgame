@@ -28,7 +28,6 @@ STATICFILES_DIRS = (
     STATIC_PATH,
 )
 DATABASE_PATH = os.path.join(PROJECT_PATH, 'vmgame.db')
-print STATICFILES_DIRS
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
