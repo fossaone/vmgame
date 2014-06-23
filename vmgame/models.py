@@ -47,6 +47,7 @@ class Scoring(models.Model):
 
 class Team(models.Model):
     country = models.CharField(max_length=80)
+    country_regularized = models.CharField(max_length=80)
 #    abbr = models.CharField(max_length=3)
 #    alt_abbr = models.CharField(max_length=2)
     group = models.ForeignKey(Group)
@@ -62,6 +63,7 @@ class Team(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=80)
+    name_regularized = models.CharField(max_length=80)
     team = models.ForeignKey(Team)
     position = models.CharField(max_length=80)
     goals_scored = models.IntegerField(default=0)
