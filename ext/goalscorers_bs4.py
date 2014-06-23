@@ -3,7 +3,7 @@
 import re
 from bs4 import BeautifulSoup
 
-with open('wiki_wc_2014_main.html','r') as f:
+with open('2014_FIFA_World_Cup.html','r') as f:
   raw_html=f.read()
 
 wc_soup = BeautifulSoup(raw_html)

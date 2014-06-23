@@ -32,11 +32,16 @@ def update_vmgame_results():
            record = record.split(',')
            player_name = record[0]
            goals_scored = int(record[1])
+           print player_name
            #FIXME: (Stupid "(c)" for captains)
            try:
                player = Player.objects.get(name=player_name)
            except Player.DoesNotExist:
-               player = Player.objects.get(name=player_name+u" (c)")
+               try:
+                   player = Player.objects.get(name=player_name+u" (c)")
+               except Player.DoesNotExist:
+                   print "WARNING: Could not find player with name "+player_name
+                   continue
            player.goals_scored = goals_scored
            player.save()
 
