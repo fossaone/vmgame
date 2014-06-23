@@ -297,7 +297,7 @@ def results(request, pick_id=None):
     # Create a context dictionary which we can pass to the template rendering engine.
     #user_list = UserProfile.objects.order_by('score')
     #context_dict = {'users': user_list}
-    pick_list = Pick.objects.order_by('score')
+    pick_list = Pick.objects.order_by('-score')
     context_dict = {'picks': pick_list}
     
     
