@@ -3,9 +3,15 @@
 
 ** DATABASE/models changes
 * Re-work Pick model so that it better maps to scoring criteria
+* Add sub-score info to make score breakdown view possible.
+  (doesn't need to be stored in db, just need to break out
+   scoring categories into sub-functions)
+* Add score history so we can plot scores as function of time
+
 
 ** Results update
 * Add knock-out stage to the updater/scraper.
+
 
 ** views
 * Re-write view_picks to have a nicely formatted table of group ranks and
@@ -23,4 +29,5 @@
 * Add a view that explains the scoring
 * Re-write the make_pick view to ensure consistent picks and reduce choices
   as picks are made (multiple views or javascript?)
+* Add view to show scores as function of time
  
