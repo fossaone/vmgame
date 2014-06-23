@@ -9,6 +9,7 @@ vmgame.db*
 
 #Ignore log file
 vmgame_website.log
+update_vmgame_results.log
 
 #Ignore stupid mac files
 .DS_Store

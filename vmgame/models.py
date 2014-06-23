@@ -279,41 +279,41 @@ class Pick(models.Model):
 
         #Group stage
         for gr in Group.objects.all():
-            gw = self.group_winners.objects.filter(group=gr)
+            gw = self.group_winners.get(group=gr)
             if gw.group_rank < 3:
                 score += self.scoring.group_advancer_points
 
-            gru = self.group_runners_up.objects.filter(group=gr)
+            gru = self.group_runners_up.get(group=gr)
             if gru.group_rank < 3:
                 score += self.scoring.group_advancer_points
 
-            gt = self.group_third.objects.filter(group=gr)
-            gf = self.group_fourth.objects.filter(group=gr)
+            gt = self.group_third.get(group=gr)
+            gf = self.group_fourth.get(group=gr)
             if( gw.group_rank == 1 and gru.group_rank == 2 
               and gt.group_rank == 3 and gf.group_rank == 4 ):
                 score += self.scoring.group_perfect_points
 
         #Quarterfinals
-        for qft in self.quarterfinal_teams.objects.all(): 
+        for qft in self.quarterfinal_teams.all(): 
           if qft.furthest_round > 1:
             score += self.scoring.qf_points
  
         #Semifinals
-        for sft in self.semifinal_teams.objects.all(): 
+        for sft in self.semifinal_teams.all(): 
           if sft.furthest_round > 2:
             score += self.scoring.sf_points
 
         #Finals
-        for ft in self.final_teams.objects.all(): 
+        for ft in self.final_teams.all(): 
           if ft.furthest_round > 3:
             score += self.scoring.f_points
 
         #Third-place
-        if self.third_place_team.third_place == True:
+        if self.third_place_team.is_third_place == True:
           score += self.scoring.third_place_points
 
         #Champion
-        if self.champion.champion == True:
+        if self.champion.is_champion == True:
           score += self.scoring.champ_points
 
         #Defensive team
@@ -321,54 +321,58 @@ class Pick(models.Model):
                    *self.defensive_team.shutouts)
 
         #Golden boot
-        for striker in self.strikers:
+        for striker in self.strikers.all():
           score += (self.scoring.striker_goals_points
                      *striker.goals_scored)
 
+        self.score = score
         self.user.score = score
         return score
 
 def update_scores():
+    for p in Pick.objects.filter(is_truth=False):
+        p.calculate_score()
+        p.save()
 
-    try:
-       #Delete any old truths
-       Pick.objects.filter(is_truth=True).delete()
-    except django.core.exceptions.ObjectDoesNotExist:
-       pass
-    #New, empty truth
-    truth = Pick(is_truth=True)
-
-    # Fill out truth based on Team and Player info
-    for t in Team.objects.all():
-       if team.group_rank == 1:
-          truth.group_winners.add(t)
-       elif team.group_rank == 2:
-          truth.group_runners_up.add(t)
-        
-    for t in Team.objects.filter(furthest_round__gte=2):
-       truth.quarterfinal_teams.add(t)
-
-    for t in Team.objects.filter(furthest_round__gte=3):
-       truth.semifinal_teams.add(t)
-       
-    for t in Team.objects.filter(furthest_round__gte=4):
-       truth.final_teams.add(t)
-
-    #This will fail until we set a third place
-    try:
-        truth.third_place_team = Team.objects.get(is_third_place=True)
-    except: pass
-
-    #This will fail until we set a champ
-    try:
-        truth.champion = Team.objects.get(is_champion=True)
-    except: pass
-
-    #TODO: Strikers and best defense 
-    # * These are not true/untrue
-    # * May want to pull the best possible picks
-
-    #Update scores
-    for e in Pick.objects.filter(is_truth=False):
-        e.calculate_score()
-
+#  MAKE TRUTH
+# N.B.  This doesn't work.  Need to properly initialize pick
+#       with all required fields.  Not using it so not fixing
+#       it
+#
+#    try:
+#       #Delete any old truths
+#       Pick.objects.filter(is_truth=True).delete()
+#    except django.core.exceptions.ObjectDoesNotExist:
+#       pass
+#    #New, empty truth
+#    truth = Pick(is_truth=True)
+#
+#    # Fill out truth based on Team and Player info
+#    for t in Team.objects.all():
+#       if t.group_rank == 1:
+#          truth.group_winners.add(t)
+#       elif t.group_rank == 2:
+#          truth.group_runners_up.add(t)
+#        
+#    for t in Team.objects.filter(furthest_round__gte=2):
+#       truth.quarterfinal_teams.add(t)
+#
+#    for t in Team.objects.filter(furthest_round__gte=3):
+#       truth.semifinal_teams.add(t)
+#       
+#    for t in Team.objects.filter(furthest_round__gte=4):
+#       truth.final_teams.add(t)
+#
+#    #This will fail until we set a third place
+#    try:
+#        truth.third_place_team = Team.objects.get(is_third_place=True)
+#    except: pass
+#
+#    #This will fail until we set a champ
+#    try:
+#        truth.champion = Team.objects.get(is_champion=True)
+#    except: pass
+#
+#    #TODO: Strikers and best defense 
+#    # * These are not true/untrue
+#    # * May want to pull the best possible picks

@@ -80,6 +80,7 @@ def update_vmgame_results():
 if __name__ == '__main__':
     print "Starting VM Game population script..."
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vmgame_website.settings')
-    from vmgame.models import Team,Player,Group,Scoring
+    from vmgame.models import Team,Player,Group,Scoring,update_scores
     update_vmgame_results()
+    update_scores()
 
