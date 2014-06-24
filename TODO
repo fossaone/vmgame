@@ -30,4 +30,6 @@
 * Re-write the make_pick view to ensure consistent picks and reduce choices
   as picks are made (multiple views or javascript?)
 * Add view to show scores as function of time
+* Stats page (most picked scorers and defensive teams, correctly picked upsets,
+  best picks for scorers and defensive teams)
  
