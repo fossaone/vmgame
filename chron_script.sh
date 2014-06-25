@@ -1,7 +1,12 @@
 #!/bin/bash
 
+#Find directory this script is stored in.
+#Cribbed from: http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+#N.B. May not work when symlinks are involved
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 #For some reason pythonanywhere runs this from the home directory
-cd /home/vmgame2014/vmgame
+cd ${SCRIPT_DIR}
 
 #Don't update database if update_results.sh fails
 set -e
