@@ -295,17 +295,17 @@ class Pick(models.Model):
 
         #Quarterfinals
         for qft in self.quarterfinal_teams.all(): 
-          if qft.furthest_round > 1:
+          if qft.furthest_round > 2:
             score += self.scoring.qf_points
  
         #Semifinals
         for sft in self.semifinal_teams.all(): 
-          if sft.furthest_round > 2:
+          if sft.furthest_round > 3:
             score += self.scoring.sf_points
 
         #Finals
         for ft in self.final_teams.all(): 
-          if ft.furthest_round > 3:
+          if ft.furthest_round > 4:
             score += self.scoring.f_points
 
         #Third-place

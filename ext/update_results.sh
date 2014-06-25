@@ -15,10 +15,13 @@ result_dir=../static/data/results
 ./group_ranks_bs4.py > $result_dir/group_ranks.txt
 ./goalscorers_bs4.py > $result_dir/goalscorers.txt
 ./shutouts_bs4.py > $result_dir/shutouts.txt
+./knockout_stage_bs4.py > $result_dir/knockout_stage.txt
 
 sed -i "s/Ivory Coast/Côte d'Ivoire/g" $result_dir/group_ranks.txt
 sed -i "s/Ivory Coast/Côte d'Ivoire/g" $result_dir/shutouts.txt 
+sed -i "s/Ivory Coast/Côte d'Ivoire/g" $result_dir/knockout_stage.txt
 
 sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/group_ranks.txt
 sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/shutouts.txt 
+sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/knockout_stage.txt
 
