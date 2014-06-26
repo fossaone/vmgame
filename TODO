@@ -13,6 +13,7 @@
 ** views
 * Re-write view_picks to have a nicely formatted table of group ranks and
   a bracket-style knock-out stage (c.f. Wikipedia's HTML bracket impl.)
+* Show time of last score update
 * Show breakdown of score of pick on results detail view.
 * Show breakdown of score of pick on results overview.
 * Re-write base.html to be prettier (nav-bar at top or side; add some color
