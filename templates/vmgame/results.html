@@ -1,8 +1,30 @@
 {% extends 'vmgame/base.html' %}
 
+
 {% block title %}Results{% endblock %}
 
+
 {% block body_block %}
+<!-- NEED TO MOVE THIS TO CSS -->
+<style>
+
+ table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+td, th {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+th {
+    border: solid black medium;
+}
+
+</style> 
+
 
         {% if result_pick != None %}
 		Here is {{ result_pick.user}}'s pick: </br>
@@ -12,19 +34,19 @@
 			Here is a list of all VM game 2014 players.  </br>
 			Click on their user name to see their picks.
 			</br></br>
-			<table>
+			<table style="border-style:solid;border-width:medium;">
 				<tr align="center">
-					<td> User name </td>
+					<th id="border"> User name </th>
 					<!--td> Country </td-->
-					<td> Total score </td>
-					<td> Group Stage </td>
-					<td> Quarterfinals </td>
-					<td> Semifinals </td>
-					<td> Finals    </td>
-					<td> Third Place </td>
-					<td> Champion   </td>
-					<td> Defensive Team </td>
-					<td> Strikers  </td>
+					<th> Total score </th>
+					<th> Group Stage </th>
+					<th> Quarterfinals </th>
+					<th> Semifinals </th>
+					<th> Finals    </th>
+					<th> Third Place </th>
+					<th> Champion   </th>
+					<th> Defensive Team </th>
+					<th> Strikers  </th>
 				</tr>
                 {% for p in picks %}
 				<tr align="center">
