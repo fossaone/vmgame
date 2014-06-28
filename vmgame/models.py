@@ -43,7 +43,7 @@ class Scoring(models.Model):
     champ_points = models.PositiveIntegerField(default=32)
     team_shutout_points = models.PositiveIntegerField(default=3)
     striker_goals_points = models.PositiveIntegerField(default=2)
-   
+
 
 class Team(models.Model):
     country = models.CharField(max_length=80)
@@ -184,7 +184,7 @@ class Pick(models.Model):
         num_group_winners = self.group_winners.all().count()
         if(num_group_winners != 8):
            return "incorrect number of group winners"
-        #8 Group Runners Up 
+        #8 Group Runners Up
         num_group_runners_up = self.group_runners_up.all().count()
         if(num_group_runners_up != 8):
            return "incorrect number of group runners up"
@@ -201,18 +201,18 @@ class Pick(models.Model):
         #One group runner up for each group
         for g in Group.objects.all():
            num_group_winners = self.group_winners.filter(group = g).count()
-           if num_group_winners != 1: 
+           if num_group_winners != 1:
                 return "More than one group winner for {0}".format(g)
            num_group_runners_up = self.group_runners_up.filter(group = g).count()
-           if num_group_runners_up != 1: 
+           if num_group_runners_up != 1:
                 return "More than one group runner up for {0}".format(g)
 
            num_group_thirds = self.group_third.filter(group = g).count()
-           if num_group_thirds != 1: 
+           if num_group_thirds != 1:
                 return "More than one group third place up for {0}".format(g)
 
            num_group_fourths = self.group_fourth.filter(group = g).count()
-           if num_group_fourths != 1: 
+           if num_group_fourths != 1:
                 return "More than one group fourth place up for {0}".format(g)
 
            g1 = self.group_winners.get(group = g)
@@ -272,58 +272,78 @@ class Pick(models.Model):
 #        if self.champion not in self.final_teams.all():
 #                return "Champion {0} not picked to be in finals".format(self.champion)
 
-
-    def calculate_score(self):
-        #Score the pick 
-        score = 0
-
-        #Group stage
+    def score_group_stage(self):
+        group_score = 0
         for gr in Group.objects.all():
             gw = self.group_winners.get(group=gr)
             if gw.group_rank < 3:
-                score += self.scoring.group_advancer_points
+                group_score += self.scoring.group_advancer_points
 
             gru = self.group_runners_up.get(group=gr)
             if gru.group_rank < 3:
-                score += self.scoring.group_advancer_points
+                group_score += self.scoring.group_advancer_points
 
             gt = self.group_third.get(group=gr)
             gf = self.group_fourth.get(group=gr)
-            if( gw.group_rank == 1 and gru.group_rank == 2 
+            if( gw.group_rank == 1 and gru.group_rank == 2
               and gt.group_rank == 3 and gf.group_rank == 4 ):
-                score += self.scoring.group_perfect_points
+                group_score += self.scoring.group_perfect_points
+        return group_score
 
-        #Quarterfinals
-        for qft in self.quarterfinal_teams.all(): 
+    def score_quarterfinals(self):
+        qf_score = 0
+        for qft in self.quarterfinal_teams.all():
           if qft.furthest_round > 2:
-            score += self.scoring.qf_points
- 
-        #Semifinals
-        for sft in self.semifinal_teams.all(): 
+            qf_score += self.scoring.qf_points
+        return qf_score
+
+    def score_semifinals(self):
+        sf_score = 0
+        for sft in self.semifinal_teams.all():
           if sft.furthest_round > 3:
-            score += self.scoring.sf_points
+            sf_score += self.scoring.sf_points
+        return sf_score
 
-        #Finals
-        for ft in self.final_teams.all(): 
+    def score_finals(self):
+        f_score = 0
+        for ft in self.final_teams.all():
           if ft.furthest_round > 4:
-            score += self.scoring.f_points
+            f_score += self.scoring.f_points
+        return f_score
 
-        #Third-place
+    def score_third_place(self):
         if self.third_place_team.is_third_place == True:
-          score += self.scoring.third_place_points
+          return self.scoring.third_place_points
+        else: return 0
 
-        #Champion
+    def score_champion(self):
         if self.champion.is_champion == True:
-          score += self.scoring.champ_points
+          return self.scoring.champ_points
+        else: return 0
 
-        #Defensive team
-        score += (self.scoring.team_shutout_points 
-                   *self.defensive_team.shutouts)
+    def score_defense(self):
+        return (self.scoring.team_shutout_points
+                 *self.defensive_team.shutouts)
 
-        #Golden boot
+    def score_strikers(self):
+        striker_score = 0
         for striker in self.strikers.all():
-          score += (self.scoring.striker_goals_points
+          striker_score += (self.scoring.striker_goals_points
                      *striker.goals_scored)
+        return striker_score
+
+
+    def calculate_score(self):
+        #Score the pick
+        score = 0
+        score += score_group_stage()
+        score += score_quarterfinals()
+        score += score_semifinals()
+        score += score_finals()
+        score += score_third_place()
+        score += score_champion()
+        score += score_defense()
+        score += score_strikers()
 
         self.score = score
         self.user.score = score
@@ -353,13 +373,13 @@ def update_scores():
 #          truth.group_winners.add(t)
 #       elif t.group_rank == 2:
 #          truth.group_runners_up.add(t)
-#        
+#
 #    for t in Team.objects.filter(furthest_round__gte=2):
 #       truth.quarterfinal_teams.add(t)
 #
 #    for t in Team.objects.filter(furthest_round__gte=3):
 #       truth.semifinal_teams.add(t)
-#       
+#
 #    for t in Team.objects.filter(furthest_round__gte=4):
 #       truth.final_teams.add(t)
 #
@@ -373,6 +393,6 @@ def update_scores():
 #        truth.champion = Team.objects.get(is_champion=True)
 #    except: pass
 #
-#    #TODO: Strikers and best defense 
+#    #TODO: Strikers and best defense
 #    # * These are not true/untrue
 #    # * May want to pull the best possible picks
