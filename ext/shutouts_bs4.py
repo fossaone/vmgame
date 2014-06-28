@@ -28,8 +28,14 @@ games_finished=wc_soup.find_all('a',href=re.compile('_vs_'),text=re.compile(u'[0
 for game in games_finished:
     home_goals=int(game.string.split(u"\u2013")[0])
     away_goals=int(game.string.split(u"\u2013")[1])
-    home_team=game.find_parent('th').find_previous_sibling('th').a.string
-    away_team=game.find_parent('th').find_next_sibling('th').a.string
+    try:
+        home_team=game.find_parent('th').find_previous_sibling('th').a.string
+        away_team=game.find_parent('th').find_next_sibling('th').a.string
+    except AttributeError:
+        #Somebody decided to change these to td's from th's
+        #They may decide to change it back...
+        home_team=game.find_parent('td').find_previous_sibling('td').a.string
+        away_team=game.find_parent('td').find_next_sibling('td').a.string
     if home_goals == 0:
         shutout_count[away_team] +=1
     if away_goals == 0:
