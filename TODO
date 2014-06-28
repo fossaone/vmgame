@@ -20,9 +20,6 @@
   to text and bg, add the mascot image in the upper right)
 * Add a message board view.  (Probably can just borrow this from somewhere.
   Could even be a live chat as that would make the games more fun)
-* Modify make pick and view picks to be based on a tournament starting
-  time (i.e. can make picks and view own picks up until kick-off of first
-  game; aftwerwards, can't make new picks but can view other players picks).
 * Allow users to identify active picks and/or delete unwanted picks.
 * Add a view that explains the scoring
 * Re-write the make_pick view to ensure consistent picks and reduce choices

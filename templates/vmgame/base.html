@@ -17,14 +17,19 @@
 				<li><a href="http://diabolics.com/VMgame2010/VM10.htm">Scoring</a></li>
 
 			{% if user.is_authenticated %}
-				<!-- li><a href="/vmgame/enterpicks/">Enter picks</a></li-->
-				<li><a href="/vmgame/displaypicks/{{user.username.url}}">Display your picks</a></li>
+                          {% if tournament_started %}
 				<li><a href="/vmgame/results/">Results</a></li>
+                          {% else %}
+				<li><a href="/vmgame/enterpicks/">Enter picks</a></li>
+                          {% endif %}
+				<li><a href="/vmgame/displaypicks/{{user.username.url}}">Display your picks</a></li>
 				<li><a href="/vmgame/logout/">Logout</a></li>
 			{% else %}
 				<li><a href="/vmgame/register/">Register Here</a></li>
 				<li><a href="/vmgame/login/">Login</a></li>
+                          {% if tournament_started %}
 				<li><a href="/vmgame/results/">Results</a></li>
+                          {% endif %}
 			{% endif %}
 			</u1>
 		</div>
