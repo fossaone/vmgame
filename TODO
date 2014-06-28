@@ -4,18 +4,15 @@
 ** DATABASE/models changes
 * Re-work Pick model so that it better maps to scoring criteria
   (makes form generation less like ju-jitsu)
-* Add sub-score info to make score breakdown view possible.
-  (doesn't need to be stored in db, just need to break out
-   scoring categories into sub-functions)
 * Add score history so we can plot scores as function of time
 
 
 ** views
 * Re-write view_picks to have a nicely formatted table of group ranks and
   a bracket-style knock-out stage (c.f. Wikipedia's HTML bracket impl.)
-* Show time of last score update
+* Better solution for time of last update (add to models somehow; "event"
+  model?) (current solution has a tracked file being modified on every update
 * Show breakdown of score of pick on results detail view.
-* Show breakdown of score of pick on results overview.
 * Re-write base.html to be prettier (nav-bar at top or side; add some color
   to text and bg, add the mascot image in the upper right)
 * Add a message board view.  (Probably can just borrow this from somewhere.
