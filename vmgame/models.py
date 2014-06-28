@@ -336,14 +336,14 @@ class Pick(models.Model):
     def calculate_score(self):
         #Score the pick
         score = 0
-        score += score_group_stage()
-        score += score_quarterfinals()
-        score += score_semifinals()
-        score += score_finals()
-        score += score_third_place()
-        score += score_champion()
-        score += score_defense()
-        score += score_strikers()
+        score += self.score_group_stage()
+        score += self.score_quarterfinals()
+        score += self.score_semifinals()
+        score += self.score_finals()
+        score += self.score_third_place()
+        score += self.score_champion()
+        score += self.score_defense()
+        score += self.score_strikers()
 
         self.score = score
         self.user.score = score
