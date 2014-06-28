@@ -25,6 +25,7 @@ logger = logging.getLogger(__name__)
 #global_context_dict is at file scope to have some app level info
 global_context_dict = {}
 global_context_dict['tournament_started'] = vmgame.config.TOURNAMENT_START < datetime.datetime.utcnow()
+global_context_dict['LAST_UPDATED'] = vmgame.config.LAST_UPDATED
 
 def register(request):
     logger.info('in register view')

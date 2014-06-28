@@ -20,3 +20,6 @@ cd ../
 #Go from text files to database
 ./update_vmgame_results.py >> update_vmgame_results.log
 
+sed -i -e '/^LAST_UPDATED.*/d' vmgame/config.py
+echo "LAST_UPDATED = \"`date -u`\"" >> vmgame/config.py
+

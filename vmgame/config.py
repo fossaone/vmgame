@@ -10,3 +10,4 @@ GROUP_RANKS = ["1st","2nd","3rd","4th"]
 #UTC
 TOURNAMENT_START = datetime.datetime(2014,6,12,20,0)
 
+LAST_UPDATED = "Sat Jun 28 01:19:25 PDT 2014"
