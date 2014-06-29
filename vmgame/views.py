@@ -17,7 +17,7 @@ import django
 #vmgame
 import vmgame
 from vmgame.models import (Team, Player, Group, User, Scoring,
-                           UserProfile, Pick)
+                           UserProfile, Pick, Event)
 from vmgame.forms import PickForm, UserForm, UserProfileForm
 
 logger = logging.getLogger(__name__)
@@ -25,7 +25,6 @@ logger = logging.getLogger(__name__)
 #global_context_dict is at file scope to have some app level info
 global_context_dict = {}
 global_context_dict['tournament_started'] = vmgame.config.TOURNAMENT_START < datetime.datetime.utcnow()
-global_context_dict['LAST_UPDATED'] = vmgame.config.LAST_UPDATED
 
 def register(request):
     logger.info('in register view')
@@ -316,6 +315,10 @@ def results(request, pick_id=None):
     pick_list = Pick.objects.order_by('-score')
     context_dict = {}
     context_dict['picks'] = pick_list
+
+    # Sun Jun 29 00:01:28 UTC 2014
+    last_update_event = Event.objects.get(name='LAST_SCORE_UPDATE')
+    context_dict['LAST_SCORE_UPDATE'] = last_update_event.datetime.strftime("%a %b %d %H:%M:%S %Z %Y")
 
     if pick_id is not None:
         try:

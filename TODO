@@ -10,8 +10,6 @@
 ** views
 * Re-write view_picks to have a nicely formatted table of group ranks and
   a bracket-style knock-out stage (c.f. Wikipedia's HTML bracket impl.)
-* Better solution for time of last update (add to models somehow; "event"
-  model?) (current solution has a tracked file being modified on every update
 * Show breakdown of score of pick on results detail view.
 * Re-write base.html to be prettier (nav-bar at top or side; add some color
   to text and bg, add the mascot image in the upper right)

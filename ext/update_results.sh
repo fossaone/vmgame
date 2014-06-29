@@ -25,3 +25,6 @@ sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/group_ranks.t
 sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/shutouts.txt 
 sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/knockout_stage.txt
 
+#Wikipedia refuses to use a consistent name for this guy
+sed -i "s/Georgios Samaras/Giorgos Samaras/g" $result_dir/goalscorers.txt
+

@@ -3,6 +3,7 @@
 
 import os,sys
 import codecs
+import datetime
 from unidecode import unidecode
 
 def update_vmgame_results():
@@ -105,7 +106,11 @@ def update_vmgame_results():
 if __name__ == '__main__':
     print "Starting VM Game population script..."
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vmgame_website.settings')
-    from vmgame.models import Team,Player,Group,Scoring,update_scores
+    import django.utils.timezone
+    from vmgame.models import Team,Player,Group,Scoring,Event,update_scores
     update_vmgame_results()
     update_scores()
+    last_score_update,created = Event.objects.get_or_create(name="LAST_SCORE_UPDATE")
+    last_score_update.datetime = django.utils.timezone.now()
+    last_score_update.save()
 
