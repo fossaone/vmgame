@@ -26,5 +26,6 @@ sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/shutouts.txt
 sed -i "s/Bosnia and Herzegovina/Bosnia-Herzegovina/g" $result_dir/knockout_stage.txt
 
 #Wikipedia refuses to use a consistent name for this guy
-sed -i "s/Georgios Samaras/Giorgos Samaras/g" $result_dir/goalscorers.txt
+# I changed the name in the db on pythonanywhere
+#sed -i "s/Georgios Samaras/Giorgos Samaras/g" $result_dir/goalscorers.txt
 
