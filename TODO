@@ -22,4 +22,7 @@
 * Add view to show scores as function of time
 * Stats page (most picked scorers and defensive teams, correctly picked upsets,
   best picks for scorers and defensive teams)
- 
+* Scenario generator/runner (how many points can each person get if they get all the remaining matches correct.) 
+
+** Update/scraper
+* Fix third place and champion to account for possible ties.  (May just be easier to set these manually).
