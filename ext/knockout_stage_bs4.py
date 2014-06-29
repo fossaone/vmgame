@@ -89,7 +89,10 @@ for match_num in range(2):
 
 
 #TODO: If match ends in tie how does wikipedia report the score
-third_place_match_sect=wc_soup.find('span',class_='mw-headline',id='Third_place_match',text='Third place match').find_parent('h3')
+try:
+    third_place_match_sect=wc_soup.find('span',class_='mw-headline',id='Third_place_match',text='Third place match').find_parent('h3')
+except:
+    third_place_match_sect=wc_soup.find('span',class_='mw-headline',id='Third_place_play-off',text='Third place play-off').find_parent('h3')
 third_place_match=third_place_match_sect.find_all_next('a',href=re.compile('_vs_'),text=re.compile(u'[0-9]*\u2013[0-9]*'))
 if len(third_place_match) > 0:
     match=third_place_match[0]
