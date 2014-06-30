@@ -1,37 +1,39 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
+
 	<head>
 		<title>VM Game - {% block title %}{% endblock %}</title>
 	</head>
-
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
 	<body>
+
+
+        <div>
+        <ul class="nav nav-pills">
+          <li><a href="/vmgame/">Home</a></li>
+{% if tournament_started %}
+          <li><a href="/vmgame/results">Results</a></li>
+{% endif %}
+          <li><a href="http://diabolics.com/VMgame2010/VM10.htm">Scoring</a></li>
+{% if user.is_authenticated %}
+    {% if not tournament_started %}
+            <li><a href="/vmgame/enterpick/">Enter pick</a></li>
+    {% endif %}
+          <li><a href="/vmgame/mypicks">My Picks</a></li>
+          <li><a href="/vmgame/logout/">Logout</a></li>
+{% else %}
+        <li><a href="/vmgame/register/">Register</a></li>
+        <li><a href="/vmgame/login/">Login</a></li>
+{% endif %}
+        </ul>
+        </div>
+        <hr />
+
 		<div>
 			{% block body_block %}{% endblock %}
 		</div>
 
-		<hr />
-
-		<div>
-			<u1>
-				<li><a href="/vmgame/">Return to the homepage</a></li>
-				<li><a href="http://diabolics.com/VMgame2010/VM10.htm">Scoring</a></li>
-
-			{% if user.is_authenticated %}
-                          {% if tournament_started %}
-				<li><a href="/vmgame/results/">Results</a></li>
-                          {% else %}
-				<li><a href="/vmgame/enterpicks/">Enter picks</a></li>
-                          {% endif %}
-				<li><a href="/vmgame/displaypicks/{{user.username.url}}">Display your picks</a></li>
-				<li><a href="/vmgame/logout/">Logout</a></li>
-			{% else %}
-				<li><a href="/vmgame/register/">Register Here</a></li>
-				<li><a href="/vmgame/login/">Login</a></li>
-                          {% if tournament_started %}
-				<li><a href="/vmgame/results/">Results</a></li>
-                          {% endif %}
-			{% endif %}
-			</u1>
-		</div>
 	</body>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </html>

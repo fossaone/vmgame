@@ -157,7 +157,7 @@ def index(request):
 
 
 @login_required
-def enterpicks(request):
+def enterpick(request):
     if global_context_dict['tournament_started']:
         raise django.core.exceptions.PermissionDenied
         #return django.http.HttpResponseForbidden()
@@ -255,16 +255,13 @@ def enterpicks(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/enterpicks.html', context_dict, context)
+    return render_to_response('vmgame/enterpick.html', context_dict, context)
 
 
 
 @login_required
-def displaypicks(request,user_pick_id=None):
+def mypicks(request):
     context = RequestContext(request)
-    # Change underscores in the category name to spaces.
-    # URLs don't handle spaces well, so we encode them as underscores.
-    # We can then simply replace the underscores with spaces again to get the name.
     user_name = request.user.username
 
     # Create a context dictionary which we can pass to the template rendering engine.
@@ -272,38 +269,93 @@ def displaypicks(request,user_pick_id=None):
     context_dict = {}
     context_dict['user_name']=user_name
 
-    if user_pick_id is not None:
-        try:
-            display_pick = Pick.objects.get(id=user_pick_id)
-            if(display_pick.user.user.username != user_name):
-               raise django.core.exceptions.PermissionDenied
-            context_dict['display_pick'] = display_pick
-            logger.info(context_dict)
-        except Pick.DoesNotExist:
-            pass
-    else:
-        try:
-            # Can we find a user with the given name?
-            # If we can't, the .get() method raises a DoesNotExist exception.
-            # So the .get() method returns one model instance or raises an exception.
-            user_picks = Pick.objects.filter(user__user__username=user_name)
-
-            # Adds our results list to the template context under name pages.
-            context_dict['user_picks'] = user_picks
-        except Pick.DoesNotExist:
-            # We get here if we didn't find the specified category.
-            # Don't do anything - the template displays the "no category" message for us.
-            pass
+    #filter returns all picks or None
+    user_picks = Pick.objects.filter(user__user__username=user_name)
+    context_dict['user_picks'] = user_picks
 
     context_dict.update(global_context_dict)
 
     #A HTTP POST
     #if request.method == 'GET':
     #    pick = Pick(request.GET)
-    return render_to_response('vmgame/displaypicks.html', context_dict, context)
+    return render_to_response('vmgame/mypicks.html', context_dict, context)
 
 
-def results(request, pick_id=None):
+def displaypick(request, pick_id):
+    context = RequestContext(request)
+    context_dict = {}
+    try:
+        display_pick = Pick.objects.get(id=pick_id)
+        if(
+            (not global_context_dict['tournament_started']) and
+            display_pick.user.user.username != user_name
+          ):
+           raise django.core.exceptions.PermissionDenied
+        context_dict['display_pick'] = display_pick
+    except Pick.DoesNotExist:
+        raise django.core.exceptions.ObjectDoesNotExist
+
+    group_stage = {1:[],2:[],3:[],4:[]}
+    for g1 in display_pick.group_winners.order_by('group__name'):
+        g1_dict = {'country': g1.country, 'correct': False}
+        if(g1.group_rank == 1):
+            g1_dict['correct'] = True
+        group_stage[1].append(g1_dict)
+    for g2 in display_pick.group_runners_up.order_by('group__name'):
+        g2_dict = {'country': g2.country, 'correct': False}
+        if(g2.group_rank == 2):
+            g2_dict['correct'] = True
+        group_stage[2].append(g2_dict)
+    for g3 in display_pick.group_third.order_by('group__name'):
+        g3_dict = {'country': g3.country, 'correct': False}
+        if(g3.group_rank == 3):
+            g3_dict['correct'] = True
+        group_stage[3].append(g3_dict)
+    for g4 in display_pick.group_fourth.order_by('group__name'):
+        g4_dict = {'country': g4.country, 'correct': False}
+        if(g4.group_rank == 4):
+            g4_dict['correct'] = True
+        group_stage[4].append(g4_dict)
+
+    quarterfinal_teams = []
+    for qft in display_pick.quarterfinal_teams.all():
+        qft_dict = {'country': qft.country, 'correct': False}
+        if(qft.furthest_round > 2):
+            qft_dict['correct'] = True
+        quarterfinal_teams.append(qft_dict)
+
+    semifinal_teams = []
+    for sft in display_pick.semifinal_teams.all():
+        sft_dict = {'country': sft.country, 'correct': False}
+        if(sft.furthest_round > 3):
+            sft_dict['correct'] = True
+        semifinal_teams.append(sft_dict)
+
+    final_teams = []
+    for ft in display_pick.final_teams.all():
+        ft_dict = {'country': ft.country, 'correct': False}
+        if(ft.furthest_round > 4):
+            ft_dict['correct'] = True
+        final_teams.append(ft_dict)
+
+    champion = {'country': display_pick.champion.country ,
+                'correct': display_pick.champion.is_champion }
+    third_place = {'country': display_pick.third_place_team.country ,
+                'correct': display_pick.third_place_team.is_third_place }
+
+    defensive_team = display_pick.defensive_team
+
+    context_dict['group_stage'] = group_stage
+    context_dict['quarterfinal_teams'] = quarterfinal_teams
+    context_dict['semifinal_teams'] = semifinal_teams
+    context_dict['final_teams'] = final_teams
+    context_dict['champion'] = champion
+    context_dict['third_place'] = third_place
+    context_dict.update(global_context_dict)
+    return render_to_response('vmgame/displaypick.html', context_dict, context)
+
+
+def results(request):
     if not global_context_dict['tournament_started']:
         #return django.http.HttpResponseForbidden()
         raise django.core.exceptions.PermissionDenied
@@ -316,38 +368,9 @@ def results(request, pick_id=None):
     context_dict = {}
     context_dict['picks'] = pick_list
 
-    # Sun Jun 29 00:01:28 UTC 2014
     last_update_event = Event.objects.get(name='LAST_SCORE_UPDATE')
     context_dict['LAST_SCORE_UPDATE'] = last_update_event.datetime.strftime("%a %b %d %H:%M:%S %Z %Y")
 
-    if pick_id is not None:
-        try:
-            result_pick = Pick.objects.get(id=pick_id)
-            context_dict['result_pick'] = result_pick
-        except Pick.DoesNotExist:
-            pass
-    '''
-    else:
-        try:
-            # Can we find a user with the given name?
-            # If we can't, the .get() method raises a DoesNotExist exception.
-            # So the .get() method returns one model instance or raises an exception.
-            p = Pick.objects.filter(id=pick_id)
-
-            # Retrieve all of the associated pages.
-            # Note that filter returns >= 1 model instance.
-            #picks = Page.objects.filter(category=category)
-
-            # Adds our results list to the template context under name pages.
-            context_dict['picks'] = p
-            # We also add the category object from the database to the context dictionary.
-            # We'll use this in the template to verify that the category exists.
-            #context_dict['category'] = category
-        except Pick.DoesNotExist:
-            # We get here if we didn't find the specified category.
-            # Don't do anything - the template displays the "no category" message for us.
-            pass
-    '''
     context_dict.update(global_context_dict)
     return render_to_response('vmgame/results.html', context_dict, context)
 

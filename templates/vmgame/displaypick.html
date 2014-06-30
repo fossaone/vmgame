@@ -1,0 +1,154 @@
+{% extends 'vmgame/base.html' %}
+
+{% block title %}{{display_pick.pick_name}}{% endblock %}
+
+{% block body_block %}
+
+<!-- Group Stage -->
+<h2>Group Stage</h2>
+<table class="table table-bordered">
+<!-- HEADER -->
+<tr>
+<th>Rank</th>
+<th>Group A</th> <th>Group B</th> <th>Group C</th> <th>Group D</th> <th>Group E</th> <th>Group F</th> <th>Group G</th> <th>Group H</th>
+</tr>
+
+<!-- Group Winners -->
+<tr>
+<td>1</td>
+{% for g1 in group_stage.1 %}
+{% if g1.correct %}
+<td class='success'>{{ g1.country }}</td>
+{% else %}
+<td class='danger'>{{ g1.country }}</td>
+{% endif %}
+{% endfor %}
+</tr>
+
+<!-- Group Runners Up-->
+<tr>
+<td>2</td>
+{% for g2 in group_stage.2 %}
+{% if g2.correct %}
+<td class='success'>{{ g2.country }}</td>
+{% else %}
+<td class='danger'>{{ g2.country }}</td>
+{% endif %}
+{% endfor %}
+</tr>
+
+<!-- Group Third -->
+<tr>
+<td>3</td>
+{% for g3 in group_stage.3 %}
+{% if g3.correct %}
+<td class='success'>{{ g3.country }}</td>
+{% else %}
+<td class='danger'>{{ g3.country }}</td>
+{% endif %}
+{% endfor %}
+</tr>
+
+<!-- Group Fourth -->
+<tr>
+<td>4</td>
+{% for g4 in group_stage.4 %}
+{% if g4.correct %}
+<td class='success'>{{ g4.country }}</td>
+{% else %}
+<td class='danger'>{{ g4.country }}</td>
+{% endif %}
+{% endfor %}
+</tr>
+</table>
+
+<!-- TODO : Group stage points -->
+
+<!-- Quarterfinals -->
+<h2>Knock-out Stage</h2>
+<table class="table table-bordered">
+<tr>
+<td rowspan="2">
+<ul class="list-group">
+Quarterfinals
+{% for qft in quarterfinal_teams %}
+{% if qft.correct %}
+<li class="list-group-item list-group-item-success">{{ qft.country }}</li>
+{% else %}
+<li class="list-group-item list-group-item-danger">{{ qft.country }}</li>
+{% endif %}
+{% endfor %}
+</ul>
+</td>
+
+<td rowspan="2">
+Semifinals
+<ul class="list-group">
+{% for sft in semifinal_teams %}
+{% if sft.correct %}
+<li class="list-group-item list-group-item-success">{{ sft.country }}</li>
+{% else %}
+<li class="list-group-item list-group-item-danger">{{ sft.country }}</li>
+{% endif %}
+{% endfor %}
+</ul>
+</td>
+
+<td rowspan="2">
+Semifinals
+<ul class="list-group">
+{% for ft in final_teams %}
+{% if ft.correct %}
+<li class="list-group-item list-group-item-success">{{ ft.country }}</li>
+{% else %}
+<li class="list-group-item list-group-item-danger">{{ ft.country }}</li>
+{% endif %}
+{% endfor %}
+</ul>
+</td>
+
+<td>
+Champion
+<ul class="list-group">
+{% if display_pick.champion.is_champion%}
+<li class="list-group-item list-group-item-success">{{ display_pick.champion.country }}</li>
+{% else %}
+<li class="list-group-item list-group-item-danger">{{ display_pick.champion.country }}</li>
+{% endif %}
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Third-place
+<ul class="list-group">
+{% if display_pick.third_place_team.is_third_place %}
+<li class="list-group-item list-group-item-success">{{ display_pick.third_place_team.country }}</li>
+{% else %}
+<li class="list-group-item list-group-item-danger">{{ display_pick.third_place_team.country }}</li>
+{% endif %}
+</ul>
+</td>
+</tr>
+</table>
+
+<h2>Bonus</h2>
+<table class="table table-bordered">
+<tr>
+<th>Category</th><th>Pick</th><th>Shutouts/Goals Scored</th>
+</tr>
+<tr>
+<td>Defense</td><td>{{ display_pick.defensive_team.country }}</td><td>{{ display_pick.defensive_team.shutouts }}</td>
+</tr>
+{% for striker in display_pick.strikers.all %}
+<tr>
+{% if forloop.first %}
+<td rowspan=3>Striker </td>
+{% endif %}
+<td>{{ striker.name }}</td><td>{{ striker.goals_scored }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<!-- <pre> {{ display_pick.print_detail }} </pre> -->
+{% endblock %}

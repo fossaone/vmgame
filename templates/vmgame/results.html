@@ -7,71 +7,59 @@
 {% block body_block %}
 <!-- NEED TO MOVE THIS TO CSS -->
 <style>
-
- table {
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid black;
-}
-td, th {
-    padding-right: 8px;
-    padding-left: 8px;
-}
-th {
-    border: solid black medium;
-}
+/* Modify Bootstrap table styles */
+.table { border: 1px solid black; }
+.table thead > tr > td,
+.table tbody > tr > td,
+.table tfoot > tr > td { border: 1px solid black; }
+.table thead > tr > th,
+.table tbody > tr > th,
+.table tfoot > tr > th { border: 3px solid black; }
 
 </style> 
 
 
-        {% if result_pick != None %}
-		Here is {{ result_pick.user}}'s pick: </br>
-                <pre> {{ result_pick.print_detail }} </pre>
-	{% elif picks != None  %}	
-                 <ul>
-			Here is a list of all VM game 2014 players.  </br>
-			Click on their user name to see their picks.
-			</br></br>
-			(Last updated on {{ LAST_SCORE_UPDATE }})
-			</br></br>
-			<table style="border-style:solid;border-width:medium;">
-				<tr align="center">
-					<th id="border"> User name </th>
-					<!--td> Country </td-->
-					<th> Total score </th>
-					<th> Group Stage </th>
-					<th> Quarterfinals </th>
-					<th> Semifinals </th>
-					<th> Finals    </th>
-					<th> Third Place </th>
-					<th> Champion   </th>
-					<th> Defensive Team </th>
-					<th> Strikers  </th>
-				</tr>
-                {% for p in picks %}
-				<tr align="center">
-					<!--td>{{ p.user }}</td-->
-					<td><a href="/vmgame/results/{{p.id}}">{{ p.user }}</a></td>
-					<!--td>{{ User.country }}</td-->
-						
-					<td>{{ p.score }}</td>
-                                        <td>{{ p.score_group_stage }}</td>
-                                        <td>{{ p.score_quarterfinals }}</td>
-                                        <td>{{ p.score_semifinals }}</td>
-                                        <td>{{ p.score_finals }}</td>
-                                        <td>{{ p.score_third_place }}</td>
-                                        <td>{{ p.score_champion }}</td>
-                                        <td>{{ p.score_defense }}</td>
-                                        <td>{{ p.score_strikers }}</td>
-				</tr>
-                {% endfor %}
-				</table>
-            </ul>
-        {% else %}
-        	No users are registered.
-        {% endif %}
-		
-		
+<ul>
+Here is a list of all VM game 2014 players.  </br>
+Click on their user name to see their picks.
+</br>
+<small>(Last updated on {{ LAST_SCORE_UPDATE }})</small>
+</br>
+{% if picks != None %}
+<!-- <table style="border-style:solid;border-width:medium;"> -->
+<table class="table table-bordered">
+<tr>
+<!--  <th id="border"> User name </th> -->
+  <th class="text-center"> User name </th>
+  <!--td> Country </td-->
+  <th class="text-center"> Total score </th>
+  <th class="text-center"> Group Stage </th>
+  <th class="text-center"> Quarterfinals </th>
+  <th class="text-center"> Semifinals </th>
+  <th class="text-center"> Finals    </th>
+  <th class="text-center"> Third Place </th>
+  <th class="text-center"> Champion   </th>
+  <th class="text-center"> Defensive Team </th>
+  <th class="text-center"> Strikers  </th>
+</tr>
+{% for p in picks %}
+<tr align="center">
+  <td><a href="/vmgame/displaypick/{{p.id}}">{{ p.user }}</a></td>
+  <!--td>{{ User.country }}</td-->
+  <td>{{ p.score }}</td>
+  <td>{{ p.score_group_stage }}</td>
+  <td>{{ p.score_quarterfinals }}</td>
+  <td>{{ p.score_semifinals }}</td>
+  <td>{{ p.score_finals }}</td>
+  <td>{{ p.score_third_place }}</td>
+  <td>{{ p.score_champion }}</td>
+  <td>{{ p.score_defense }}</td>
+  <td>{{ p.score_strikers }}</td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+  No picks to display.
+{% endif %}
+</ul>
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'vmgame/base.html' %}
+
+{% block title %}My Picks{% endblock %}
+
+{% block body_block %}
+<ul>
+  {% for pick in user_picks%}
+    <li><a href="/vmgame/displaypick/{{pick.id}}">Display pick {{pick.pick_name}}</a></li>
+  {% empty %}
+    <strong>There are no picks on record.</strong>
+  {% endfor %}
+</ul>
+{% endblock %}
