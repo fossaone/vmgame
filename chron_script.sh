@@ -20,3 +20,4 @@ cd ../
 #Go from text files to database
 ./update_vmgame_results.py 2>&1 >> update_vmgame_results.log
 
+echo "Done updating results" >> update_vmgame_results.log

@@ -4,7 +4,13 @@
 set -e
 
 #NOTE: Not updating players anymore
-wget -q en.wikipedia.org/wiki/2014_FIFA_World_Cup -O 2014_FIFA_World_Cup.html
+wget -q http://en.wikipedia.org/wiki/2014_FIFA_World_Cup -O 2014_FIFA_World_Cup.html
+wget_err=$?
+if [ "$wget_err" -ne "0" ]
+then
+    echo "wget failed with error code $wget_err"
+    exit
+fi
 #wget -q en.wikipedia.org/wiki/2014_FIFA_World_Cup_squads -O 2014_FIFA_World_Cup_squads.html
 
 #Need this for non-ASCII characters (player names)
