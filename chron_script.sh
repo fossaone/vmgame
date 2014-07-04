@@ -5,7 +5,7 @@
 #N.B. May not work when symlinks are involved
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-#For some reason pythonanywhere runs this from the home directory
+#Change script directory
 cd ${SCRIPT_DIR}
 
 #Don't update database if update_results.sh fails
@@ -17,6 +17,7 @@ cd ext
 ./update_results.sh 2>&1 >> ../update_vmgame_results.log
 cd ../
 
+echo "Starting update_vmgame_results.py"
 #Go from text files to database
 ./update_vmgame_results.py 2>&1 >> update_vmgame_results.log
 
