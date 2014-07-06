@@ -14,5 +14,6 @@ urlpatterns = patterns('',
     url(r'^results/$', views.results, name='results'),
 #    url(r'^results/(?P<pick_id>\w+)$', views.results, name='results_pick'),
     url(r'^logout/$', views.user_logout, name='logout'),
+    url(r'^scoring/$', views.scoring, name='scoring'),
 
 )

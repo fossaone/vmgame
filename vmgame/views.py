@@ -374,5 +374,11 @@ def results(request):
     context_dict.update(global_context_dict)
     return render_to_response('vmgame/results.html', context_dict, context)
 
+def scoring(request):
+    context = RequestContext(request)
 
+    context_dict = {}
+    context_dict.update(global_context_dict)
+    
+    return render_to_response('vmgame/scoring.html', context_dict, context)
 

@@ -15,7 +15,8 @@
 {% if tournament_started %}
           <li><a href="/vmgame/results">Results</a></li>
 {% endif %}
-          <li><a href="http://diabolics.com/VMgame2010/VM10.htm">Scoring</a></li>
+		  <li><a href="/vmgame/scoring/">Scoring</a></li>
+          <!--li><a href="http://diabolics.com/VMgame2010/VM10.htm">Scoring</a></li-->
 {% if user.is_authenticated %}
     {% if not tournament_started %}
             <li><a href="/vmgame/enterpick/">Enter pick</a></li>
