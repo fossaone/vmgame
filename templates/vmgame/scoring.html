@@ -1,0 +1,66 @@
+{% extends 'vmgame/base.html' %}
+
+
+{% block title %}VMgame Scoring{% endblock %}
+
+{% block body_block %}
+	{% if user.is_authenticated %}
+    <h1>Hello {{ user.username }}!</h1>
+	{% endif %} 
+	
+	<p>Scoring for VMgame is described below</p>
+	</br>
+	<p>
+	<b>Group stage</b>
+	</br>
+	Predict the outcome of the groups! You get 2 points per team that qualifies for the 'round 	of 	   16' (position is irrelevant). However, correctly predicting the order of all four teams in a 	group will net you 5 bonus points.
+	</p>
+	
+	<p>
+	<b>Teams advancing out of the round of 16 </b>
+	</br> 
+	Each team that is correctly predicted reaching this level earns you 4 points.
+	</p>
+	
+	<p>
+	<b>Quarterfinals </b>
+	</br> 
+	Each correct team is worth 8 points. 
+	</p>
+	
+	<p>
+	<b>Semifinals </b>
+	</br> 
+	Each correct team is worth 16 points. 
+	</p>	
+		
+	<p>
+	<b>Third place team </b>
+	</br> 
+	Correct team is worth 16 points. 
+	</p>
+	
+	<p>
+	<b>2014 World Champion </b>
+	</br> 
+	Correct team is worth 32 points. 
+	</p>
+		
+	<p>
+	<b>Strikers</b>
+	</br> 
+	Shoose three players and get 2 bonus points for every* goal they score.
+	</br> 
+	* According to the official FIFA stats.
+	</p>
+		
+		
+	<p>
+	<b>Defensive team</b>
+	</br> 
+	This team will give you 3 fresh points everytime they end a game with no goals scored 	   	  	  against them (includes extra-time if needed). 
+	</p>
+		
+	<p><b>Picks must be entered prior to kickoff of the first match!</b></p>
+		
+{% endblock %}
