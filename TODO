@@ -5,24 +5,28 @@
 * Re-work Pick model so that it better maps to scoring criteria
   (makes form generation less like ju-jitsu)
 * Add score history so we can plot scores as function of time
+* Switch from SQLite to MySQL to speed up calls
 
 
 ** views
 * Re-write view_picks to have a nicely formatted table of group ranks and
   a bracket-style knock-out stage (c.f. Wikipedia's HTML bracket impl.)
-* Show breakdown of score of pick on results detail view.
-* Re-write base.html to be prettier (nav-bar at top or side; add some color
-  to text and bg, add the mascot image in the upper right)
+* Add rank to results page table, acount for identical scores.
+* Add user's country to results page table.
+* On user picks page, in Group results could bold two teams that advance to show they got that right.
 * Add a message board view.  (Probably can just borrow this from somewhere.
   Could even be a live chat as that would make the games more fun)
 * Allow users to identify active picks and/or delete unwanted picks.
-* Add a view that explains the scoring
 * Re-write the make_pick view to ensure consistent picks and reduce choices
   as picks are made (multiple views or javascript?)
 * Add view to show scores as function of time
 * Stats page (most picked scorers and defensive teams, correctly picked upsets,
   best picks for scorers and defensive teams)
-* Scenario generator/runner (how many points can each person get if they get all the remaining matches correct.) 
+* Scenario generator/runner (how many points can each person get if they get all the remaining    	matches correct.) 
+* Allow filtering on results page, could filter based on specific picks or based on possible points   	given teams still in the running.
+* Use bootstrap for registration pabe and login page.
+* Make sure when someone registers they are logedin and don't need to login afterwards.
+* Allow people to start typing in striker names and have it autocomplete with possible choices.
 
 ** Update/scraper
-* Fix third place and champion to account for possible ties.  (May just be easier to set these manually).
+* Fix third place and champion to account for possible ties.  (May just be easier to set these 		 	manually).
