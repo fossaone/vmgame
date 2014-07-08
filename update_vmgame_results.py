@@ -108,7 +108,7 @@ if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vmgame_website.settings')
     import django.utils.timezone
     from vmgame.models import Team,Player,Group,Scoring,Event,update_scores
-    update_vmgame_results()
+#    update_vmgame_results()
     update_scores()
     last_score_update,created = Event.objects.get_or_create(name="LAST_SCORE_UPDATE")
     last_score_update.datetime = django.utils.timezone.now()
