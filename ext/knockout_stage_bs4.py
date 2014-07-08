@@ -108,6 +108,8 @@ if len(third_place_match) > 0:
 
 #TODO: If match ends in tie how does wikipedia report the score
 finals_sect=wc_soup.find('span',class_='mw-headline',id='Final',text='Final').find_parent('h3')
+#match_regex = re.compile(ur'',re.UNICODE)
+#TODO: Fix this up
 finals_match=finals_sect.find_all_next('a',href=re.compile('_vs_'),text=re.compile(u'[0-9]*\u2013[0-9]*'))
 if len(finals_match) > 0:
     match=finals_match[0]
