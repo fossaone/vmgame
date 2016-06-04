@@ -3,12 +3,12 @@
 import re
 from bs4 import BeautifulSoup
 
-with open('2014_FIFA_World_Cup.html','r') as f:
+with open('UEFA_Euro_2016.html','r') as f:
   raw_html=f.read()
 
-wc_soup = BeautifulSoup(raw_html)
+main_soup = BeautifulSoup(raw_html)
 
-goal_dls=wc_soup.find('span',class_='mw-headline',id='Goalscorers',text='Goalscorers')\
+goal_dls=main_soup.find('span',class_='mw-headline',id='Goalscorers',text='Goalscorers')\
                 .find_parent('h3')\
                 .find_next_siblings('dl')
 for goal_count in goal_dls:

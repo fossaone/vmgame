@@ -3,28 +3,22 @@
 import re
 from bs4 import BeautifulSoup
 
-with open('2014_FIFA_World_Cup.html','r') as f:
+#Get teams from text file
+teams=[]
+with open('../static/data/all_teams.txt','r') as f:
+  teams = f.read().split("\n")
+teams = teams[:-1]
+
+with open('UEFA_Euro_2016.html','r') as f:
   raw_html=f.read()
 
-wc_soup = BeautifulSoup(raw_html)
-
-teams=[]
-qual_sect=wc_soup.find('span',class_='mw-headline',text='Qualification').find_parent('h3')
-qual_region_dls=qual_sect.find_next_sibling('table').find_all('dl')
-for region_dl in qual_region_dls:
-    num_quals = int(re.sub(r'^.*\(([0-9]*)\).*$',r'\1',str(region_dl.find('dt'))))
-    if(num_quals==0): continue
-    for team_li in region_dl.find_next_sibling('ul').find_all('li'):
-        teams.append(team_li.a.string)
-
+main_soup = BeautifulSoup(raw_html,'html.parser')
 
 shutout_count={}
 for team in teams:
     shutout_count[team] = 0
 
-
-
-games_finished=wc_soup.find_all('a',href=re.compile('_vs_'),text=re.compile(u'[0-9]*\u2013[0-9]*'))
+games_finished=main_soup.find_all('a',href=re.compile('_vs_'),text=re.compile(u'[0-9]*\u2013[0-9]*'))
 for game in games_finished:
     home_goals=int(game.string.split(u"\u2013")[0])
     away_goals=int(game.string.split(u"\u2013")[1])
