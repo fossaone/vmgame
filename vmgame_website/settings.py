@@ -40,7 +40,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['vmgame2014.pythonanywhere.com']
+ALLOWED_HOSTS = ['emgame2016.diabolics.com']
 #ALLOWED_HOSTS = []
 
 # Application definition
