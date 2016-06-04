@@ -341,8 +341,8 @@ def displaypick(request, pick_id):
 
     champion = {'country': display_pick.champion.country ,
                 'correct': display_pick.champion.is_champion }
-    #third_place = {'country': display_pick.third_place_team.country ,
-    #            'correct': display_pick.third_place_team.is_third_place }
+#third_place = {'country': display_pick.third_place_team.country ,
+#            'correct': display_pick.third_place_team.is_third_place }
 
     defensive_team = display_pick.defensive_team
 
@@ -350,8 +350,7 @@ def displaypick(request, pick_id):
     context_dict['quarterfinal_teams'] = quarterfinal_teams
     context_dict['semifinal_teams'] = semifinal_teams
     context_dict['final_teams'] = final_teams
-    context_dict['champion'] = champion
-    #context_dict['third_place'] = third_place
+    context_dict['champion'] = champion#context_dict['third_place'] = third_place
     context_dict.update(global_context_dict)
     return render_to_response('emgame/displaypick.html', context_dict, context)
 
@@ -380,6 +379,6 @@ def scoring(request):
 
     context_dict = {}
     context_dict.update(global_context_dict)
-    
+
     return render_to_response('emgame/scoring.html', context_dict, context)
 

@@ -55,7 +55,7 @@ class Team(models.Model):
     group_rank = models.IntegerField(default=4)
     furthest_round = models.IntegerField(default=0)
     shutouts = models.IntegerField(default=0)
-    is_third_place = models.BooleanField(default=False)
+#    is_third_place = models.BooleanField(default=False)
     is_champion = models.BooleanField(default=False)
     def __unicode__(self):
         #return u"{0}\n {1},\nGroup Rank {2},\nFurthest Round {3}\nShutouts {4}".format(self.country,self.group.name,self.group_rank,self.furthest_round,self.shutouts)
