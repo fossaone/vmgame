@@ -40,7 +40,7 @@ class Scoring(models.Model):
     qf_points = models.PositiveIntegerField(default=4)
     sf_points = models.PositiveIntegerField(default=8)
     f_points = models.PositiveIntegerField(default=16)
-    third_place_points = models.PositiveIntegerField(default=16)
+    #third_place_points = models.PositiveIntegerField(default=16)
     champ_points = models.PositiveIntegerField(default=32)
     team_shutout_points = models.PositiveIntegerField(default=3)
     striker_goals_points = models.PositiveIntegerField(default=2)
@@ -92,7 +92,7 @@ class Pick(models.Model):
     semifinal_teams = models.ManyToManyField(Team,related_name='semifinal_teams')
     final_teams = models.ManyToManyField(Team,related_name='final_teams')
     champion = models.ForeignKey(Team,related_name='champion')
-    third_place_team = models.ForeignKey(Team,related_name='third_place_team')
+    #third_place_team = models.ForeignKey(Team,related_name='third_place_team')
     total_goals = models.PositiveIntegerField(default=0)
 
     #Validation
@@ -141,7 +141,7 @@ class Pick(models.Model):
         for ft in self.final_teams.all():
             detail_str += "    {0}\n".format(ft)
 
-        detail_str += "   Third Place Team: {0}\n".format(self.third_place_team)
+        #detail_str += "   Third Place Team: {0}\n".format(self.third_place_team)
         detail_str += "   Champion: {0}\n".format(self.champion)
         detail_str += "   Defensive Team: {0}\n".format(self.defensive_team)
         detail_str += "   Strikers:\n"
@@ -312,12 +312,11 @@ class Pick(models.Model):
           if ft.furthest_round > 4:
             f_score += self.scoring.f_points
         return f_score
-
+    '''
     def score_third_place(self):
         if self.third_place_team.is_third_place == True:
           return self.scoring.third_place_points
-        else: return 0
-
+        else: return 0 '''
     def score_champion(self):
         if self.champion.is_champion == True:
           return self.scoring.champ_points
@@ -342,7 +341,7 @@ class Pick(models.Model):
         score += self.score_quarterfinals()
         score += self.score_semifinals()
         score += self.score_finals()
-        score += self.score_third_place()
+        #score += self.score_third_place()
         score += self.score_champion()
         score += self.score_defense()
         score += self.score_strikers()
