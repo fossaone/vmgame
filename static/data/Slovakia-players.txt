@@ -1,0 +1,24 @@
+Ján Mucha,Slovakia,GK
+Peter Pekarík,Slovakia,DF
+Martin Škrtel,Slovakia,DF
+Ján Ďurica,Slovakia,DF
+Norbert Gyömbér,Slovakia,DF
+Ján Greguš,Slovakia,MF
+Vladimír Weiss,Slovakia,MF
+Ondrej Duda,Slovakia,MF
+Stanislav Šesták,Slovakia,FW
+Miroslav Stoch,Slovakia,MF
+Adam Nemec,Slovakia,FW
+Ján Novota,Slovakia,GK
+Patrik Hrošovský,Slovakia,MF
+Milan Škriniar,Slovakia,DF
+Tomáš Hubočan,Slovakia,DF
+Kornel Saláta,Slovakia,DF
+Marek Hamšík,Slovakia,MF
+Dušan Švento,Slovakia,DF
+Juraj Kucka,Slovakia,MF
+Róbert Mak,Slovakia,MF
+Michal Ďuriš,Slovakia,FW
+Viktor Pečovský,Slovakia,MF
+Matúš Kozáčik,Slovakia,GK
+# Slovakia players : 23

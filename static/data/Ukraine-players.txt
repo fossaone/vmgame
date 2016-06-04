@@ -1,0 +1,24 @@
+Denys Boyko,Ukraine,GK
+Bohdan Butko,Ukraine,DF
+Yevhen Khacheridi,Ukraine,DF
+Anatoliy Tymoshchuk,Ukraine,MF
+Oleksandr Kucher,Ukraine,DF
+Taras Stepanenko,Ukraine,MF
+Andriy Yarmolenko,Ukraine,MF
+Roman Zozulya,Ukraine,FW
+Viktor Kovalenko,Ukraine,MF
+Yevhen Konoplyanka,Ukraine,MF
+Yevhen Seleznyov,Ukraine,FW
+Andriy Pyatov,Ukraine,GK
+Vyacheslav Shevchuk,Ukraine,DF
+Ruslan Rotan,Ukraine,MF
+Pylyp Budkivskyi,Ukraine,FW
+Serhiy Sydorchuk,Ukraine,MF
+Artem Fedetskyi,Ukraine,DF
+Serhiy Rybalka,Ukraine,MF
+Denys Harmash,Ukraine,MF
+Yaroslav Rakitskiy,Ukraine,DF
+Oleksandr Zinchenko,Ukraine,MF
+Oleksandr Karavayev,Ukraine,MF
+Mykyta Shevchenko,Ukraine,GK
+# Ukraine players : 23

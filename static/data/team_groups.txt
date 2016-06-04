@@ -1,0 +1,6 @@
+France|Romania|Albania|Switzerland
+England|Russia|Wales|Slovakia
+Germany|Ukraine|Poland|Northern Ireland
+Spain|Czech| RepublicTurkey|Croatia
+Belgium|Italy|Republic| of IrelandSweden
+Portugal|Iceland|Austria|Hungary

@@ -1,0 +1,24 @@
+Manuel Neuer,Germany,GK
+Shkodran Mustafi,Germany,DF
+Jonas Hector,Germany,DF
+Benedikt Höwedes,Germany,DF
+Mats Hummels,Germany,DF
+Sami Khedira,Germany,MF
+Bastian Schweinsteiger,Germany,MF
+Mesut Özil,Germany,MF
+André Schürrle,Germany,MF
+Lukas Podolski,Germany,FW
+Julian Draxler,Germany,MF
+Bernd Leno,Germany,GK
+Thomas Müller,Germany,FW
+Emre Can,Germany,MF
+Julian Weigl,Germany,MF
+Antonio Rüdiger,Germany,DF
+Jérôme Boateng,Germany,DF
+Toni Kroos,Germany,MF
+Mario Götze,Germany,MF
+Leroy Sané,Germany,MF
+Joshua Kimmich,Germany,DF
+Marc-André ter Stegen,Germany,GK
+Mario Gómez,Germany,FW
+# Germany players : 23

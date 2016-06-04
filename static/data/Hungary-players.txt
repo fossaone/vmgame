@@ -1,0 +1,24 @@
+Gábor Király,Hungary,GK
+Ádám Lang,Hungary,DF
+Mihály Korhut,Hungary,DF
+Tamás Kádár,Hungary,DF
+Attila Fiola,Hungary,DF
+Ákos Elek,Hungary,MF
+Balázs Dzsudzsák,Hungary,FW
+Ádám Nagy,Hungary,MF
+Ádám Szalai,Hungary,FW
+Zoltán Gera,Hungary,FW
+Krisztián Németh,Hungary,FW
+Dénes Dibusz,Hungary,GK
+Dániel Böde,Hungary,FW
+Gergő Lovrencsics,Hungary,MF
+László Kleinheisler,Hungary,MF
+Ádám Pintér,Hungary,DF
+Nemanja Nikolić,Hungary,FW
+Zoltán Stieber,Hungary,MF
+Tamás Priskin,Hungary,FW
+Richárd Guzmics,Hungary,DF
+Barnabás Bese,Hungary,DF
+Péter Gulácsi,Hungary,GK
+Roland Juhász,Hungary,DF
+# Hungary players : 23

@@ -1,0 +1,24 @@
+Wayne Hennessey,Wales,GK
+Chris Gunter,Wales,DF
+Neil Taylor,Wales,DF
+Ben Davies,Wales,DF
+James Chester,Wales,DF
+Ashley Williams,Wales,DF
+Joe Allen,Wales,MF
+Andy King,Wales,MF
+Hal Robson-Kanu,Wales,FW
+Aaron Ramsey,Wales,MF
+Gareth Bale,Wales,FW
+Owain Fôn Williams,Wales,GK
+George Williams,Wales,FW
+David Edwards,Wales,MF
+Jazz Richards,Wales,DF
+Joe Ledley,Wales,MF
+David Cotterill,Wales,FW
+Sam Vokes,Wales,FW
+James Collins,Wales,DF
+Jonathan Williams,Wales,MF
+Danny Ward,Wales,GK
+David Vaughan,Wales,MF
+Simon Church,Wales,FW
+# Wales players : 23

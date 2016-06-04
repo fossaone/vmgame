@@ -1,0 +1,24 @@
+Etrit Berisha,Albania,GK
+Andi Lila,Albania,DF
+Ermir Lenjani,Albania,MF
+Elseid Hysaj,Albania,DF
+Lorik Cana,Albania,DF
+Frederik Veseli,Albania,DF
+Ansi Agolli,Albania,DF
+Migjen Basha,Albania,MF
+Ledian Memushaj,Albania,MF
+Armando Sadiku,Albania,FW
+Shkëlzen Gashi,Albania,FW
+Orges Shehi,Albania,GK
+Burim Kukeli,Albania,MF
+Taulant Xhaka,Albania,MF
+Mërgim Mavraj,Albania,DF
+Sokol Cikalleshi,Albania,FW
+Naser Aliji,Albania,DF
+Arlind Ajeti,Albania,DF
+Bekim Balaj,Albania,FW
+Ergys Kaçe,Albania,MF
+Odise Roshi,Albania,MF
+Amir Abrashi,Albania,MF
+Alban Hoxha,Albania,GK
+# Albania players : 23

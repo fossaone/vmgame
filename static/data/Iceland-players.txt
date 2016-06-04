@@ -1,0 +1,24 @@
+Hannes Þór Halldórsson,Iceland,GK
+Birkir Már Sævarsson,Iceland,DF
+Haukur Heiðar Hauksson,Iceland,DF
+Hjörtur Hermannsson,Iceland,DF
+Sverrir Ingi Ingason,Iceland,DF
+Ragnar Sigurðsson,Iceland,DF
+Jóhann Berg Guðmundsson,Iceland,FW
+Birkir Bjarnason,Iceland,MF
+Kolbeinn Sigþórsson,Iceland,FW
+Gylfi Sigurðsson,Iceland,MF
+Alfreð Finnbogason,Iceland,FW
+Ögmundur Kristinsson,Iceland,GK
+Ingvar Jónsson,Iceland,GK
+Kári Árnason,Iceland,MF
+Jón Daði Böðvarsson,Iceland,FW
+Rúnar Már Sigurjónsson,Iceland,MF
+Aron Gunnarsson,Iceland,MF
+Theódór Elmar Bjarnason,Iceland,DF
+Hörður Björgvin Magnússon,Iceland,DF
+Emil Hallfreðsson,Iceland,MF
+Arnór Ingvi Traustason,Iceland,DF
+Eiður Guðjohnsen,Iceland,FW
+Ari Freyr Skúlason,Iceland,DF
+# Iceland players : 23

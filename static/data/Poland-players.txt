@@ -1,0 +1,24 @@
+Wojciech Szczęsny,Poland,GK
+Michał Pazdan,Poland,DF
+Artur Jędrzejczyk,Poland,DF
+Thiago Cionek,Poland,DF
+Krzysztof Mączyński,Poland,MF
+Tomasz Jodłowiec,Poland,MF
+Arkadiusz Milik,Poland,FW
+Karol Linetty,Poland,MF
+Robert Lewandowski,Poland,FW
+Grzegorz Krychowiak,Poland,MF
+Kamil Grosicki,Poland,MF
+Artur Boruc,Poland,GK
+Mariusz Stępiński,Poland,FW
+Jakub Wawrzyniak,Poland,DF
+Kamil Glik,Poland,DF
+Jakub Błaszczykowski,Poland,MF
+Sławomir Peszko,Poland,MF
+Bartosz Salamon,Poland,DF
+Piotr Zieliński,Poland,MF
+Łukasz Piszczek,Poland,DF
+Bartosz Kapustka,Poland,MF
+Łukasz Fabiański,Poland,GK
+Filip Starzyński,Poland,MF
+# Poland players : 23

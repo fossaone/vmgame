@@ -1,0 +1,24 @@
+Andreas Isaksson,Sweden,GK
+Mikael Lustig,Sweden,DF
+Erik Johansson,Sweden,DF
+Andreas Granqvist,Sweden,DF
+Martin Olsson,Sweden,DF
+Emil Forsberg,Sweden,MF
+Sebastian Larsson,Sweden,MF
+Albin Ekdal,Sweden,MF
+Kim Källström,Sweden,MF
+Zlatan Ibrahimović,Sweden,FW
+Marcus Berg,Sweden,FW
+Robin Olsen,Sweden,GK
+Pontus Jansson,Sweden,DF
+Victor Lindelöf,Sweden,DF
+Oscar Hiljemark,Sweden,MF
+Pontus Wernbloom,Sweden,MF
+Ludwig Augustinsson,Sweden,DF
+Oscar Lewicki,Sweden,MF
+Emir Kujović,Sweden,FW
+John Guidetti,Sweden,FW
+Jimmy Durmaz,Sweden,MF
+Erkan Zengin,Sweden,MF
+Patrik Carlgren,Sweden,GK
+# Sweden players : 23
