@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
 import os
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 from unidecode import unidecode
 
 def populate_players_and_teams():
