@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+from unidecode import unidecode
 
 def populate_players_and_teams():
     #TODO: Make sure data is correct:
@@ -18,36 +19,39 @@ def populate_players_and_teams():
         Group.objects.all().delete()
     except: pass
 
-    for gr in ["A","B","C","D","E","F","G","H"]:
+    for gr in ["A","B","C","D","E","F"]:
         group_file = os.path.join(data_directory,"Group-{0}.txt".format(gr))
         with open(group_file,'r') as f:
             group_team_names = f.readline()
-        group_team_names = group_team_names.split("|")
+        group_team_names = group_team_names.strip("\n").split("|")
 
         g = Group(name="Group {0}".format(gr))
         g.save()
         for gtn in group_team_names:
-           t = Team(country=gtn.strip(),group=g)
+           country = gtn.strip()
+           country_regularized = unidecode(country).lower()
+           t = Team(country=country,country_regularized=country_regularized,group=g)
            t.save()
 
+    position_dict = { 'FW': 'Forwards',
+                      'MF': 'Midfielders',
+                      'DF': 'Defenders',
+                      'GK': 'Goal Keepers' }
     #players in *-players.txt
     team_files = [tf for tf in os.listdir(data_directory) if tf.endswith('-players.txt')]
     for tf in team_files:
         country_name = tf.replace('-players.txt','')
         with open(os.path.join(data_directory,tf),'r') as f:
             player_lines = f.readlines()
-        position = "Goal Keeper"
         for line in player_lines:
-            if line[0] == "%":
-                pretty_country_name = line[2:].strip()
-            elif line[0] == "#":
-                position = line[2:].strip()
-            else:
-                player_name = line[:].strip()
-                print pretty_country_name
-                t = Team.objects.get(country=pretty_country_name)
-                p = Player(name=player_name,team=t,position=position)
-                p.save()
+            if line.startswith("#"):
+                continue
+            player_name,country_name_file,position_abbr = line[:].rstrip("\n").split(",")
+            name_regularized = unidecode(player_name).lower()
+            position = position_dict[position_abbr]
+            t = Team.objects.get(country=country_name)
+            p = Player(name=player_name,name_regularized=name_regularized,team=t,position=position)
+            p.save()
        
 
 # Start execution here!
