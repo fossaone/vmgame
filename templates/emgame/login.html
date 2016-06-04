@@ -1,11 +1,11 @@
-{% extends 'vmgame/base.html' %}
+{% extends 'emgame/base.html' %}
 
 {% block title %}Login{% endblock %}
 
 {% block body_block %}
 		<h1>Login to the VM Game</h1>
 		
-		<form id="login_form" method="post" action="/vmgame/login/">
+		<form id="login_form" method="post" action="/emgame/login/">
 			{% csrf_token %}
 			Username: <input type="text" name="username" value="" size="50" />
 			<br />

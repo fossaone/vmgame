@@ -81,7 +81,7 @@ def register(request):
     context_dict = {'user_form': user_form, 'profile_form': profile_form, 'registered': registered}
     context_dict.update(global_context_dict)
     # Render the template depending on the context.
-    return render_to_response('vmgame/register.html', context_dict, context)
+    return render_to_response('emgame/register.html', context_dict, context)
 
 
 def user_login(request):
@@ -108,7 +108,7 @@ def user_login(request):
                 # If the account is valid and active, we can Log the user in.
                 # We'll send the user back to the homepage.
                 login(request, user)
-                return HttpResponseRedirect('/vmgame/')
+                return HttpResponseRedirect('/emgame/')
             else:
                 # An inactive account was used - no Logging in!
                 return HttpResponse("Your VM Game account is disabled.")
@@ -122,7 +122,7 @@ def user_login(request):
     else:
         context_dict = {}
         context_dict.update(global_context_dict)
-        return render_to_response('vmgame/login.html', context_dict, context)
+        return render_to_response('emgame/login.html', context_dict, context)
 
 
 # Use the Login_required() decorator to ensure only those Logged in can access the view.
@@ -134,7 +134,7 @@ def user_logout(request):
     context_dict = {}
     context_dict.update(global_context_dict)
     # Take the user back to the homepage.
-    return HttpResponseRedirect('/vmgame/',context_dict)
+    return HttpResponseRedirect('/emgame/',context_dict)
 
 
 def index(request):
@@ -153,7 +153,7 @@ def index(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/index.html', context_dict, context)
+    return render_to_response('emgame/index.html', context_dict, context)
 
 
 @login_required
@@ -255,7 +255,7 @@ def enterpick(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/enterpick.html', context_dict, context)
+    return render_to_response('emgame/enterpick.html', context_dict, context)
 
 
 
@@ -278,11 +278,12 @@ def mypicks(request):
     #A HTTP POST
     #if request.method == 'GET':
     #    pick = Pick(request.GET)
-    return render_to_response('vmgame/mypicks.html', context_dict, context)
+    return render_to_response('emgame/mypicks.html', context_dict, context)
 
 
 def displaypick(request, pick_id):
     context = RequestContext(request)
+    user_name = request.user.username
     context_dict = {}
     try:
         display_pick = Pick.objects.get(id=pick_id)
@@ -352,7 +353,7 @@ def displaypick(request, pick_id):
     context_dict['champion'] = champion
     context_dict['third_place'] = third_place
     context_dict.update(global_context_dict)
-    return render_to_response('vmgame/displaypick.html', context_dict, context)
+    return render_to_response('emgame/displaypick.html', context_dict, context)
 
 
 def results(request):
@@ -372,7 +373,7 @@ def results(request):
     context_dict['LAST_SCORE_UPDATE'] = last_update_event.datetime.strftime("%a %b %d %H:%M:%S %Z %Y")
 
     context_dict.update(global_context_dict)
-    return render_to_response('vmgame/results.html', context_dict, context)
+    return render_to_response('emgame/results.html', context_dict, context)
 
 def scoring(request):
     context = RequestContext(request)
@@ -380,5 +381,5 @@ def scoring(request):
     context_dict = {}
     context_dict.update(global_context_dict)
     
-    return render_to_response('vmgame/scoring.html', context_dict, context)
+    return render_to_response('emgame/scoring.html', context_dict, context)
 

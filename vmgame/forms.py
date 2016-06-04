@@ -95,10 +95,10 @@ class PickForm(forms.ModelForm):
 
         help_texts = {
             'pick_name': _('Provide a name for this pick:'),
-            'champion': _('The winner of the 2014 world cup:'),
+            'champion': _('The winner of the 2016 european cup:'),
             'third_place_team': _('The team that will finish in third place:'),
             'defensive_team': _('The team that will create the most shutouts:'),
-            'total_goals': _('Enter the total number of goals that will be scored in the 2014 World Cup:'),
+            'total_goals': _('Enter the total number of goals that will be scored in the 2016 european cup:'),
         }
         
 

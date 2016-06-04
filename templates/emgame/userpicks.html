@@ -1,6 +1,6 @@
-{% extends 'vmgame/base.html' %}
+{% extends 'emgame/base.html' %}
 
-{% block title %}EnterPicks{% endblock %}
+{% block title %}User Picks{% endblock %}
 
 {% block body_block %}
 
@@ -31,7 +31,7 @@
 			
 		{% else %}
 				{% csrf_token %}
-			You have no picks to view, please <a href="/vmgame/enterpicks/">enter picks</a>
+			You have no picks to view, please <a href="/emgame/enterpick/">enter pick</a>
 
 		{% endif %} -->
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'vmgame/base.html' %}
+{% extends 'emgame/base.html' %}
 
 
 {% block title %}Results{% endblock %}
@@ -20,7 +20,7 @@
 
 
 <ul>
-Here is a list of all VM game 2014 players.  </br>
+Here is a list of all EM game 2016 players.  </br>
 Click on their user name to see their picks.
 </br>
 <small>(Last updated on {{ LAST_SCORE_UPDATE }})</small>
@@ -44,7 +44,7 @@ Click on their user name to see their picks.
 </tr>
 {% for p in picks %}
 <tr align="center">
-  <td><a href="/vmgame/displaypick/{{p.id}}">{{ p.user }}</a></td>
+  <td><a href="/emgame/displaypick/{{p.id}}">{{ p.user }}</a></td>
   <!--td>{{ User.country }}</td-->
   <td>{{ p.score }}</td>
   <td>{{ p.score_group_stage }}</td>

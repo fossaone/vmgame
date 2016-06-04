@@ -181,21 +181,22 @@ class Pick(models.Model):
 
     def validate_groups(self):
 
-        #8 Group Winners
+        num_groups = len(vmgame.GROUP_LETTERS)
+        #Group Winners
         num_group_winners = self.group_winners.all().count()
-        if(num_group_winners != 8):
+        if(num_group_winners != num_groups):
            return "incorrect number of group winners"
-        #8 Group Runners Up
+        #Group Runners Up
         num_group_runners_up = self.group_runners_up.all().count()
-        if(num_group_runners_up != 8):
+        if(num_group_runners_up != num_groups):
            return "incorrect number of group runners up"
 
         num_group_thirds = self.group_third.all().count()
-        if(num_group_thirds != 8):
+        if(num_group_thirds != num_groups):
            return "incorrect number of group third place teams"
 
         num_group_fourths = self.group_fourth.all().count()
-        if(num_group_fourths != 8):
+        if(num_group_fourths != num_groups):
            return "incorrect number of group fourth place teams"
 
         #One group winner for each group
