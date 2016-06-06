@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 import vmgame
-from vmgame.models import Team,Group,Player,Pick,UserProfile
+from vmgame.models import Team,Player,Pick,UserProfile
 
 
 
@@ -54,8 +54,8 @@ class PickForm(forms.ModelForm):
                 help_text = (help_text if i==0 else "")
                 help_text = (help_text if i!=3 else "end")
                 self.fields["sp_group{0}{1}".format(group_letter,group_rank)] = (
-                              forms.CharField(max_length=80, 
-                              widget=forms.Select(choices=GROUP_TEAM_CHOICES), 
+                              forms.CharField(max_length=80,
+                              widget=forms.Select(choices=GROUP_TEAM_CHOICES),
                               help_text=help_text))
 
         ALL_TEAM_CHOICES = [(t,t) for t in Team.objects.all().order_by("country")]
@@ -64,8 +64,8 @@ class PickForm(forms.ModelForm):
             help_text = "8 teams to make the quarterfinals"
             help_text = (help_text if i==0 else "")
             help_text = (help_text if i!=7 else "end")
-            self.fields["sp_qf_pick{0}".format(i+1)] = forms.CharField(max_length=80, 
-                              widget=forms.Select(choices=ALL_TEAM_CHOICES), 
+            self.fields["sp_qf_pick{0}".format(i+1)] = forms.CharField(max_length=80,
+                              widget=forms.Select(choices=ALL_TEAM_CHOICES),
                               help_text=help_text)
 
         #Semifinal teams
@@ -73,8 +73,8 @@ class PickForm(forms.ModelForm):
             help_text = "4 teams to make the semifinals"
             help_text = (help_text if i==0 else "")
             help_text = (help_text if i!=3 else "end")
-            self.fields["sp_sf_pick{0}".format(i+1)] = forms.CharField(max_length=80, 
-                              widget=forms.Select(choices=ALL_TEAM_CHOICES), 
+            self.fields["sp_sf_pick{0}".format(i+1)] = forms.CharField(max_length=80,
+                              widget=forms.Select(choices=ALL_TEAM_CHOICES),
                               help_text=help_text)
 
         #Final teams
@@ -82,7 +82,7 @@ class PickForm(forms.ModelForm):
             help_text = "2 teams to make the finals"
             help_text = (help_text if i==0 else "")
             help_text = (help_text if i!=1 else "end")
-            self.fields["sp_f_pick{0}".format(i+1)] = forms.CharField(max_length=80, 
+            self.fields["sp_f_pick{0}".format(i+1)] = forms.CharField(max_length=80,
                               widget=forms.Select(choices=ALL_TEAM_CHOICES),
                               help_text=help_text)
 
@@ -98,25 +98,25 @@ class PickForm(forms.ModelForm):
             'defensive_team': _('The team that will create the most shutouts:'),
             'total_goals': _('Enter the total number of goals that will be scored in the 2016 european cup:'),
         }
-        
+
 
     def clean(self):
         cleaned_data = self.cleaned_data
         url = cleaned_data.get('url')
-        
+
         # If url is not empty and doesn't start with 'http://', prepend 'http://'
         if url and not url.startswith('http://'):
             url = 'http://' + url
             cleaned_data['url'] = url
         return cleaned_data
-        
+
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
         model = User
 
         fields = ('username', 'email', 'password',)
-        
+
 class UserProfileForm(forms.ModelForm):
     #created = forms.DateField(widget=forms.HiddenInput())
     class Meta:
