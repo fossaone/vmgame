@@ -8,7 +8,6 @@ from vmgame.models import Team,Group,Player,Pick,UserProfile
 
 
 class PickForm(forms.ModelForm): 
-
     strikers = Player.objects.filter(position="Forwards").order_by("name","team__country")
     midfielders = Player.objects.filter(position="Midfielders").order_by("name","team__country")
     defenders = Player.objects.filter(position="Defenders").order_by("name","team__country")
@@ -90,14 +89,12 @@ class PickForm(forms.ModelForm):
     class Meta:
         # Provide an association between the ModelForm and a model
         model = Pick
-
         fields = ['pick_name','champion','defensive_team','striker1','striker2','striker3','total_goals']
         #['pick_name','third_place_team','champion','defensive_team','striker1','striker2','striker3','total_goals']
 
         help_texts = {
             'pick_name': _('Provide a name for this pick:'),
-            'champion': _('The winner of the 2016 european cup:'),
-            #'third_place_team': _('The team that will finish in third place:'),
+            'champion': _('The winner of the 2016 european cup:'),#'third_place_team': _('The team that will finish in third place:'),
             'defensive_team': _('The team that will create the most shutouts:'),
             'total_goals': _('Enter the total number of goals that will be scored in the 2016 european cup:'),
         }

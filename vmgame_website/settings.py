@@ -36,7 +36,7 @@ DATABASE_PATH = os.path.join(PROJECT_PATH, 'vmgame.db')
 SECRET_KEY = '!k&#8($@c7$sr=mp86%&r!em_i1gvjrw&q#c-jp!dr*p2j&&r&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True #False
 
 TEMPLATE_DEBUG = True
 

@@ -23,12 +23,12 @@
 				{{ hidden }}
 			{% endfor %}
 
-			{{ form.non_field_errors }}
+			<ul style="color:red">{{ form.non_field_errors }}</ul>
 <!--  Pick Name -->			
                         <table>
                         <tr>
                           <td>
-                          {{ form.pick_name.errors }}
+                          <ul style="color:red">{{ form.pick_name.errors }}</ul>
                           {{ form.pick_name.help_text }}
                           </td>
                           <td>
@@ -41,7 +41,7 @@
                             {%if field.help_text != "" and field.help_text != "end" %}
                             <tr>	
                             <td>
-				{{ field.errors }}
+				<ul style="color:red">{{ field.errors }}</ul>
 				{{ field.help_text }}
                             </td>
                             <td>
