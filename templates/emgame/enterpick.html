@@ -3,18 +3,18 @@
 {% block title %}EnterPicks{% endblock %}
 
 {% block body_block %}
-	
-		
+
+
 		{% if completed %}
 			{% csrf_token %}
-			
-			{{ user.username }} your picks named {{ form.pick_name.value }} have been succesfully entered. 
+
+			{{ user.username }} your picks named {{ form.pick_name.value }} have been succesfully entered.
 			<br />
 			<br />
 			Here they are... <br />
 			<br />
-			<pre> {{ pick.print_detail }} </pre>         
-		
+			<pre> {{ pick.print_detail }} </pre>
+
 		{% else %}
 		<h1>Enter picks</h1>
 		<form id="pick_form" method="post" action="/emgame/enterpick/">
@@ -24,7 +24,7 @@
 			{% endfor %}
 
 			<ul style="color:red">{{ form.non_field_errors }}</ul>
-<!--  Pick Name -->			
+<!--  Pick Name -->
                         <table>
                         <tr>
                           <td>
@@ -35,11 +35,11 @@
                           {{ form.pick_name}}
                           </td>
                         </tr>
-<!--  Group Ranks -->		
+<!--  Group Ranks -->
 			{% for field in form.visible_fields %}
                           {%if "sp_" in field.name %}
                             {%if field.help_text != "" and field.help_text != "end" %}
-                            <tr>	
+                            <tr>
                             <td>
 				<ul style="color:red">{{ field.errors }}</ul>
 				{{ field.help_text }}
@@ -55,13 +55,13 @@
                             {% endif %}
                           {% endif %}
 			{% endfor %}
-<!--  Non-Group fields -->			
+<!--  Non-Group fields -->
 			{% for field in form.visible_fields %}
                           {%if "sp_" not in field.name and "pick_name" not in field.name %}
                             {%if field.help_text != "" and field.help_text != "end" %}
                             <tr>
                             <td>
-				{{ field.errors }}
+				<ul style="color:red">{{ field.errors }}</ul>
 				{{ field.help_text }}
                             </td>
                             <td>
@@ -78,7 +78,7 @@
                         </table>
 
 			<input type="submit" name="submit" value="Enter Picks" />
-			
+
 		</form>
 		{% endif %}
 {% endblock %}

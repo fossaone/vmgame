@@ -4,7 +4,8 @@ import os,sys,logging
 from django.db import models
 from django.contrib.auth.models import User
 import django.core.exceptions
-import django.utils.timezone
+import datetime
+#import django.utils.timezone
 
 import vmgame
 
@@ -403,7 +404,8 @@ class Event(models.Model):
     #Name of event
     name = models.CharField(max_length=160)
     #Date of event, auto updated when event is
-    datetime = models.DateTimeField(default=django.utils.timezone.now())
+#    datetime = models.DateTimeField(default=django.utils.timezone.now())
+    datetime = models.DateTimeField(default=datetime.datetime.now())
     def __unicode__(self):
         return self.name
 
