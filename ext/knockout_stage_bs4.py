@@ -25,7 +25,6 @@ for team in teams:
     is_champion[team] = 0
 
 print "# Knockout disabled until Wikipedia starts updating match pages"
-"""
 round_of_16_sect=main_soup.find('span',class_='mw-headline',id='Round_of_16',text='Round of 16').find_parent('h3')
 round_of_16_matches=round_of_16_sect.find_all_next('a',href=re.compile('_vs_'))#,text=re.compile(u'[0-9]*\u2013[0-9]*'))
 for match_num in range(8):
@@ -86,6 +85,7 @@ for match_num in range(2):
         pass
 
 
+"""
 #TODO: If match ends in tie how does wikipedia report the score
 try:
     third_place_match_sect=main_soup.find('span',class_='mw-headline',id='Third_place_match',text='Third place match').find_parent('h3')
@@ -102,13 +102,14 @@ if len(third_place_match) > 0:
         is_third_place[home_team] = 1
     else:
         is_third_place[away_team] = 1
+"""
 
 
 #TODO: If match ends in tie how does wikipedia report the score
 finals_sect=main_soup.find('span',class_='mw-headline',id='Final',text='Final').find_parent('h3')
 #match_regex = re.compile(ur'',re.UNICODE)
 #TODO: Fix this up
-finals_match=finals_sect.find_all_next('a',href=re.compile('_vs_'),text=re.compile(u'[0-9]*\u2013[0-9]*'))
+finals_match=finals_sect.find_all_next('a',href=re.compile('Final'),text=re.compile(u'[0-9]*\u2013[0-9]*'))
 if len(finals_match) > 0:
     match=finals_match[0]
     home_goals=int(match.string.split(u"\u2013")[0])
@@ -123,7 +124,6 @@ if len(finals_match) > 0:
         is_champion[home_team] = 1
     else:
         is_champion[away_team] = 1
-"""
 
 #print "# {0} games finished".format(len(games_finished))
 for team in teams:

@@ -79,9 +79,9 @@ def update_vmgame_results():
     for team in Team.objects.filter(furthest_round__gt=1):
         team.furthest_round = 1
         team.save()
-    for team in Team.objects.filter(is_third_place=True):
-        team.is_third_place = False
-        team.save()
+#    for team in Team.objects.filter(is_third_place=True):
+#        team.is_third_place = False
+#        team.save()
     for team in Team.objects.filter(is_champion=True):
         team.is_champion= False
         team.save()
@@ -93,11 +93,11 @@ def update_vmgame_results():
            record = record.split(u',')
            country_name_regularized = unidecode(record[0]).lower()
            furthest_round = int(record[1])
-           is_third_place = int(record[2])
+#           is_third_place = int(record[2])
            is_champion    = int(record[3])
            team = Team.objects.get(country_regularized=country_name_regularized)
            team.furthest_round = furthest_round
-           if(is_third_place > 0): team.is_third_place = True
+#           if(is_third_place > 0): team.is_third_place = True
            if(is_champion > 0):    team.is_champion    = True
            team.save()
 

@@ -25,8 +25,8 @@ result_dir=../static/data/results
 #./all_players_bs4.py > $result_dir/all_players.txt
 #./group_ranks_bs4.py > $result_dir/group_ranks.txt
 #no goalscorers yet
-#./goalscorers_bs4.py > $result_dir/goalscorers.txt
-#./shutouts_bs4.py > $result_dir/shutouts.txt
+./goalscorers_bs4.py > $result_dir/goalscorers.txt
+./shutouts_bs4.py > $result_dir/shutouts.txt
 ./knockout_stage_bs4.py > $result_dir/knockout_stage.txt
 
 #Old fixup code in case we need to update
