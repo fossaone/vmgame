@@ -7,4 +7,4 @@ GROUP_LETTERS = ["A","B","C","D","E","F"]
 GROUP_RANKS = ["1st","2nd","3rd","4th"]
 
 #UTC
-TOURNAMENT_START = datetime.datetime(2016,6,10,19,0)
+TOURNAMENT_START = datetime.datetime(2018,6,14,15,0)

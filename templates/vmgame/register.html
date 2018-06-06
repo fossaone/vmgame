@@ -1,17 +1,17 @@
-{% extends 'emgame/base.html' %}
+{% extends 'vmgame/base.html' %}
 
 {% block title %}Registration{% endblock %}
 
 {% block body_block %}
-		<h1>Register with EM Game</h1>
+		<h1>Register with VM Game</h1>
 		
 		{% if registered %}
 		Thank you for registering
-		<a href="/emgame/">Return to the homepage.</a><br />
+		<a href="/vmgame/">Return to the homepage.</a><br />
 		{% else %}
 		Register here
 		
-		<form id="user_form" method="post" action="/emgame/register/"
+		<form id="user_form" method="post" action="/vmgame/register/"
 			 	enctype="multipart/form-data">
 				
 			{% csrf_token %}

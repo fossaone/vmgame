@@ -1,4 +1,4 @@
-{% extends 'emgame/base.html' %}
+{% extends 'vmgame/base.html' %}
 
 
 {% block title %}Results{% endblock %}
@@ -44,7 +44,7 @@ Click on their user name to see their picks.
 </tr>
 {% for p in picks %}
 <tr align="center">
-  <td><a href="/emgame/displaypick/{{p.id}}">{{ p.user }}</a></td>
+  <td><a href="/vmgame/displaypick/{{p.id}}">{{ p.user }}</a></td>
   <!--td>{{ User.country }}</td-->
   <td>{{ p.score }}</td>
   <td>{{ p.score_group_stage }}</td>

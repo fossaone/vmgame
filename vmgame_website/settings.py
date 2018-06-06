@@ -36,11 +36,11 @@ DATABASE_PATH = os.path.join(PROJECT_PATH, 'vmgame.db')
 SECRET_KEY = '!k&#8($@c7$sr=mp86%&r!em_i1gvjrw&q#c-jp!dr*p2j&&r&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['emgame2016.diabolics.com']
+ALLOWED_HOSTS = ['vmgame2018.diabolics.com']
 #ALLOWED_HOSTS = []
 
 # Application definition
@@ -99,7 +99,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_URL = '/emgame/login/'
+LOGIN_URL = '/vmgame/login/'
 
 
 LOGGING = {

@@ -10,8 +10,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'vmgame_website.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^emgame/', include('vmgame.urls')),
+    url(r'^vmgame/', include('vmgame.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    #Re-direct from root to emgame
-    url(r'^$', RedirectView.as_view(url='emgame/', permanent=False), name='index'),
+    #Re-direct from root to vmgame
+    url(r'^$', RedirectView.as_view(url='vmgame/', permanent=False), name='index'),
 )

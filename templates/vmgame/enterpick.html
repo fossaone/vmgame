@@ -1,4 +1,4 @@
-{% extends 'emgame/base.html' %}
+{% extends 'vmgame/base.html' %}
 
 {% block title %}EnterPicks{% endblock %}
 
@@ -17,7 +17,7 @@
 
 		{% else %}
 		<h1>Enter picks</h1>
-		<form id="pick_form" method="post" action="/emgame/enterpick/">
+		<form id="pick_form" method="post" action="/vmgame/enterpick/">
 			{% csrf_token %}
 			{% for hidden in form.hidden_fields %}
 				{{ hidden }}
