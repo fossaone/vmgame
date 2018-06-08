@@ -3,13 +3,13 @@ import datetime
 import logging
 
 #django
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 #from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.forms.util import ErrorList
+from django.forms.utils import ErrorList
 from django.forms.forms import NON_FIELD_ERRORS
 import django.core.exceptions
 import django
@@ -69,7 +69,7 @@ def register(request):
         # Print problems to teh terminal.
         # They'll also be shown to the user.
         else:
-            print user_form.errors, profile_form.errors
+            print(user_form.errors, profile_form.errors)
 
     # Not a HTTP POST, so we render our form using two ModelForm instances.
     # These forms will be blank, ready for user input.
@@ -81,7 +81,7 @@ def register(request):
     context_dict = {'user_form': user_form, 'profile_form': profile_form, 'registered': registered}
     context_dict.update(global_context_dict)
     # Render the template depending on the context.
-    return render_to_response('vmgame/register.html', context_dict, context)
+    return render(request, 'vmgame/register.html', context_dict, context)
 
 
 def user_login(request):
@@ -97,7 +97,7 @@ def user_login(request):
 
         # Use Django's  machinery to attempt to see if the username/password
         # combination is valid - a User object is returned if it is.
-        user = authenticate(username=username, password=password)
+        user = authenticate(request,username=username, password=password)
 
         # If we have a user object, the details are correct.
         # If None (Python's way of representing the absence of a value), no user
@@ -114,7 +114,7 @@ def user_login(request):
                 return HttpResponse("Your VM Game account is disabled.")
         else:
             # Bad Login details were provided.  So we can't Log the user in.
-            print " Invalid login details: {0}, {1}".format(username,password)
+            print(" Invalid login details: {0}, {1}".format(username,password))
             return HttpResponse("Invalid login details supplied.")
 
     # The request is not a HTTP POST, so display the login form.
@@ -122,7 +122,7 @@ def user_login(request):
     else:
         context_dict = {}
         context_dict.update(global_context_dict)
-        return render_to_response('vmgame/login.html', context_dict, context)
+        return render(request, 'vmgame/login.html', context_dict, context)
 
 
 # Use the Login_required() decorator to ensure only those Logged in can access the view.
@@ -153,7 +153,7 @@ def index(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/index.html', context_dict, context)
+    return render(request, 'vmgame/index.html', context_dict, context)
 
 
 @login_required
@@ -242,7 +242,7 @@ def enterpick(request):
                 #return displaypicks(request)
         else:
             # If the request form contained  errors - just print them in the terminal.
-            print pick_form.errors
+            print(pick_form.errors)
             pick = PickForm()
     else:
         # If the request was not a POST, display the form to enter details.
@@ -255,7 +255,7 @@ def enterpick(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render_to_response('vmgame/enterpick.html', context_dict, context)
+    return render(request, 'vmgame/enterpick.html', context_dict, context)
 
 
 
@@ -278,7 +278,7 @@ def mypicks(request):
     #A HTTP POST
     #if request.method == 'GET':
     #    pick = Pick(request.GET)
-    return render_to_response('vmgame/mypicks.html', context_dict, context)
+    return render(request, 'vmgame/mypicks.html', context_dict, context)
 
 
 def displaypick(request, pick_id):
@@ -352,7 +352,7 @@ def displaypick(request, pick_id):
     context_dict['final_teams'] = final_teams
     context_dict['champion'] = champion#context_dict['third_place'] = third_place
     context_dict.update(global_context_dict)
-    return render_to_response('vmgame/displaypick.html', context_dict, context)
+    return render(request, 'vmgame/displaypick.html', context_dict, context)
 
 
 def results(request):
@@ -372,7 +372,7 @@ def results(request):
     context_dict['LAST_SCORE_UPDATE'] = last_update_event.datetime.strftime("%a %b %d %H:%M:%S %Z %Y")
 
     context_dict.update(global_context_dict)
-    return render_to_response('vmgame/results.html', context_dict, context)
+    return render(request, 'vmgame/results.html', context_dict, context)
 
 def scoring(request):
     context = RequestContext(request)
@@ -380,5 +380,5 @@ def scoring(request):
     context_dict = {}
     context_dict.update(global_context_dict)
 
-    return render_to_response('vmgame/scoring.html', context_dict, context)
+    return render(request, 'vmgame/scoring.html', context_dict, context)
 

@@ -1,0 +1,24 @@
+Jaime Penedo,Panama,GK
+Michael Amir Murillo,Panama,DF
+Harold Cummings,Panama,DF
+Fidel Escobar,Panama,DF
+Román Torres,Panama,DF
+Gabriel Gómez,Panama,MF
+Blas Pérez,Panama,FW
+Édgar Bárcenas,Panama,MF
+Gabriel Torres,Panama,FW
+Ismael Díaz,Panama,FW
+Armando Cooper,Panama,MF
+José Calderón,Panama,GK
+Adolfo Machado,Panama,DF
+Valentín Pimentel,Panama,MF
+Erick Davis,Panama,DF
+Abdiel Arroyo,Panama,FW
+Luis Ovalle,Panama,DF
+Luis Tejada,Panama,FW
+Alberto Quintero,Panama,MF
+Aníbal Godoy,Panama,MF
+José Luis Rodríguez,Panama,MF
+Álex Rodríguez,Panama,GK
+Felipe Baloy,Panama,DF
+# Panama players : 23

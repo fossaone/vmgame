@@ -1,0 +1,24 @@
+Keylor Navas,Costa Rica,GK
+Johnny Acosta,Costa Rica,DF
+Giancarlo González,Costa Rica,DF
+Ian Smith,Costa Rica,DF
+Celso Borges,Costa Rica,MF
+Óscar Duarte,Costa Rica,DF
+Christian Bolaños,Costa Rica,MF
+Bryan Oviedo,Costa Rica,DF
+Daniel Colindres,Costa Rica,MF
+Bryan Ruiz,Costa Rica,MF
+Johan Venegas,Costa Rica,FW
+Joel Campbell,Costa Rica,FW
+Rodney Wallace,Costa Rica,MF
+Randall Azofeifa,Costa Rica,MF
+Francisco Calvo,Costa Rica,DF
+Cristian Gamboa,Costa Rica,DF
+Yeltsin Tejeda,Costa Rica,MF
+Patrick Pemberton,Costa Rica,GK
+Kendall Waston,Costa Rica,DF
+David Guzmán,Costa Rica,MF
+Marco Ureña,Costa Rica,FW
+Rónald Matarrita,Costa Rica,DF
+Leonel Moreira,Costa Rica,GK
+# Costa Rica players : 23

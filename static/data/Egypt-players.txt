@@ -1,0 +1,24 @@
+Essam El-Hadary,Egypt,GK
+Ali Gabr,Egypt,DF
+Ahmed Elmohamady,Egypt,DF
+Omar Gaber,Egypt,MF
+Sam Morsy,Egypt,MF
+Ahmed Hegazi,Egypt,DF
+Ahmed Fathy,Egypt,DF
+Tarek Hamed,Egypt,MF
+Marwan Mohsen,Egypt,FW
+Mohamed Salah,Egypt,FW
+Kahraba,Egypt,FW
+Ayman Ashraf,Egypt,DF
+Mohamed Abdel-Shafy,Egypt,DF
+Ramadan Sobhi,Egypt,FW
+Mahmoud Hamdy,Egypt,DF
+Sherif Ekramy,Egypt,GK
+Mohamed Elneny,Egypt,MF
+Shikabala,Egypt,FW
+Abdallah Said,Egypt,MF
+Saad Samir,Egypt,DF
+Trézéguet,Egypt,MF
+Amr Warda,Egypt,FW
+Mohamed El-Shenawy,Egypt,GK
+# Egypt players : 23

@@ -1,6 +1,8 @@
-France|Romania|Albania|Switzerland
-England|Russia|Wales|Slovakia
-Germany|Ukraine|Poland|Northern Ireland
-Spain|Czech| RepublicTurkey|Croatia
-Belgium|Italy|Republic| of IrelandSweden
-Portugal|Iceland|Austria|Hungary
+Egypt|Russia|Saudi Arabia|Uruguay
+Iran|Morocco|Portugal|Spain
+Australia|Denmark|France|Peru
+Argentina|Croatia|Iceland|Nigeria
+Brazil|Costa Rica|Serbia|Switzerland
+Germany|Mexico|South Korea|Sweden
+Belgium|England|Panama|Tunisia
+Colombia|Japan|Poland|Senegal

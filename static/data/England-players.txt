@@ -1,0 +1,24 @@
+Jordan Pickford,England,GK
+Kyle Walker,England,DF
+Danny Rose,England,DF
+Eric Dier,England,MF
+John Stones,England,DF
+Harry Maguire,England,DF
+Jesse Lingard,England,MF
+Jordan Henderson,England,MF
+Harry Kane,England,FW
+Raheem Sterling,England,FW
+Jamie Vardy,England,FW
+Kieran Trippier,England,DF
+Jack Butland,England,GK
+Danny Welbeck,England,FW
+Gary Cahill,England,DF
+Phil Jones,England,DF
+Fabian Delph,England,DF
+Ashley Young,England,DF
+Marcus Rashford,England,FW
+Dele Alli,England,MF
+Ruben Loftus-Cheek,England,MF
+Trent Alexander-Arnold,England,DF
+Nick Pope,England,GK
+# England players : 23

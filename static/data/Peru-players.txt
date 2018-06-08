@@ -1,0 +1,24 @@
+Pedro Gallese,Peru,GK
+Alberto Rodríguez,Peru,DF
+Aldo Corzo,Peru,DF
+Anderson Santamaría,Peru,DF
+Miguel Araujo,Peru,DF
+Miguel Trauco,Peru,DF
+Paolo Hurtado,Peru,MF
+Christian Cueva,Peru,MF
+Paolo Guerrero,Peru,FW
+Jefferson Farfán,Peru,FW
+Raúl Ruidíaz,Peru,FW
+Carlos Cáceda,Peru,GK
+Renato Tapia,Peru,MF
+Andy Polo,Peru,MF
+Christian Ramos,Peru,DF
+Wilder Cartagena,Peru,MF
+Luis Advíncula,Peru,DF
+André Carrillo,Peru,FW
+Yoshimar Yotún,Peru,MF
+Edison Flores,Peru,FW
+José Carvallo,Peru,GK
+Nilson Loyola,Peru,DF
+Pedro Aquino,Peru,MF
+# Peru players : 23

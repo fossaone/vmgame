@@ -1,0 +1,24 @@
+Alisson,Brazil,GK
+Thiago Silva,Brazil,DF
+Miranda,Brazil,DF
+Pedro Geromel,Brazil,DF
+Casemiro,Brazil,MF
+Filipe Luís,Brazil,DF
+Douglas Costa,Brazil,FW
+Renato Augusto,Brazil,MF
+Gabriel Jesus,Brazil,FW
+Neymar,Brazil,FW
+Philippe Coutinho,Brazil,MF
+Marcelo,Brazil,DF
+Marquinhos,Brazil,DF
+Danilo,Brazil,DF
+Paulinho,Brazil,MF
+Cássio,Brazil,GK
+Fernandinho,Brazil,MF
+Fred,Brazil,MF
+Willian,Brazil,MF
+Roberto Firmino,Brazil,FW
+Taison,Brazil,FW
+Fagner,Brazil,DF
+Ederson,Brazil,GK
+# Brazil players : 23

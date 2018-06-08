@@ -1,0 +1,24 @@
+Farouk Ben Mustapha,Tunisia,GK
+Syam Ben Youssef,Tunisia,DF
+Yohan Benalouane,Tunisia,DF
+Yassine Meriah,Tunisia,DF
+Oussama Haddadi,Tunisia,DF
+Rami Bedoui,Tunisia,DF
+Saîf-Eddine Khaoui,Tunisia,FW
+Fakhreddine Ben Youssef,Tunisia,FW
+Anice Badri,Tunisia,MF
+Wahbi Khazri,Tunisia,FW
+Dylan Bronn,Tunisia,DF
+Ali Maâloul,Tunisia,DF
+Ferjani Sassi,Tunisia,MF
+Mohamed Amine Ben Amor,Tunisia,MF
+Ahmed Khalil,Tunisia,FW
+Aymen Mathlouthi,Tunisia,GK
+Ellyes Skhiri,Tunisia,MF
+Bassem Srarfi,Tunisia,FW
+Saber Khalifa,Tunisia,FW
+Ghailene Chaalali,Tunisia,FW
+Hamdi Nagguez,Tunisia,DF
+Mouez Hassen,Tunisia,GK
+Naïm Sliti,Tunisia,FW
+# Tunisia players : 23

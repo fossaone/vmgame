@@ -1,0 +1,24 @@
+Rui Patrício,Portugal,GK
+Bruno Alves,Portugal,DF
+Pepe,Portugal,DF
+Manuel Fernandes,Portugal,MF
+Raphaël Guerreiro,Portugal,DF
+José Fonte,Portugal,DF
+Cristiano Ronaldo,Portugal,FW
+João Moutinho,Portugal,MF
+André Silva,Portugal,FW
+João Mário,Portugal,MF
+Bernardo Silva,Portugal,MF
+Anthony Lopes,Portugal,GK
+Rúben Dias,Portugal,DF
+William Carvalho,Portugal,MF
+Ricardo Pereira,Portugal,DF
+Bruno Fernandes,Portugal,MF
+Gonçalo Guedes,Portugal,FW
+Gelson Martins,Portugal,FW
+Mário Rui,Portugal,DF
+Ricardo Quaresma,Portugal,FW
+Cédric,Portugal,DF
+Beto,Portugal,GK
+Adrien Silva,Portugal,MF
+# Portugal players : 23

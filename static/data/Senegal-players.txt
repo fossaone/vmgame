@@ -1,0 +1,24 @@
+Abdoulaye Diallo,Senegal,GK
+Saliou Ciss,Senegal,DF
+Kalidou Koulibaly,Senegal,DF
+Kara Mbodji,Senegal,DF
+Idrissa Gueye,Senegal,MF
+Salif Sané,Senegal,MF
+Moussa Sow,Senegal,FW
+Cheikhou Kouyaté,Senegal,MF
+Mame Biram Diouf,Senegal,FW
+Sadio Mané,Senegal,FW
+Cheikh N'Doye,Senegal,MF
+Youssouf Sabaly,Senegal,DF
+Alfred N'Diaye,Senegal,MF
+Moussa Konaté,Senegal,FW
+Diafra Sakho,Senegal,FW
+Khadim N'Diaye,Senegal,GK
+Badou Ndiaye,Senegal,MF
+Ismaïla Sarr,Senegal,FW
+M'Baye Niang,Senegal,FW
+Keita Baldé,Senegal,FW
+Lamine Gassama,Senegal,DF
+Moussa Wagué,Senegal,DF
+Alfred Gomis,Senegal,GK
+# Senegal players : 23

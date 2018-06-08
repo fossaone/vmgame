@@ -1,24 +1,24 @@
-Iker Casillas,Spain,GK
-César Azpilicueta,Spain,DF
+David de Gea,Spain,GK
+Dani Carvajal,Spain,DF
 Gerard Piqué,Spain,DF
-Marc Bartra,Spain,DF
+Nacho,Spain,DF
 Sergio Busquets,Spain,MF
 Andrés Iniesta,Spain,MF
-Álvaro Morata,Spain,FW
+Saúl,Spain,MF
 Koke,Spain,MF
-Lucas Vázquez,Spain,FW
-Cesc Fàbregas,Spain,MF
-Pedro,Spain,FW
-Héctor Bellerín,Spain,DF
-David de Gea,Spain,GK
+Rodrigo,Spain,FW
 Thiago,Spain,MF
+Lucas Vázquez,Spain,FW
+Álvaro Odriozola,Spain,DF
+Kepa Arrizabalaga,Spain,GK
+César Azpilicueta,Spain,DF
 Sergio Ramos,Spain,DF
-Juanfran,Spain,DF
-Mikel San José,Spain,DF
+Nacho Monreal,Spain,DF
+Iago Aspas,Spain,FW
 Jordi Alba,Spain,DF
-Bruno Soriano,Spain,MF
-Aritz Aduriz,Spain,FW
-David Silva,Spain,MF
-Nolito,Spain,FW
-Sergio Rico,Spain,GK
+Diego Costa,Spain,FW
+Marco Asensio,Spain,MF
+David Silva,Spain,FW
+Isco,Spain,MF
+Pepe Reina,Spain,GK
 # Spain players : 23

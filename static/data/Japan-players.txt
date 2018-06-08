@@ -1,0 +1,24 @@
+Eiji Kawashima,Japan,GK
+Naomichi Ueda,Japan,DF
+Gen Shoji,Japan,DF
+Keisuke Honda,Japan,MF
+Yuto Nagatomo,Japan,DF
+Wataru Endo,Japan,DF
+Gaku Shibasaki,Japan,MF
+Genki Haraguchi,Japan,MF
+Shinji Okazaki,Japan,FW
+Shinji Kagawa,Japan,MF
+Takashi Usami,Japan,MF
+Masaaki Higashiguchi,Japan,GK
+Yoshinori Mutō,Japan,FW
+Takashi Inui,Japan,MF
+Yuya Osako,Japan,FW
+Hotaru Yamaguchi,Japan,MF
+Makoto Hasebe,Japan,MF
+Ryota Oshima,Japan,MF
+Hiroki Sakai,Japan,DF
+Tomoaki Makino,Japan,DF
+Gōtoku Sakai,Japan,DF
+Maya Yoshida,Japan,DF
+Kosuke Nakamura,Japan,GK
+# Japan players : 23

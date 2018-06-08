@@ -1,0 +1,24 @@
+Vladimir Stojković,Serbia,GK
+Antonio Rukavina,Serbia,DF
+Duško Tošić,Serbia,DF
+Luka Milivojević,Serbia,MF
+Uroš Spajić,Serbia,DF
+Branislav Ivanović,Serbia,DF
+Andrija Živković,Serbia,MF
+Aleksandar Prijović,Serbia,FW
+Aleksandar Mitrović,Serbia,FW
+Dušan Tadić,Serbia,MF
+Aleksandar Kolarov,Serbia,DF
+Predrag Rajković,Serbia,GK
+Miloš Veljković,Serbia,DF
+Milan Rodić,Serbia,DF
+Nikola Milenković,Serbia,DF
+Marko Grujić,Serbia,MF
+Filip Kostić,Serbia,MF
+Nemanja Radonjić,Serbia,FW
+Luka Jović,Serbia,FW
+Sergej Milinković-Savić,Serbia,MF
+Nemanja Matić,Serbia,MF
+Adem Ljajić,Serbia,MF
+Marko Dmitrović,Serbia,GK
+# Serbia players : 23

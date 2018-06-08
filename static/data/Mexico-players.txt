@@ -1,0 +1,24 @@
+José de Jesús Corona,Mexico,GK
+Hugo Ayala,Mexico,DF
+Carlos Salcedo,Mexico,DF
+Rafael Márquez,Mexico,DF
+Diego Reyes,Mexico,DF
+Jonathan dos Santos,Mexico,MF
+Miguel Layún,Mexico,MF
+Marco Fabián,Mexico,FW
+Raúl Jiménez,Mexico,FW
+Giovani dos Santos,Mexico,MF
+Carlos Vela,Mexico,FW
+Alfredo Talavera,Mexico,GK
+Guillermo Ochoa,Mexico,GK
+Javier Hernández,Mexico,FW
+Héctor Moreno,Mexico,DF
+Héctor Herrera,Mexico,DF
+Jesús Manuel Corona,Mexico,MF
+Andrés Guardado,Mexico,MF
+Oribe Peralta,Mexico,FW
+Javier Aquino,Mexico,MF
+Edson Álvarez,Mexico,DF
+Hirving Lozano,Mexico,FW
+Jesús Gallardo,Mexico,MF
+# Mexico players : 23

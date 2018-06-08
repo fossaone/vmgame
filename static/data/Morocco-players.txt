@@ -1,0 +1,24 @@
+Yassine Bounou,Morocco,GK
+Achraf Hakimi,Morocco,DF
+Hamza Mendyl,Morocco,DF
+Manuel da Costa,Morocco,DF
+Medhi Benatia,Morocco,DF
+Romain Saïss,Morocco,DF
+Hakim Ziyech,Morocco,MF
+Karim El Ahmadi,Morocco,MF
+Ayoub El Kaabi,Morocco,FW
+Younès Belhanda,Morocco,MF
+Fayçal Fajr,Morocco,MF
+Munir Mohamedi,Morocco,GK
+Khalid Boutaïb,Morocco,FW
+Mbark Boussoufa,Morocco,MF
+Youssef Aït Bennasser,Morocco,MF
+Nordin Amrabat,Morocco,MF
+Nabil Dirar,Morocco,DF
+Amine Harit,Morocco,MF
+Youssef En-Nesyri,Morocco,FW
+Aziz Bouhaddouz,Morocco,FW
+Sofyan Amrabat,Morocco,MF
+Ahmed Reda Tagnaouti,Morocco,GK
+Mehdi Carcela,Morocco,MF
+# Morocco players : 23

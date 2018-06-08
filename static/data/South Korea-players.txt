@@ -1,0 +1,24 @@
+Kim Seung-gyu,South Korea,GK
+Lee Yong,South Korea,DF
+Jung Seung-hyun,South Korea,DF
+Oh Ban-suk,South Korea,DF
+Yun Young-sun,South Korea,DF
+Park Joo-ho,South Korea,DF
+Son Heung-min,South Korea,FW
+Ju Se-jong,South Korea,MF
+Kim Shin-wook,South Korea,FW
+Lee Seung-woo,South Korea,MF
+Hwang Hee-chan,South Korea,FW
+Kim Min-woo,South Korea,DF
+Koo Ja-cheol,South Korea,MF
+Hong Chul,South Korea,DF
+Jung Woo-young,South Korea,MF
+Ki Sung-yueng,South Korea,MF
+Lee Jae-sung,South Korea,MF
+Moon Seon-min,South Korea,MF
+Kim Young-gwon,South Korea,DF
+Jang Hyun-soo,South Korea,DF
+Kim Jin-hyeon,South Korea,GK
+Go Yo-han,South Korea,DF
+Cho Hyun-woo,South Korea,GK
+# South Korea players : 23

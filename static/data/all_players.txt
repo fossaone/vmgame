@@ -1,577 +1,769 @@
-Hugo Lloris,France,GK
-Christophe Jallet,France,DF
-Patrice Evra,France,DF
-Adil Rami,France,DF
-N'Golo Kanté,France,MF
-Yohan Cabaye,France,MF
-Antoine Griezmann,France,FW
-Dimitri Payet,France,MF
-Olivier Giroud,France,FW
-André-Pierre Gignac,France,FW
-Anthony Martial,France,FW
-Morgan Schneiderlin,France,MF
-Eliaquim Mangala,France,DF
-Blaise Matuidi,France,MF
-Paul Pogba,France,MF
-Steve Mandanda,France,GK
-Lucas Digne,France,DF
-Moussa Sissoko,France,MF
-Bacary Sagna,France,DF
-Kingsley Coman,France,MF
-Laurent Koscielny,France,DF
-Samuel Umtiti,France,DF
-Benoît Costil,France,GK
-Costel Pantilimon,Romania,GK
-Alexandru Mățel,Romania,DF
-Răzvan Raț,Romania,DF
-Cosmin Moți,Romania,DF
-Ovidiu Hoban,Romania,MF
-Vlad Chiricheș,Romania,DF
-Alexandru Chipciu,Romania,MF
-Mihai Pintilii,Romania,MF
-Denis Alibec,Romania,FW
-Nicolae Stanciu,Romania,MF
-Gabriel Torje,Romania,MF
-Ciprian Tătărușanu,Romania,GK
-Claudiu Keșerü,Romania,FW
-Florin Andone,Romania,FW
-Valerică Găman,Romania,DF
-Steliano Filip,Romania,DF
-Lucian Sânmărtean,Romania,MF
-Andrei Prepeliță,Romania,MF
-Bogdan Stancu,Romania,FW
-Adrian Popa,Romania,MF
-Dragoș Grigore,Romania,DF
-Cristian Săpunaru,Romania,DF
-Silviu Lung Jr.,Romania,GK
-Etrit Berisha,Albania,GK
-Andi Lila,Albania,DF
-Ermir Lenjani,Albania,MF
-Elseid Hysaj,Albania,DF
-Lorik Cana,Albania,DF
-Frederik Veseli,Albania,DF
-Ansi Agolli,Albania,DF
-Migjen Basha,Albania,MF
-Ledian Memushaj,Albania,MF
-Armando Sadiku,Albania,FW
-Shkëlzen Gashi,Albania,FW
-Orges Shehi,Albania,GK
-Burim Kukeli,Albania,MF
-Taulant Xhaka,Albania,MF
-Mërgim Mavraj,Albania,DF
-Sokol Cikalleshi,Albania,FW
-Naser Aliji,Albania,DF
-Arlind Ajeti,Albania,DF
-Bekim Balaj,Albania,FW
-Ergys Kaçe,Albania,MF
-Odise Roshi,Albania,MF
-Amir Abrashi,Albania,MF
-Alban Hoxha,Albania,GK
-Yann Sommer,Switzerland,GK
-Stephan Lichtsteiner,Switzerland,DF
-François Moubandje,Switzerland,DF
-Nico Elvedi,Switzerland,DF
-Steve von Bergen,Switzerland,DF
-Michael Lang,Switzerland,DF
-Breel Embolo,Switzerland,FW
-Fabian Frei,Switzerland,MF
-Haris Seferović,Switzerland,FW
-Granit Xhaka,Switzerland,MF
-Valon Behrami,Switzerland,MF
-Marwin Hitz,Switzerland,GK
-Ricardo Rodríguez,Switzerland,DF
-Denis Zakaria,Switzerland,MF
-Blerim Džemaili,Switzerland,MF
-Gélson Fernandes,Switzerland,MF
-Shani Tarashaj,Switzerland,FW
-Admir Mehmedi,Switzerland,FW
-Eren Derdiyok,Switzerland,FW
-Johan Djourou,Switzerland,DF
-Roman Bürki,Switzerland,GK
-Fabian Schär,Switzerland,DF
-Xherdan Shaqiri,Switzerland,MF
-Joe Hart,England,GK
-Kyle Walker,England,DF
-Danny Rose,England,DF
-James Milner,England,MF
-Gary Cahill,England,DF
-Chris Smalling,England,DF
-Raheem Sterling,England,MF
-Adam Lallana,England,MF
-Harry Kane,England,FW
-Wayne Rooney,England,FW
-Jamie Vardy,England,FW
-Nathaniel Clyne,England,DF
-Fraser Forster,England,GK
-Jordan Henderson,England,MF
-Daniel Sturridge,England,FW
-John Stones,England,DF
-Eric Dier,England,MF
-Jack Wilshere,England,MF
-Ross Barkley,England,MF
-Dele Alli,England,MF
-Ryan Bertrand,England,DF
-Marcus Rashford,England,FW
-Tom Heaton,England,GK
 Igor Akinfeev,Russia,GK
-Roman Shishkin,Russia,DF
-Igor Smolnikov,Russia,DF
+Mário Fernandes,Russia,DF
+Ilya Kutepov,Russia,DF
 Sergei Ignashevich,Russia,DF
-Roman Neustädter,Russia,DF
-Aleksei Berezutski,Russia,DF
-Igor Denisov,Russia,MF
-Denis Glushakov,Russia,MF
-Aleksandr Kokorin,Russia,FW
+Andrei Semyonov,Russia,DF
+Denis Cheryshev,Russia,MF
+Daler Kuzyayev,Russia,MF
+Yury Gazinsky,Russia,MF
+Alan Dzagoev,Russia,MF
 Fyodor Smolov,Russia,FW
-Pavel Mamayev,Russia,MF
-Yuri Lodygin,Russia,GK
+Roman Zobnin,Russia,MF
+Andrey Lunyov,Russia,GK
+Fyodor Kudryashov,Russia,DF
+Vladimir Granat,Russia,DF
+Aleksei Miranchuk,Russia,MF
+Anton Miranchuk,Russia,MF
 Aleksandr Golovin,Russia,MF
-Vasili Berezutski,Russia,DF
-Roman Shirokov,Russia,MF
-Guilherme Marinato,Russia,GK
-Oleg Shatov,Russia,MF
-Oleg Ivanov,Russia,MF
+Yuri Zhirkov,Russia,MF
 Aleksandr Samedov,Russia,MF
-Dmitri Torbinski,Russia,MF
-Georgi Shchennikov,Russia,DF
+Vladimir Gabulov,Russia,GK
+Aleksandr Yerokhin,Russia,MF
 Artem Dzyuba,Russia,FW
-Dmitri Kombarov,Russia,DF
-Wayne Hennessey,Wales,GK
-Chris Gunter,Wales,DF
-Neil Taylor,Wales,DF
-Ben Davies,Wales,DF
-James Chester,Wales,DF
-Ashley Williams,Wales,DF
-Joe Allen,Wales,MF
-Andy King,Wales,MF
-Hal Robson-Kanu,Wales,FW
-Aaron Ramsey,Wales,MF
-Gareth Bale,Wales,FW
-Owain Fôn Williams,Wales,GK
-George Williams,Wales,FW
-David Edwards,Wales,MF
-Jazz Richards,Wales,DF
-Joe Ledley,Wales,MF
-David Cotterill,Wales,FW
-Sam Vokes,Wales,FW
-James Collins,Wales,DF
-Jonathan Williams,Wales,MF
-Danny Ward,Wales,GK
-David Vaughan,Wales,MF
-Simon Church,Wales,FW
-Ján Mucha,Slovakia,GK
-Peter Pekarík,Slovakia,DF
-Martin Škrtel,Slovakia,DF
-Ján Ďurica,Slovakia,DF
-Norbert Gyömbér,Slovakia,DF
-Ján Greguš,Slovakia,MF
-Vladimír Weiss,Slovakia,MF
-Ondrej Duda,Slovakia,MF
-Stanislav Šesták,Slovakia,FW
-Miroslav Stoch,Slovakia,MF
-Adam Nemec,Slovakia,FW
-Ján Novota,Slovakia,GK
-Patrik Hrošovský,Slovakia,MF
-Milan Škriniar,Slovakia,DF
-Tomáš Hubočan,Slovakia,DF
-Kornel Saláta,Slovakia,DF
-Marek Hamšík,Slovakia,MF
-Dušan Švento,Slovakia,DF
-Juraj Kucka,Slovakia,MF
-Róbert Mak,Slovakia,MF
-Michal Ďuriš,Slovakia,FW
-Viktor Pečovský,Slovakia,MF
-Matúš Kozáčik,Slovakia,GK
+Igor Smolnikov,Russia,DF
 Manuel Neuer,Germany,GK
-Shkodran Mustafi,Germany,DF
+Marvin Plattenhardt,Germany,DF
 Jonas Hector,Germany,DF
-Benedikt Höwedes,Germany,DF
+Matthias Ginter,Germany,DF
 Mats Hummels,Germany,DF
 Sami Khedira,Germany,MF
-Bastian Schweinsteiger,Germany,MF
-Mesut Özil,Germany,MF
-André Schürrle,Germany,MF
-Lukas Podolski,Germany,FW
 Julian Draxler,Germany,MF
-Bernd Leno,Germany,GK
-Thomas Müller,Germany,FW
-Emre Can,Germany,MF
-Julian Weigl,Germany,MF
+Toni Kroos,Germany,MF
+Timo Werner,Germany,FW
+Mesut Özil,Germany,MF
+Marco Reus,Germany,FW
+Kevin Trapp,Germany,GK
+Thomas Müller,Germany,MF
+Leon Goretzka,Germany,MF
+Niklas Süle,Germany,DF
 Antonio Rüdiger,Germany,DF
 Jérôme Boateng,Germany,DF
-Toni Kroos,Germany,MF
-Mario Götze,Germany,MF
-Leroy Sané,Germany,MF
 Joshua Kimmich,Germany,DF
+Sebastian Rudy,Germany,MF
+Julian Brandt,Germany,MF
+İlkay Gündoğan,Germany,MF
 Marc-André ter Stegen,Germany,GK
 Mario Gómez,Germany,FW
-Denys Boyko,Ukraine,GK
-Bohdan Butko,Ukraine,DF
-Yevhen Khacheridi,Ukraine,DF
-Anatoliy Tymoshchuk,Ukraine,MF
-Oleksandr Kucher,Ukraine,DF
-Taras Stepanenko,Ukraine,MF
-Andriy Yarmolenko,Ukraine,MF
-Roman Zozulya,Ukraine,FW
-Viktor Kovalenko,Ukraine,MF
-Yevhen Konoplyanka,Ukraine,MF
-Yevhen Seleznyov,Ukraine,FW
-Andriy Pyatov,Ukraine,GK
-Vyacheslav Shevchuk,Ukraine,DF
-Ruslan Rotan,Ukraine,MF
-Pylyp Budkivskyi,Ukraine,FW
-Serhiy Sydorchuk,Ukraine,MF
-Artem Fedetskyi,Ukraine,DF
-Serhiy Rybalka,Ukraine,MF
-Denys Harmash,Ukraine,MF
-Yaroslav Rakitskiy,Ukraine,DF
-Oleksandr Zinchenko,Ukraine,MF
-Oleksandr Karavayev,Ukraine,MF
-Mykyta Shevchenko,Ukraine,GK
+Alisson,Brazil,GK
+Thiago Silva,Brazil,DF
+Miranda,Brazil,DF
+Pedro Geromel,Brazil,DF
+Casemiro,Brazil,MF
+Filipe Luís,Brazil,DF
+Douglas Costa,Brazil,FW
+Renato Augusto,Brazil,MF
+Gabriel Jesus,Brazil,FW
+Neymar,Brazil,FW
+Philippe Coutinho,Brazil,MF
+Marcelo,Brazil,DF
+Marquinhos,Brazil,DF
+Danilo,Brazil,DF
+Paulinho,Brazil,MF
+Cássio,Brazil,GK
+Fernandinho,Brazil,MF
+Fred,Brazil,MF
+Willian,Brazil,MF
+Roberto Firmino,Brazil,FW
+Taison,Brazil,FW
+Fagner,Brazil,DF
+Ederson,Brazil,GK
+Rui Patrício,Portugal,GK
+Bruno Alves,Portugal,DF
+Pepe,Portugal,DF
+Manuel Fernandes,Portugal,MF
+Raphaël Guerreiro,Portugal,DF
+José Fonte,Portugal,DF
+Cristiano Ronaldo,Portugal,FW
+João Moutinho,Portugal,MF
+André Silva,Portugal,FW
+João Mário,Portugal,MF
+Bernardo Silva,Portugal,MF
+Anthony Lopes,Portugal,GK
+Rúben Dias,Portugal,DF
+William Carvalho,Portugal,MF
+Ricardo Pereira,Portugal,DF
+Bruno Fernandes,Portugal,MF
+Gonçalo Guedes,Portugal,FW
+Gelson Martins,Portugal,FW
+Mário Rui,Portugal,DF
+Ricardo Quaresma,Portugal,FW
+Cédric,Portugal,DF
+Beto,Portugal,GK
+Adrien Silva,Portugal,MF
+Nahuel Guzmán,Argentina,GK
+Gabriel Mercado,Argentina,DF
+Nicolás Tagliafico,Argentina,DF
+Cristian Ansaldi,Argentina,DF
+Lucas Biglia,Argentina,MF
+Federico Fazio,Argentina,DF
+Éver Banega,Argentina,MF
+Marcos Acuña,Argentina,DF
+Gonzalo Higuaín,Argentina,FW
+Lionel Messi,Argentina,FW
+Ángel Di María,Argentina,MF
+Franco Armani,Argentina,GK
+Maximiliano Meza,Argentina,MF
+Javier Mascherano,Argentina,DF
+Manuel Lanzini,Argentina,MF
+Marcos Rojo,Argentina,DF
+Nicolás Otamendi,Argentina,DF
+Eduardo Salvio,Argentina,DF
+Sergio Agüero,Argentina,FW
+Giovani Lo Celso,Argentina,MF
+Paulo Dybala,Argentina,FW
+Cristian Pavón,Argentina,MF
+Willy Caballero,Argentina,GK
+Thibaut Courtois,Belgium,GK
+Toby Alderweireld,Belgium,DF
+Thomas Vermaelen,Belgium,DF
+Vincent Kompany,Belgium,DF
+Jan Vertonghen,Belgium,DF
+Axel Witsel,Belgium,MF
+Kevin De Bruyne,Belgium,MF
+Marouane Fellaini,Belgium,MF
+Romelu Lukaku,Belgium,FW
+Eden Hazard,Belgium,FW
+Yannick Carrasco,Belgium,MF
+Simon Mignolet,Belgium,GK
+Koen Casteels,Belgium,GK
+Dries Mertens,Belgium,FW
+Thomas Meunier,Belgium,DF
+Thorgan Hazard,Belgium,MF
+Youri Tielemans,Belgium,MF
+Adnan Januzaj,Belgium,FW
+Mousa Dembélé,Belgium,MF
+Dedryck Boyata,Belgium,DF
+Michy Batshuayi,Belgium,FW
+Nacer Chadli,Belgium,MF
+Leander Dendoncker,Belgium,DF
 Wojciech Szczęsny,Poland,GK
 Michał Pazdan,Poland,DF
 Artur Jędrzejczyk,Poland,DF
 Thiago Cionek,Poland,DF
-Krzysztof Mączyński,Poland,MF
-Tomasz Jodłowiec,Poland,MF
+Jan Bednarek,Poland,DF
+Jacek Góralski,Poland,MF
 Arkadiusz Milik,Poland,FW
 Karol Linetty,Poland,MF
 Robert Lewandowski,Poland,FW
 Grzegorz Krychowiak,Poland,MF
 Kamil Grosicki,Poland,MF
-Artur Boruc,Poland,GK
-Mariusz Stępiński,Poland,FW
-Jakub Wawrzyniak,Poland,DF
+Bartosz Białkowski,Poland,GK
+Maciej Rybus,Poland,MF
+Łukasz Teodorczyk,Poland,FW
 Kamil Glik,Poland,DF
 Jakub Błaszczykowski,Poland,MF
 Sławomir Peszko,Poland,MF
-Bartosz Salamon,Poland,DF
+Bartosz Bereszyński,Poland,DF
 Piotr Zieliński,Poland,MF
 Łukasz Piszczek,Poland,DF
-Bartosz Kapustka,Poland,MF
+Rafał Kurzawa,Poland,MF
 Łukasz Fabiański,Poland,GK
-Filip Starzyński,Poland,MF
-Michael McGovern,Northern Ireland,GK
-Conor McLaughlin,Northern Ireland,DF
-Shane Ferguson,Northern Ireland,MF
-Gareth McAuley,Northern Ireland,DF
-Jonny Evans,Northern Ireland,DF
-Chris Baird,Northern Ireland,DF
-Niall McGinn,Northern Ireland,MF
-Steven Davis,Northern Ireland,MF
-Will Grigg,Northern Ireland,FW
-Kyle Lafferty,Northern Ireland,FW
-Conor Washington,Northern Ireland,FW
-Roy Carroll,Northern Ireland,GK
-Corry Evans,Northern Ireland,MF
-Stuart Dallas,Northern Ireland,MF
-Luke McCullough,Northern Ireland,DF
-Oliver Norwood,Northern Ireland,MF
-Paddy McNair,Northern Ireland,DF
-Aaron Hughes,Northern Ireland,DF
-Jamie Ward,Northern Ireland,MF
-Craig Cathcart,Northern Ireland,DF
-Josh Magennis,Northern Ireland,FW
-Lee Hodson,Northern Ireland,DF
-Alan Mannus,Northern Ireland,GK
-Iker Casillas,Spain,GK
-César Azpilicueta,Spain,DF
+Dawid Kownacki,Poland,FW
+Hugo Lloris,France,GK
+Benjamin Pavard,France,DF
+Presnel Kimpembe,France,DF
+Raphaël Varane,France,DF
+Samuel Umtiti,France,DF
+Paul Pogba,France,MF
+Antoine Griezmann,France,FW
+Thomas Lemar,France,FW
+Olivier Giroud,France,FW
+Kylian Mbappé,France,FW
+Ousmane Dembélé,France,FW
+Corentin Tolisso,France,MF
+N'Golo Kanté,France,MF
+Blaise Matuidi,France,MF
+Steven Nzonzi,France,MF
+Steve Mandanda,France,GK
+Adil Rami,France,DF
+Nabil Fekir,France,FW
+Djibril Sidibé,France,DF
+Florian Thauvin,France,FW
+Lucas Hernández,France,DF
+Benjamin Mendy,France,DF
+Alphonse Areola,France,GK
+David de Gea,Spain,GK
+Dani Carvajal,Spain,DF
 Gerard Piqué,Spain,DF
-Marc Bartra,Spain,DF
+Nacho,Spain,DF
 Sergio Busquets,Spain,MF
 Andrés Iniesta,Spain,MF
-Álvaro Morata,Spain,FW
+Saúl,Spain,MF
 Koke,Spain,MF
-Lucas Vázquez,Spain,FW
-Cesc Fàbregas,Spain,MF
-Pedro,Spain,FW
-Héctor Bellerín,Spain,DF
-David de Gea,Spain,GK
+Rodrigo,Spain,FW
 Thiago,Spain,MF
+Lucas Vázquez,Spain,FW
+Álvaro Odriozola,Spain,DF
+Kepa Arrizabalaga,Spain,GK
+César Azpilicueta,Spain,DF
 Sergio Ramos,Spain,DF
-Juanfran,Spain,DF
-Mikel San José,Spain,DF
+Nacho Monreal,Spain,DF
+Iago Aspas,Spain,FW
 Jordi Alba,Spain,DF
-Bruno Soriano,Spain,MF
-Aritz Aduriz,Spain,FW
-David Silva,Spain,MF
-Nolito,Spain,FW
-Sergio Rico,Spain,GK
-Petr Čech,Czech Republic,GK
-Pavel Kadeřábek,Czech Republic,DF
-Michal Kadlec,Czech Republic,DF
-Theodor Gebre Selassie,Czech Republic,DF
-Roman Hubník,Czech Republic,DF
-Tomáš Sivok,Czech Republic,DF
-Tomáš Necid,Czech Republic,FW
-David Limberský,Czech Republic,DF
-Bořek Dočkal,Czech Republic,MF
-Tomáš Rosický,Czech Republic,MF
-Daniel Pudil,Czech Republic,MF
-Milan Škoda,Czech Republic,FW
-Jaroslav Plašil,Czech Republic,MF
-Daniel Kolář,Czech Republic,MF
-David Pavelka,Czech Republic,MF
-Tomáš Vaclík,Czech Republic,GK
-Marek Suchý,Czech Republic,DF
-Josef Šural,Czech Republic,MF
-Ladislav Krejčí,Czech Republic,MF
-Jiří Skalák,Czech Republic,MF
-David Lafata,Czech Republic,FW
-Vladimír Darida,Czech Republic,MF
-Tomáš Koubek,Czech Republic,GK
-Volkan Babacan,Turkey,GK
-Semih Kaya,Turkey,DF
-Hakan Balta,Turkey,DF
-Ahmet Yılmaz Çalık,Turkey,DF
-Nuri Şahin,Turkey,MF
-Hakan Çalhanoğlu,Turkey,MF
-Gökhan Gönül,Turkey,DF
-Selçuk İnan,Turkey,MF
-Cenk Tosun,Turkey,FW
-Arda Turan,Turkey,MF
-Olcay Şahan,Turkey,MF
-Onur Kıvrak,Turkey,GK
-İsmail Köybaşı,Turkey,DF
-Oğuzhan Özyakup,Turkey,MF
-Mehmet Topal,Turkey,MF
-Ozan Tufan,Turkey,MF
-Burak Yılmaz,Turkey,FW
-Caner Erkin,Turkey,MF
-Yunus Mallı,Turkey,MF
-Volkan Şen,Turkey,MF
-Emre Mor,Turkey,FW
-Şener Özbayraklı,Turkey,DF
-Harun Tekin,Turkey,GK
-Ivan Vargić,Croatia,GK
+Diego Costa,Spain,FW
+Marco Asensio,Spain,MF
+David Silva,Spain,FW
+Isco,Spain,MF
+Pepe Reina,Spain,GK
+Pedro Gallese,Peru,GK
+Alberto Rodríguez,Peru,DF
+Aldo Corzo,Peru,DF
+Anderson Santamaría,Peru,DF
+Miguel Araujo,Peru,DF
+Miguel Trauco,Peru,DF
+Paolo Hurtado,Peru,MF
+Christian Cueva,Peru,MF
+Paolo Guerrero,Peru,FW
+Jefferson Farfán,Peru,FW
+Raúl Ruidíaz,Peru,FW
+Carlos Cáceda,Peru,GK
+Renato Tapia,Peru,MF
+Andy Polo,Peru,MF
+Christian Ramos,Peru,DF
+Wilder Cartagena,Peru,MF
+Luis Advíncula,Peru,DF
+André Carrillo,Peru,FW
+Yoshimar Yotún,Peru,MF
+Edison Flores,Peru,FW
+José Carvallo,Peru,GK
+Nilson Loyola,Peru,DF
+Pedro Aquino,Peru,MF
+Yann Sommer,Switzerland,GK
+Stephan Lichtsteiner,Switzerland,DF
+François Moubandje,Switzerland,DF
+Nico Elvedi,Switzerland,DF
+Manuel Akanji,Switzerland,DF
+Michael Lang,Switzerland,DF
+Breel Embolo,Switzerland,FW
+Remo Freuler,Switzerland,MF
+Haris Seferović,Switzerland,FW
+Granit Xhaka,Switzerland,MF
+Valon Behrami,Switzerland,MF
+Yvon Mvogo,Switzerland,GK
+Ricardo Rodríguez,Switzerland,DF
+Steven Zuber,Switzerland,MF
+Blerim Džemaili,Switzerland,MF
+Gelson Fernandes,Switzerland,MF
+Denis Zakaria,Switzerland,MF
+Mario Gavranović,Switzerland,FW
+Josip Drmić,Switzerland,FW
+Johan Djourou,Switzerland,DF
+Roman Bürki,Switzerland,GK
+Fabian Schär,Switzerland,DF
+Xherdan Shaqiri,Switzerland,MF
+Jordan Pickford,England,GK
+Kyle Walker,England,DF
+Danny Rose,England,DF
+Eric Dier,England,MF
+John Stones,England,DF
+Harry Maguire,England,DF
+Jesse Lingard,England,MF
+Jordan Henderson,England,MF
+Harry Kane,England,FW
+Raheem Sterling,England,FW
+Jamie Vardy,England,FW
+Kieran Trippier,England,DF
+Jack Butland,England,GK
+Danny Welbeck,England,FW
+Gary Cahill,England,DF
+Phil Jones,England,DF
+Fabian Delph,England,DF
+Ashley Young,England,DF
+Marcus Rashford,England,FW
+Dele Alli,England,MF
+Ruben Loftus-Cheek,England,MF
+Trent Alexander-Arnold,England,DF
+Nick Pope,England,GK
+David Ospina,Colombia,GK
+Cristián Zapata,Colombia,DF
+Óscar Murillo,Colombia,DF
+Santiago Arias,Colombia,DF
+Wílmar Barrios,Colombia,MF
+Carlos Sánchez,Colombia,MF
+Carlos Bacca,Colombia,FW
+Abel Aguilar,Colombia,MF
+Radamel Falcao,Colombia,FW
+James Rodríguez,Colombia,MF
+Juan Cuadrado,Colombia,MF
+Camilo Vargas,Colombia,GK
+Yerry Mina,Colombia,DF
+Luis Muriel,Colombia,FW
+Mateus Uribe,Colombia,MF
+Jefferson Lerma,Colombia,MF
+Johan Mojica,Colombia,DF
+Frank Fabra,Colombia,DF
+Miguel Borja,Colombia,FW
+Juan Fernando Quintero,Colombia,MF
+José Izquierdo,Colombia,FW
+José Fernando Cuadrado,Colombia,GK
+Dávinson Sánchez,Colombia,DF
+José de Jesús Corona,Mexico,GK
+Hugo Ayala,Mexico,DF
+Carlos Salcedo,Mexico,DF
+Rafael Márquez,Mexico,DF
+Diego Reyes,Mexico,DF
+Jonathan dos Santos,Mexico,MF
+Miguel Layún,Mexico,MF
+Marco Fabián,Mexico,FW
+Raúl Jiménez,Mexico,FW
+Giovani dos Santos,Mexico,MF
+Carlos Vela,Mexico,FW
+Alfredo Talavera,Mexico,GK
+Guillermo Ochoa,Mexico,GK
+Javier Hernández,Mexico,FW
+Héctor Moreno,Mexico,DF
+Héctor Herrera,Mexico,DF
+Jesús Manuel Corona,Mexico,MF
+Andrés Guardado,Mexico,MF
+Oribe Peralta,Mexico,FW
+Javier Aquino,Mexico,MF
+Edson Álvarez,Mexico,DF
+Hirving Lozano,Mexico,FW
+Jesús Gallardo,Mexico,MF
+Fernando Muslera,Uruguay,GK
+José Giménez,Uruguay,DF
+Diego Godín,Uruguay,DF
+Guillermo Varela,Uruguay,DF
+Carlos Sánchez,Uruguay,MF
+Rodrigo Bentancur,Uruguay,MF
+Cristian Rodríguez,Uruguay,MF
+Nahitan Nández,Uruguay,MF
+Luis Suárez,Uruguay,FW
+Giorgian De Arrascaeta,Uruguay,FW
+Cristhian Stuani,Uruguay,FW
+Martín Campaña,Uruguay,GK
+Gastón Silva,Uruguay,DF
+Lucas Torreira,Uruguay,MF
+Matías Vecino,Uruguay,MF
+Maxi Pereira,Uruguay,DF
+Diego Laxalt,Uruguay,MF
+Maxi Gómez,Uruguay,FW
+Sebastián Coates,Uruguay,DF
+Jonathan Urretaviscaya,Uruguay,FW
+Edinson Cavani,Uruguay,FW
+Martín Cáceres,Uruguay,DF
+Martín Silva,Uruguay,GK
+Dominik Livaković,Croatia,GK
 Šime Vrsaljko,Croatia,DF
 Ivan Strinić,Croatia,DF
-Ivan Perišić,Croatia,MF
+Ivan Perišić,Croatia,FW
 Vedran Ćorluka,Croatia,DF
-Tin Jedvaj,Croatia,DF
+Dejan Lovren,Croatia,DF
 Ivan Rakitić,Croatia,MF
 Mateo Kovačić,Croatia,MF
 Andrej Kramarić,Croatia,FW
 Luka Modrić,Croatia,MF
-Darijo Srna,Croatia,DF
-Lovre Kalinić,Croatia,GK
-Gordon Schildenfeld,Croatia,DF
 Marcelo Brozović,Croatia,MF
-Ante Ćorić,Croatia,MF
+Lovre Kalinić,Croatia,GK
+Tin Jedvaj,Croatia,DF
+Filip Bradarić,Croatia,MF
+Duje Ćaleta-Car,Croatia,DF
 Nikola Kalinić,Croatia,FW
 Mario Mandžukić,Croatia,FW
-Marko Rog,Croatia,MF
+Ante Rebić,Croatia,FW
 Milan Badelj,Croatia,MF
 Marko Pjaca,Croatia,FW
 Domagoj Vida,Croatia,DF
-Duje Čop,Croatia,FW
+Josip Pivarić,Croatia,DF
 Danijel Subašić,Croatia,GK
-Thibaut Courtois,Belgium,GK
-Toby Alderweireld,Belgium,DF
-Thomas Vermaelen,Belgium,DF
-Radja Nainggolan,Belgium,MF
-Jan Vertonghen,Belgium,DF
-Axel Witsel,Belgium,MF
-Kevin De Bruyne,Belgium,FW
-Marouane Fellaini,Belgium,MF
-Romelu Lukaku,Belgium,FW
-Eden Hazard,Belgium,FW
-Yannick Ferreira Carrasco,Belgium,FW
-Simon Mignolet,Belgium,GK
-Jean-François Gillet,Belgium,GK
-Dries Mertens,Belgium,FW
-Jason Denayer,Belgium,DF
-Thomas Meunier,Belgium,DF
-Divock Origi,Belgium,FW
-Christian Kabasele,Belgium,DF
-Mousa Dembélé,Belgium,MF
-Christian Benteke,Belgium,FW
-Jordan Lukaku,Belgium,DF
-Michy Batshuayi,Belgium,FW
-Laurent Ciman,Belgium,DF
-Gianluigi Buffon,Italy,GK
-Mattia De Sciglio,Italy,DF
-Giorgio Chiellini,Italy,DF
-Matteo Darmian,Italy,DF
-Angelo Ogbonna,Italy,DF
-Antonio Candreva,Italy,MF
-Simone Zaza,Italy,FW
-Alessandro Florenzi,Italy,MF
-Graziano Pellè,Italy,FW
-Thiago Motta,Italy,MF
-Ciro Immobile,Italy,FW
-Salvatore Sirigu,Italy,GK
-Federico Marchetti,Italy,GK
-Stefano Sturaro,Italy,MF
-Andrea Barzagli,Italy,DF
-Daniele De Rossi,Italy,MF
-Éder,Italy,FW
-Marco Parolo,Italy,MF
-Leonardo Bonucci,Italy,DF
-Lorenzo Insigne,Italy,FW
-Federico Bernardeschi,Italy,MF
-Stephan El Shaarawy,Italy,FW
-Emanuele Giaccherini,Italy,MF
-Keiren Westwood,Republic of Ireland,GK
-Séamus Coleman,Republic of Ireland,DF
-Ciaran Clark,Republic of Ireland,DF
-John O'Shea,Republic of Ireland,DF
-Richard Keogh,Republic of Ireland,DF
-Glenn Whelan,Republic of Ireland,MF
-Aiden McGeady,Republic of Ireland,MF
-James McCarthy,Republic of Ireland,MF
-Shane Long,Republic of Ireland,FW
-Robbie Keane,Republic of Ireland,FW
-James McClean,Republic of Ireland,MF
-Shane Duffy,Republic of Ireland,DF
-Jeff Hendrick,Republic of Ireland,MF
-Jonathan Walters,Republic of Ireland,FW
-Cyrus Christie,Republic of Ireland,DF
-Shay Given,Republic of Ireland,GK
-Stephen Ward,Republic of Ireland,DF
-David Meyler,Republic of Ireland,MF
-Robbie Brady,Republic of Ireland,MF
-Wes Hoolahan,Republic of Ireland,MF
-Daryl Murphy,Republic of Ireland,FW
-Stephen Quinn,Republic of Ireland,MF
-Darren Randolph,Republic of Ireland,GK
-Andreas Isaksson,Sweden,GK
-Mikael Lustig,Sweden,DF
-Erik Johansson,Sweden,DF
-Andreas Granqvist,Sweden,DF
-Martin Olsson,Sweden,DF
-Emil Forsberg,Sweden,MF
-Sebastian Larsson,Sweden,MF
-Albin Ekdal,Sweden,MF
-Kim Källström,Sweden,MF
-Zlatan Ibrahimović,Sweden,FW
-Marcus Berg,Sweden,FW
-Robin Olsen,Sweden,GK
-Pontus Jansson,Sweden,DF
-Victor Lindelöf,Sweden,DF
-Oscar Hiljemark,Sweden,MF
-Pontus Wernbloom,Sweden,MF
-Ludwig Augustinsson,Sweden,DF
-Oscar Lewicki,Sweden,MF
-Emir Kujović,Sweden,FW
-John Guidetti,Sweden,FW
-Jimmy Durmaz,Sweden,MF
-Erkan Zengin,Sweden,MF
-Patrik Carlgren,Sweden,GK
-Rui Patrício,Portugal,GK
-Bruno Alves,Portugal,DF
-Pepe,Portugal,DF
-José Fonte,Portugal,DF
-Raphaël Guerreiro,Portugal,DF
-Ricardo Carvalho,Portugal,DF
-Cristiano Ronaldo,Portugal,FW
-João Moutinho,Portugal,MF
-Éder,Portugal,FW
-João Mário,Portugal,MF
-Vieirinha,Portugal,MF
-Anthony Lopes,Portugal,GK
-Danilo,Portugal,MF
-William Carvalho,Portugal,MF
-André Gomes,Portugal,MF
-Renato Sanches,Portugal,MF
-Nani,Portugal,FW
-Rafa Silva,Portugal,MF
-Eliseu,Portugal,DF
-Ricardo Quaresma,Portugal,FW
-Cédric Soares,Portugal,DF
-Eduardo,Portugal,GK
-Adrien Silva,Portugal,MF
+Kasper Schmeichel,Denmark,GK
+Michael Krohn-Dehli,Denmark,MF
+Jannik Vestergaard,Denmark,DF
+Simon Kjær,Denmark,DF
+Jonas Knudsen,Denmark,DF
+Andreas Christensen,Denmark,DF
+William Kvist,Denmark,MF
+Thomas Delaney,Denmark,MF
+Nicolai Jørgensen,Denmark,FW
+Christian Eriksen,Denmark,MF
+Martin Braithwaite,Denmark,FW
+Kasper Dolberg,Denmark,FW
+Mathias Jørgensen,Denmark,DF
+Henrik Dalsgaard,Denmark,DF
+Viktor Fischer,Denmark,FW
+Jonas Lössl,Denmark,GK
+Jens Stryger Larsen,Denmark,DF
+Lukas Lerager,Denmark,MF
+Lasse Schöne,Denmark,MF
+Yussuf Poulsen,Denmark,FW
+Andreas Cornelius,Denmark,FW
+Frederik Rønnow,Denmark,GK
+Pione Sisto,Denmark,FW
 Hannes Þór Halldórsson,Iceland,GK
 Birkir Már Sævarsson,Iceland,DF
-Haukur Heiðar Hauksson,Iceland,DF
-Hjörtur Hermannsson,Iceland,DF
+Samúel Friðjónsson,Iceland,MF
+Albert Guðmundsson,Iceland,MF
 Sverrir Ingi Ingason,Iceland,DF
 Ragnar Sigurðsson,Iceland,DF
-Jóhann Berg Guðmundsson,Iceland,FW
+Jóhann Berg Guðmundsson,Iceland,MF
 Birkir Bjarnason,Iceland,MF
-Kolbeinn Sigþórsson,Iceland,FW
+Björn Bergmann Sigurðarson,Iceland,FW
 Gylfi Sigurðsson,Iceland,MF
 Alfreð Finnbogason,Iceland,FW
-Ögmundur Kristinsson,Iceland,GK
-Ingvar Jónsson,Iceland,GK
-Kári Árnason,Iceland,MF
-Jón Daði Böðvarsson,Iceland,FW
-Rúnar Már Sigurjónsson,Iceland,MF
+Frederik Schram,Iceland,GK
+Rúnar Alex Rúnarsson,Iceland,GK
+Kári Árnason,Iceland,DF
+Hólmar Örn Eyjólfsson,Iceland,DF
+Ólafur Ingi Skúlason,Iceland,MF
 Aron Gunnarsson,Iceland,MF
-Theódór Elmar Bjarnason,Iceland,DF
 Hörður Björgvin Magnússon,Iceland,DF
+Rúrik Gíslason,Iceland,MF
 Emil Hallfreðsson,Iceland,MF
-Arnór Ingvi Traustason,Iceland,DF
-Eiður Guðjohnsen,Iceland,FW
+Arnór Ingvi Traustason,Iceland,MF
+Jón Daði Böðvarsson,Iceland,FW
 Ari Freyr Skúlason,Iceland,DF
-Robert Almer,Austria,GK
-György Garics,Austria,MF
-Aleksandar Dragović,Austria,DF
-Martin Hinteregger,Austria,DF
-Christian Fuchs,Austria,DF
-Stefan Ilsanker,Austria,MF
-Marko Arnautović,Austria,FW
-David Alaba,Austria,MF
-Rubin Okotie,Austria,FW
-Zlatko Junuzović,Austria,MF
-Martin Harnik,Austria,MF
-Heinz Lindner,Austria,GK
-Markus Suttner,Austria,DF
-Julian Baumgartlinger,Austria,MF
-Sebastian Prödl,Austria,DF
-Kevin Wimmer,Austria,DF
-Florian Klein,Austria,DF
-Alessandro Schöpf,Austria,MF
-Lukas Hinterseer,Austria,FW
-Marcel Sabitzer,Austria,MF
-Marc Janko,Austria,FW
-Jakob Jantscher,Austria,MF
-Ramazan Özcan,Austria,GK
-Gábor Király,Hungary,GK
-Ádám Lang,Hungary,DF
-Mihály Korhut,Hungary,DF
-Tamás Kádár,Hungary,DF
-Attila Fiola,Hungary,DF
-Ákos Elek,Hungary,MF
-Balázs Dzsudzsák,Hungary,FW
-Ádám Nagy,Hungary,MF
-Ádám Szalai,Hungary,FW
-Zoltán Gera,Hungary,FW
-Krisztián Németh,Hungary,FW
-Dénes Dibusz,Hungary,GK
-Dániel Böde,Hungary,FW
-Gergő Lovrencsics,Hungary,MF
-László Kleinheisler,Hungary,MF
-Ádám Pintér,Hungary,DF
-Nemanja Nikolić,Hungary,FW
-Zoltán Stieber,Hungary,MF
-Tamás Priskin,Hungary,FW
-Richárd Guzmics,Hungary,DF
-Barnabás Bese,Hungary,DF
-Péter Gulácsi,Hungary,GK
-Roland Juhász,Hungary,DF
-# Total players : 552
+Keylor Navas,Costa Rica,GK
+Johnny Acosta,Costa Rica,DF
+Giancarlo González,Costa Rica,DF
+Ian Smith,Costa Rica,DF
+Celso Borges,Costa Rica,MF
+Óscar Duarte,Costa Rica,DF
+Christian Bolaños,Costa Rica,MF
+Bryan Oviedo,Costa Rica,DF
+Daniel Colindres,Costa Rica,MF
+Bryan Ruiz,Costa Rica,MF
+Johan Venegas,Costa Rica,FW
+Joel Campbell,Costa Rica,FW
+Rodney Wallace,Costa Rica,MF
+Randall Azofeifa,Costa Rica,MF
+Francisco Calvo,Costa Rica,DF
+Cristian Gamboa,Costa Rica,DF
+Yeltsin Tejeda,Costa Rica,MF
+Patrick Pemberton,Costa Rica,GK
+Kendall Waston,Costa Rica,DF
+David Guzmán,Costa Rica,MF
+Marco Ureña,Costa Rica,FW
+Rónald Matarrita,Costa Rica,DF
+Leonel Moreira,Costa Rica,GK
+Robin Olsen,Sweden,GK
+Mikael Lustig,Sweden,DF
+Victor Lindelöf,Sweden,DF
+Andreas Granqvist,Sweden,DF
+Martin Olsson,Sweden,DF
+Ludwig Augustinsson,Sweden,DF
+Sebastian Larsson,Sweden,MF
+Albin Ekdal,Sweden,MF
+Marcus Berg,Sweden,FW
+Emil Forsberg,Sweden,MF
+John Guidetti,Sweden,FW
+Karl-Johan Johnsson,Sweden,GK
+Gustav Svensson,Sweden,MF
+Filip Helander,Sweden,DF
+Oscar Hiljemark,Sweden,MF
+Emil Krafth,Sweden,DF
+Viktor Claesson,Sweden,MF
+Pontus Jansson,Sweden,DF
+Marcus Rohdén,Sweden,MF
+Ola Toivonen,Sweden,FW
+Jimmy Durmaz,Sweden,MF
+Isaac Kiese Thelin,Sweden,FW
+Kristoffer Nordfeldt,Sweden,GK
+Farouk Ben Mustapha,Tunisia,GK
+Syam Ben Youssef,Tunisia,DF
+Yohan Benalouane,Tunisia,DF
+Yassine Meriah,Tunisia,DF
+Oussama Haddadi,Tunisia,DF
+Rami Bedoui,Tunisia,DF
+Saîf-Eddine Khaoui,Tunisia,FW
+Fakhreddine Ben Youssef,Tunisia,FW
+Anice Badri,Tunisia,MF
+Wahbi Khazri,Tunisia,FW
+Dylan Bronn,Tunisia,DF
+Ali Maâloul,Tunisia,DF
+Ferjani Sassi,Tunisia,MF
+Mohamed Amine Ben Amor,Tunisia,MF
+Ahmed Khalil,Tunisia,FW
+Aymen Mathlouthi,Tunisia,GK
+Ellyes Skhiri,Tunisia,MF
+Bassem Srarfi,Tunisia,FW
+Saber Khalifa,Tunisia,FW
+Ghailene Chaalali,Tunisia,FW
+Hamdi Nagguez,Tunisia,DF
+Mouez Hassen,Tunisia,GK
+Naïm Sliti,Tunisia,FW
+Essam El-Hadary,Egypt,GK
+Ali Gabr,Egypt,DF
+Ahmed Elmohamady,Egypt,DF
+Omar Gaber,Egypt,MF
+Sam Morsy,Egypt,MF
+Ahmed Hegazi,Egypt,DF
+Ahmed Fathy,Egypt,DF
+Tarek Hamed,Egypt,MF
+Marwan Mohsen,Egypt,FW
+Mohamed Salah,Egypt,FW
+Kahraba,Egypt,FW
+Ayman Ashraf,Egypt,DF
+Mohamed Abdel-Shafy,Egypt,DF
+Ramadan Sobhi,Egypt,FW
+Mahmoud Hamdy,Egypt,DF
+Sherif Ekramy,Egypt,GK
+Mohamed Elneny,Egypt,MF
+Shikabala,Egypt,FW
+Abdallah Said,Egypt,MF
+Saad Samir,Egypt,DF
+Trézéguet,Egypt,MF
+Amr Warda,Egypt,FW
+Mohamed El-Shenawy,Egypt,GK
+Abdoulaye Diallo,Senegal,GK
+Saliou Ciss,Senegal,DF
+Kalidou Koulibaly,Senegal,DF
+Kara Mbodji,Senegal,DF
+Idrissa Gueye,Senegal,MF
+Salif Sané,Senegal,MF
+Moussa Sow,Senegal,FW
+Cheikhou Kouyaté,Senegal,MF
+Mame Biram Diouf,Senegal,FW
+Sadio Mané,Senegal,FW
+Cheikh N'Doye,Senegal,MF
+Youssouf Sabaly,Senegal,DF
+Alfred N'Diaye,Senegal,MF
+Moussa Konaté,Senegal,FW
+Diafra Sakho,Senegal,FW
+Khadim N'Diaye,Senegal,GK
+Badou Ndiaye,Senegal,MF
+Ismaïla Sarr,Senegal,FW
+M'Baye Niang,Senegal,FW
+Keita Baldé,Senegal,FW
+Lamine Gassama,Senegal,DF
+Moussa Wagué,Senegal,DF
+Alfred Gomis,Senegal,GK
+Alireza Beiranvand,Iran,GK
+Mehdi Torabi,Iran,MF
+Ehsan Hajsafi,Iran,DF
+Rouzbeh Cheshmi,Iran,DF
+Milad Mohammadi,Iran,DF
+Saeid Ezatolahi,Iran,MF
+Masoud Shojaei,Iran,MF
+Morteza Pouraliganji,Iran,DF
+Omid Ebrahimi,Iran,MF
+Karim Ansarifard,Iran,FW
+Vahid Amiri,Iran,MF
+Mohammad Rashid Mazaheri,Iran,GK
+Mohammad Reza Khanzadeh,Iran,DF
+Saman Ghoddos,Iran,FW
+Pejman Montazeri,Iran,DF
+Reza Ghoochannejhad,Iran,FW
+Mehdi Taremi,Iran,FW
+Alireza Jahanbakhsh,Iran,FW
+Majid Hosseini,Iran,DF
+Sardar Azmoun,Iran,FW
+Ashkan Dejagah,Iran,FW
+Amir Abedzadeh,Iran,GK
+Ramin Rezaeian,Iran,DF
+Vladimir Stojković,Serbia,GK
+Antonio Rukavina,Serbia,DF
+Duško Tošić,Serbia,DF
+Luka Milivojević,Serbia,MF
+Uroš Spajić,Serbia,DF
+Branislav Ivanović,Serbia,DF
+Andrija Živković,Serbia,MF
+Aleksandar Prijović,Serbia,FW
+Aleksandar Mitrović,Serbia,FW
+Dušan Tadić,Serbia,MF
+Aleksandar Kolarov,Serbia,DF
+Predrag Rajković,Serbia,GK
+Miloš Veljković,Serbia,DF
+Milan Rodić,Serbia,DF
+Nikola Milenković,Serbia,DF
+Marko Grujić,Serbia,MF
+Filip Kostić,Serbia,MF
+Nemanja Radonjić,Serbia,FW
+Luka Jović,Serbia,FW
+Sergej Milinković-Savić,Serbia,MF
+Nemanja Matić,Serbia,MF
+Adem Ljajić,Serbia,MF
+Marko Dmitrović,Serbia,GK
+Ikechukwu Ezenwa,Nigeria,GK
+Brian Idowu,Nigeria,DF
+Elderson Echiéjilé,Nigeria,DF
+Wilfred Ndidi,Nigeria,MF
+William Troost-Ekong,Nigeria,DF
+Leon Balogun,Nigeria,DF
+Ahmed Musa,Nigeria,FW
+Oghenekaro Etebo,Nigeria,MF
+Odion Ighalo,Nigeria,FW
+John Obi Mikel,Nigeria,MF
+Victor Moses,Nigeria,FW
+Shehu Abdullahi,Nigeria,DF
+Simeon Nwankwo,Nigeria,FW
+Kelechi Iheanacho,Nigeria,FW
+Joel Obi,Nigeria,MF
+Daniel Akpeyi,Nigeria,GK
+Ogenyi Onazi,Nigeria,MF
+Alex Iwobi,Nigeria,FW
+John Ogu,Nigeria,MF
+Chidozie Awaziem,Nigeria,DF
+Tyronne Ebuehi,Nigeria,DF
+Kenneth Omeruo,Nigeria,DF
+Francis Uzoho,Nigeria,GK
+Mathew Ryan,Australia,GK
+Milos Degenek,Australia,DF
+James Meredith,Australia,DF
+Tim Cahill,Australia,FW
+Mark Milligan,Australia,DF
+Matthew Jurman,Australia,DF
+Mathew Leckie,Australia,FW
+Massimo Luongo,Australia,MF
+Tomi Juric,Australia,FW
+Robbie Kruse,Australia,FW
+Andrew Nabbout,Australia,FW
+Brad Jones,Australia,GK
+Aaron Mooy,Australia,MF
+Jamie Maclaren,Australia,FW
+Mile Jedinak,Australia,MF
+Aziz Behich,Australia,DF
+Daniel Arzani,Australia,FW
+Danny Vukovic,Australia,GK
+Josh Risdon,Australia,DF
+Trent Sainsbury,Australia,DF
+Dimitri Petratos,Australia,FW
+Jackson Irvine,Australia,MF
+Tom Rogic,Australia,MF
+Eiji Kawashima,Japan,GK
+Naomichi Ueda,Japan,DF
+Gen Shoji,Japan,DF
+Keisuke Honda,Japan,MF
+Yuto Nagatomo,Japan,DF
+Wataru Endo,Japan,DF
+Gaku Shibasaki,Japan,MF
+Genki Haraguchi,Japan,MF
+Shinji Okazaki,Japan,FW
+Shinji Kagawa,Japan,MF
+Takashi Usami,Japan,MF
+Masaaki Higashiguchi,Japan,GK
+Yoshinori Mutō,Japan,FW
+Takashi Inui,Japan,MF
+Yuya Osako,Japan,FW
+Hotaru Yamaguchi,Japan,MF
+Makoto Hasebe,Japan,MF
+Ryota Oshima,Japan,MF
+Hiroki Sakai,Japan,DF
+Tomoaki Makino,Japan,DF
+Gōtoku Sakai,Japan,DF
+Maya Yoshida,Japan,DF
+Kosuke Nakamura,Japan,GK
+Yassine Bounou,Morocco,GK
+Achraf Hakimi,Morocco,DF
+Hamza Mendyl,Morocco,DF
+Manuel da Costa,Morocco,DF
+Medhi Benatia,Morocco,DF
+Romain Saïss,Morocco,DF
+Hakim Ziyech,Morocco,MF
+Karim El Ahmadi,Morocco,MF
+Ayoub El Kaabi,Morocco,FW
+Younès Belhanda,Morocco,MF
+Fayçal Fajr,Morocco,MF
+Munir Mohamedi,Morocco,GK
+Khalid Boutaïb,Morocco,FW
+Mbark Boussoufa,Morocco,MF
+Youssef Aït Bennasser,Morocco,MF
+Nordin Amrabat,Morocco,MF
+Nabil Dirar,Morocco,DF
+Amine Harit,Morocco,MF
+Youssef En-Nesyri,Morocco,FW
+Aziz Bouhaddouz,Morocco,FW
+Sofyan Amrabat,Morocco,MF
+Ahmed Reda Tagnaouti,Morocco,GK
+Mehdi Carcela,Morocco,MF
+Jaime Penedo,Panama,GK
+Michael Amir Murillo,Panama,DF
+Harold Cummings,Panama,DF
+Fidel Escobar,Panama,DF
+Román Torres,Panama,DF
+Gabriel Gómez,Panama,MF
+Blas Pérez,Panama,FW
+Édgar Bárcenas,Panama,MF
+Gabriel Torres,Panama,FW
+Ismael Díaz,Panama,FW
+Armando Cooper,Panama,MF
+José Calderón,Panama,GK
+Adolfo Machado,Panama,DF
+Valentín Pimentel,Panama,MF
+Erick Davis,Panama,DF
+Abdiel Arroyo,Panama,FW
+Luis Ovalle,Panama,DF
+Luis Tejada,Panama,FW
+Alberto Quintero,Panama,MF
+Aníbal Godoy,Panama,MF
+José Luis Rodríguez,Panama,MF
+Álex Rodríguez,Panama,GK
+Felipe Baloy,Panama,DF
+Kim Seung-gyu,South Korea,GK
+Lee Yong,South Korea,DF
+Jung Seung-hyun,South Korea,DF
+Oh Ban-suk,South Korea,DF
+Yun Young-sun,South Korea,DF
+Park Joo-ho,South Korea,DF
+Son Heung-min,South Korea,FW
+Ju Se-jong,South Korea,MF
+Kim Shin-wook,South Korea,FW
+Lee Seung-woo,South Korea,MF
+Hwang Hee-chan,South Korea,FW
+Kim Min-woo,South Korea,DF
+Koo Ja-cheol,South Korea,MF
+Hong Chul,South Korea,DF
+Jung Woo-young,South Korea,MF
+Ki Sung-yueng,South Korea,MF
+Lee Jae-sung,South Korea,MF
+Moon Seon-min,South Korea,MF
+Kim Young-gwon,South Korea,DF
+Jang Hyun-soo,South Korea,DF
+Kim Jin-hyeon,South Korea,GK
+Go Yo-han,South Korea,DF
+Cho Hyun-woo,South Korea,GK
+Abdullah Al-Mayouf,Saudi Arabia,GK
+Mansoor Al-Harbi,Saudi Arabia,DF
+Osama Hawsawi,Saudi Arabia,DF
+Ali Al-Bulaihi,Saudi Arabia,DF
+Omar Hawsawi,Saudi Arabia,DF
+Mohammed Al-Breik,Saudi Arabia,DF
+Salman Al-Faraj,Saudi Arabia,MF
+Yahya Al-Shehri,Saudi Arabia,MF
+Hattan Bahebri,Saudi Arabia,MF
+Mohammad Al-Sahlawi,Saudi Arabia,FW
+Abdulmalek Al-Khaibri,Saudi Arabia,MF
+Mohamed Kanno,Saudi Arabia,MF
+Yasser Al-Shahrani,Saudi Arabia,DF
+Abdullah Otayf,Saudi Arabia,MF
+Abdullah Al-Khaibari,Saudi Arabia,MF
+Housain Al-Mogahwi,Saudi Arabia,MF
+Taisir Al-Jassim,Saudi Arabia,MF
+Salem Al-Dawsari,Saudi Arabia,MF
+Fahad Al-Muwallad,Saudi Arabia,FW
+Muhannad Assiri,Saudi Arabia,FW
+Yasser Al-Mosailem,Saudi Arabia,GK
+Mohammed Al-Owais,Saudi Arabia,GK
+Motaz Hawsawi,Saudi Arabia,DF
+# Total players : 736
+# Russia players : 23
+# Germany players : 23
+# Brazil players : 23
+# Portugal players : 23
+# Argentina players : 23
+# Belgium players : 23
+# Poland players : 23
 # France players : 23
-# Romania players : 23
-# Albania players : 23
+# Spain players : 23
+# Peru players : 23
 # Switzerland players : 23
 # England players : 23
-# Russia players : 23
-# Wales players : 23
-# Slovakia players : 23
-# Germany players : 23
-# Ukraine players : 23
-# Poland players : 23
-# Northern Ireland players : 23
-# Spain players : 23
-# Czech Republic players : 23
-# Turkey players : 23
+# Colombia players : 23
+# Mexico players : 23
+# Uruguay players : 23
 # Croatia players : 23
-# Belgium players : 23
-# Italy players : 23
-# Republic of Ireland players : 23
-# Sweden players : 23
-# Portugal players : 23
+# Denmark players : 23
 # Iceland players : 23
-# Austria players : 23
-# Hungary players : 23
+# Costa Rica players : 23
+# Sweden players : 23
+# Tunisia players : 23
+# Egypt players : 23
+# Senegal players : 23
+# Iran players : 23
+# Serbia players : 23
+# Nigeria players : 23
+# Australia players : 23
+# Japan players : 23
+# Morocco players : 23
+# Panama players : 23
+# South Korea players : 23
+# Saudi Arabia players : 23

@@ -3,6 +3,8 @@ import os,sys,logging
 
 from django.db import models
 from django.contrib.auth.models import User
+#from django.contrib.auth import get_user_model
+#User = get_user_model()
 import django.core.exceptions
 import datetime
 #import django.utils.timezone
@@ -13,22 +15,22 @@ logger = logging.getLogger(__name__)
 
 class UserProfile(models.Model):
     # This line is required.  Links UserProfile to a User model instance.
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
 
     #These are additional attributes we wish to add
     country = models.CharField(max_length=100)
     score = models.PositiveIntegerField(default=0)
     created = models.DateField()
-    picks = models.ManyToManyField("Pick",related_name="picks",null=True)
+    picks = models.ManyToManyField("Pick",related_name="picks")
 
-    def __unicode__(self):
+    def __str__(self):
         #return u"{0} : {1}".format(self.user.username,self.score)
         return self.user.username
 
 
 class Group(models.Model):
     name = models.CharField(max_length=80)
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -41,7 +43,7 @@ class Scoring(models.Model):
     qf_points = models.PositiveIntegerField(default=4)
     sf_points = models.PositiveIntegerField(default=8)
     f_points = models.PositiveIntegerField(default=16)
-    #third_place_points = models.PositiveIntegerField(default=16)
+    third_place_points = models.PositiveIntegerField(default=16)
     champ_points = models.PositiveIntegerField(default=32)
     team_shutout_points = models.PositiveIntegerField(default=3)
     striker_goals_points = models.PositiveIntegerField(default=2)
@@ -52,13 +54,13 @@ class Team(models.Model):
     country_regularized = models.CharField(max_length=80)
 #    abbr = models.CharField(max_length=3)
 #    alt_abbr = models.CharField(max_length=2)
-    group = models.ForeignKey(Group)
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
     group_rank = models.IntegerField(default=4)
     furthest_round = models.IntegerField(default=0)
     shutouts = models.IntegerField(default=0)
-#    is_third_place = models.BooleanField(default=False)
+    is_third_place = models.BooleanField(default=False)
     is_champion = models.BooleanField(default=False)
-    def __unicode__(self):
+    def __str__(self):
         #return u"{0}\n {1},\nGroup Rank {2},\nFurthest Round {3}\nShutouts {4}".format(self.country,self.group.name,self.group_rank,self.furthest_round,self.shutouts)
         return self.country
 
@@ -66,10 +68,10 @@ class Team(models.Model):
 class Player(models.Model):
     name = models.CharField(max_length=80)
     name_regularized = models.CharField(max_length=80)
-    team = models.ForeignKey(Team)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
     position = models.CharField(max_length=80)
     goals_scored = models.IntegerField(default=0)
-    def __unicode__(self):
+    def __str__(self):
         #return u"{0} ({1}) : {2}, Goals: {3}".format(self.name,self.position,self.team,self.goals_scored)
         #return u"{0} ({1})".format(self.name,self.team)
         return self.name
@@ -77,13 +79,13 @@ class Player(models.Model):
 
 class Pick(models.Model):
     #Who's picks
-    user = models.ForeignKey(UserProfile)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     #When did they pick
     pick_date = models.DateTimeField('date entered')
     pick_name = models.CharField(max_length=80)
 
     #Choices
-    defensive_team = models.ForeignKey(Team,related_name='defensive_team')
+    defensive_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='defensive_team')
     strikers = models.ManyToManyField(Player,related_name='strikers')
     group_winners = models.ManyToManyField(Team,related_name='group_winners')
     group_runners_up = models.ManyToManyField(Team,related_name='group_runners_up')
@@ -92,15 +94,15 @@ class Pick(models.Model):
     quarterfinal_teams = models.ManyToManyField(Team,related_name='quarterfinal_teams')
     semifinal_teams = models.ManyToManyField(Team,related_name='semifinal_teams')
     final_teams = models.ManyToManyField(Team,related_name='final_teams')
-    champion = models.ForeignKey(Team,related_name='champion')
-    #third_place_team = models.ForeignKey(Team,related_name='third_place_team')
+    champion = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='champion')
+    third_place_team = models.ForeignKey(Team,on_delete=models.CASCADE, related_name='third_place_team')
     total_goals = models.PositiveIntegerField(default=0)
 
     #Validation
     completed = models.BooleanField(default=False)
 
     #How many points for each selection
-    scoring = models.ForeignKey(Scoring)
+    scoring = models.ForeignKey(Scoring, on_delete=models.CASCADE)
 
     #The score for this pick
     score = models.PositiveIntegerField(default=0)
@@ -108,7 +110,7 @@ class Pick(models.Model):
     #Actual results.  May not be necessary?
     is_truth = models.BooleanField(default=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return u"{0}'s pick".format(self.user)
 
     def print_detail(self):
@@ -119,7 +121,7 @@ class Pick(models.Model):
         detail_str += "Pick name: {0}\n".format(self.pick_name)
 
         detail_str += "Groups :\n"
-        for group_letter in vmgame.GROUP_LETTERS:
+        for group_letter in vmgame.config.GROUP_LETTERS:
             g1 = self.group_winners.get(group__name='Group {0}'.format(group_letter))
             g2 = self.group_runners_up.get(group__name='Group {0}'.format(group_letter))
             g3 = self.group_third.get(group__name='Group {0}'.format(group_letter))
@@ -153,7 +155,7 @@ class Pick(models.Model):
 
     def write_file(self):
         pick_file = "{0}-{1}".format(self.user.user.username,self.pick_date.strftime("%Y%m%d%H%M%S"))
-        pick_file = os.path.join(vmgame.package_directory,'pick_records',pick_file)
+        pick_file = os.path.join(vmgame.config.package_directory,'pick_records',pick_file)
         logger.info("Writing pick to file : {0}".format(pick_file))
         with open(pick_file,'w') as f:
             f.write(self.print_detail())
@@ -182,7 +184,7 @@ class Pick(models.Model):
 
     def validate_groups(self):
 
-        num_groups = len(vmgame.GROUP_LETTERS)
+        num_groups = len(vmgame.config.GROUP_LETTERS)
         #Group Winners
         num_group_winners = self.group_winners.all().count()
         if(num_group_winners != num_groups):
@@ -405,7 +407,8 @@ class Event(models.Model):
     name = models.CharField(max_length=160)
     #Date of event, auto updated when event is
 #    datetime = models.DateTimeField(default=django.utils.timezone.now())
-    datetime = models.DateTimeField(default=datetime.datetime.now())
-    def __unicode__(self):
+    #datetime = models.DateTimeField(default=datetime.datetime.now())
+    datetime = models.DateTimeField(django.utils.timezone.now)
+    def __str__(self):
         return self.name
 

@@ -1,0 +1,24 @@
+Igor Akinfeev,Russia,GK
+Mário Fernandes,Russia,DF
+Ilya Kutepov,Russia,DF
+Sergei Ignashevich,Russia,DF
+Andrei Semyonov,Russia,DF
+Denis Cheryshev,Russia,MF
+Daler Kuzyayev,Russia,MF
+Yury Gazinsky,Russia,MF
+Alan Dzagoev,Russia,MF
+Fyodor Smolov,Russia,FW
+Roman Zobnin,Russia,MF
+Andrey Lunyov,Russia,GK
+Fyodor Kudryashov,Russia,DF
+Vladimir Granat,Russia,DF
+Aleksei Miranchuk,Russia,MF
+Anton Miranchuk,Russia,MF
+Aleksandr Golovin,Russia,MF
+Yuri Zhirkov,Russia,MF
+Aleksandr Samedov,Russia,MF
+Vladimir Gabulov,Russia,GK
+Aleksandr Yerokhin,Russia,MF
+Artem Dzyuba,Russia,FW
+Igor Smolnikov,Russia,DF
+# Russia players : 23

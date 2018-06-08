@@ -1,17 +1,27 @@
-from django.conf.urls import patterns, include, url
-from django.core.urlresolvers import reverse_lazy
-from django.views.generic import RedirectView
+"""vmgame_website URL Configuration
 
-
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
 from django.contrib import admin
-admin.autodiscover()
+from django.urls import path
+from django.urls import include
+from django.views.generic.base import RedirectView
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'vmgame_website.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^vmgame/', include('vmgame.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+urlpatterns = [
+    path('vmgame/', include('vmgame.urls')),
+    path('admin/', admin.site.urls),
     #Re-direct from root to vmgame
-    url(r'^$', RedirectView.as_view(url='vmgame/', permanent=False), name='index'),
-)
+    path('', RedirectView.as_view(url='vmgame/', permanent=False), name='index'),
+]
+

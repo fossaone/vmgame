@@ -1,0 +1,24 @@
+Alireza Beiranvand,Iran,GK
+Mehdi Torabi,Iran,MF
+Ehsan Hajsafi,Iran,DF
+Rouzbeh Cheshmi,Iran,DF
+Milad Mohammadi,Iran,DF
+Saeid Ezatolahi,Iran,MF
+Masoud Shojaei,Iran,MF
+Morteza Pouraliganji,Iran,DF
+Omid Ebrahimi,Iran,MF
+Karim Ansarifard,Iran,FW
+Vahid Amiri,Iran,MF
+Mohammad Rashid Mazaheri,Iran,GK
+Mohammad Reza Khanzadeh,Iran,DF
+Saman Ghoddos,Iran,FW
+Pejman Montazeri,Iran,DF
+Reza Ghoochannejhad,Iran,FW
+Mehdi Taremi,Iran,FW
+Alireza Jahanbakhsh,Iran,FW
+Majid Hosseini,Iran,DF
+Sardar Azmoun,Iran,FW
+Ashkan Dejagah,Iran,FW
+Amir Abedzadeh,Iran,GK
+Ramin Rezaeian,Iran,DF
+# Iran players : 23

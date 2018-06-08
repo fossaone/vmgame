@@ -1,0 +1,24 @@
+Ikechukwu Ezenwa,Nigeria,GK
+Brian Idowu,Nigeria,DF
+Elderson Echiéjilé,Nigeria,DF
+Wilfred Ndidi,Nigeria,MF
+William Troost-Ekong,Nigeria,DF
+Leon Balogun,Nigeria,DF
+Ahmed Musa,Nigeria,FW
+Oghenekaro Etebo,Nigeria,MF
+Odion Ighalo,Nigeria,FW
+John Obi Mikel,Nigeria,MF
+Victor Moses,Nigeria,FW
+Shehu Abdullahi,Nigeria,DF
+Simeon Nwankwo,Nigeria,FW
+Kelechi Iheanacho,Nigeria,FW
+Joel Obi,Nigeria,MF
+Daniel Akpeyi,Nigeria,GK
+Ogenyi Onazi,Nigeria,MF
+Alex Iwobi,Nigeria,FW
+John Ogu,Nigeria,MF
+Chidozie Awaziem,Nigeria,DF
+Tyronne Ebuehi,Nigeria,DF
+Kenneth Omeruo,Nigeria,DF
+Francis Uzoho,Nigeria,GK
+# Nigeria players : 23

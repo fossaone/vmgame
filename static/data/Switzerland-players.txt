@@ -1,0 +1,24 @@
+Yann Sommer,Switzerland,GK
+Stephan Lichtsteiner,Switzerland,DF
+François Moubandje,Switzerland,DF
+Nico Elvedi,Switzerland,DF
+Manuel Akanji,Switzerland,DF
+Michael Lang,Switzerland,DF
+Breel Embolo,Switzerland,FW
+Remo Freuler,Switzerland,MF
+Haris Seferović,Switzerland,FW
+Granit Xhaka,Switzerland,MF
+Valon Behrami,Switzerland,MF
+Yvon Mvogo,Switzerland,GK
+Ricardo Rodríguez,Switzerland,DF
+Steven Zuber,Switzerland,MF
+Blerim Džemaili,Switzerland,MF
+Gelson Fernandes,Switzerland,MF
+Denis Zakaria,Switzerland,MF
+Mario Gavranović,Switzerland,FW
+Josip Drmić,Switzerland,FW
+Johan Djourou,Switzerland,DF
+Roman Bürki,Switzerland,GK
+Fabian Schär,Switzerland,DF
+Xherdan Shaqiri,Switzerland,MF
+# Switzerland players : 23

@@ -1,0 +1,24 @@
+Nahuel Guzmán,Argentina,GK
+Gabriel Mercado,Argentina,DF
+Nicolás Tagliafico,Argentina,DF
+Cristian Ansaldi,Argentina,DF
+Lucas Biglia,Argentina,MF
+Federico Fazio,Argentina,DF
+Éver Banega,Argentina,MF
+Marcos Acuña,Argentina,DF
+Gonzalo Higuaín,Argentina,FW
+Lionel Messi,Argentina,FW
+Ángel Di María,Argentina,MF
+Franco Armani,Argentina,GK
+Maximiliano Meza,Argentina,MF
+Javier Mascherano,Argentina,DF
+Manuel Lanzini,Argentina,MF
+Marcos Rojo,Argentina,DF
+Nicolás Otamendi,Argentina,DF
+Eduardo Salvio,Argentina,DF
+Sergio Agüero,Argentina,FW
+Giovani Lo Celso,Argentina,MF
+Paulo Dybala,Argentina,FW
+Cristian Pavón,Argentina,MF
+Willy Caballero,Argentina,GK
+# Argentina players : 23

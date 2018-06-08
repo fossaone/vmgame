@@ -1,0 +1,24 @@
+Thibaut Courtois,Belgium,GK
+Toby Alderweireld,Belgium,DF
+Thomas Vermaelen,Belgium,DF
+Vincent Kompany,Belgium,DF
+Jan Vertonghen,Belgium,DF
+Axel Witsel,Belgium,MF
+Kevin De Bruyne,Belgium,MF
+Marouane Fellaini,Belgium,MF
+Romelu Lukaku,Belgium,FW
+Eden Hazard,Belgium,FW
+Yannick Carrasco,Belgium,MF
+Simon Mignolet,Belgium,GK
+Koen Casteels,Belgium,GK
+Dries Mertens,Belgium,FW
+Thomas Meunier,Belgium,DF
+Thorgan Hazard,Belgium,MF
+Youri Tielemans,Belgium,MF
+Adnan Januzaj,Belgium,FW
+Mousa Dembélé,Belgium,MF
+Dedryck Boyata,Belgium,DF
+Michy Batshuayi,Belgium,FW
+Nacer Chadli,Belgium,MF
+Leander Dendoncker,Belgium,DF
+# Belgium players : 23

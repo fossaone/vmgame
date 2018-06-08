@@ -1,0 +1,24 @@
+David Ospina,Colombia,GK
+Cristián Zapata,Colombia,DF
+Óscar Murillo,Colombia,DF
+Santiago Arias,Colombia,DF
+Wílmar Barrios,Colombia,MF
+Carlos Sánchez,Colombia,MF
+Carlos Bacca,Colombia,FW
+Abel Aguilar,Colombia,MF
+Radamel Falcao,Colombia,FW
+James Rodríguez,Colombia,MF
+Juan Cuadrado,Colombia,MF
+Camilo Vargas,Colombia,GK
+Yerry Mina,Colombia,DF
+Luis Muriel,Colombia,FW
+Mateus Uribe,Colombia,MF
+Jefferson Lerma,Colombia,MF
+Johan Mojica,Colombia,DF
+Frank Fabra,Colombia,DF
+Miguel Borja,Colombia,FW
+Juan Fernando Quintero,Colombia,MF
+José Izquierdo,Colombia,FW
+José Fernando Cuadrado,Colombia,GK
+Dávinson Sánchez,Colombia,DF
+# Colombia players : 23

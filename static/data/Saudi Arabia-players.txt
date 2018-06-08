@@ -1,0 +1,24 @@
+Abdullah Al-Mayouf,Saudi Arabia,GK
+Mansoor Al-Harbi,Saudi Arabia,DF
+Osama Hawsawi,Saudi Arabia,DF
+Ali Al-Bulaihi,Saudi Arabia,DF
+Omar Hawsawi,Saudi Arabia,DF
+Mohammed Al-Breik,Saudi Arabia,DF
+Salman Al-Faraj,Saudi Arabia,MF
+Yahya Al-Shehri,Saudi Arabia,MF
+Hattan Bahebri,Saudi Arabia,MF
+Mohammad Al-Sahlawi,Saudi Arabia,FW
+Abdulmalek Al-Khaibri,Saudi Arabia,MF
+Mohamed Kanno,Saudi Arabia,MF
+Yasser Al-Shahrani,Saudi Arabia,DF
+Abdullah Otayf,Saudi Arabia,MF
+Abdullah Al-Khaibari,Saudi Arabia,MF
+Housain Al-Mogahwi,Saudi Arabia,MF
+Taisir Al-Jassim,Saudi Arabia,MF
+Salem Al-Dawsari,Saudi Arabia,MF
+Fahad Al-Muwallad,Saudi Arabia,FW
+Muhannad Assiri,Saudi Arabia,FW
+Yasser Al-Mosailem,Saudi Arabia,GK
+Mohammed Al-Owais,Saudi Arabia,GK
+Motaz Hawsawi,Saudi Arabia,DF
+# Saudi Arabia players : 23

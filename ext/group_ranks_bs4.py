@@ -3,7 +3,7 @@
 import re
 from bs4 import BeautifulSoup
 
-with open('UEFA_Euro_2016.html','r') as f:
+with open('2018_FIFA_World_Cup.html','r') as f:
   raw_html=f.read()
 
 main_soup = BeautifulSoup(raw_html,'html.parser')

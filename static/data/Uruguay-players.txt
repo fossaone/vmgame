@@ -1,0 +1,24 @@
+Fernando Muslera,Uruguay,GK
+José Giménez,Uruguay,DF
+Diego Godín,Uruguay,DF
+Guillermo Varela,Uruguay,DF
+Carlos Sánchez,Uruguay,MF
+Rodrigo Bentancur,Uruguay,MF
+Cristian Rodríguez,Uruguay,MF
+Nahitan Nández,Uruguay,MF
+Luis Suárez,Uruguay,FW
+Giorgian De Arrascaeta,Uruguay,FW
+Cristhian Stuani,Uruguay,FW
+Martín Campaña,Uruguay,GK
+Gastón Silva,Uruguay,DF
+Lucas Torreira,Uruguay,MF
+Matías Vecino,Uruguay,MF
+Maxi Pereira,Uruguay,DF
+Diego Laxalt,Uruguay,MF
+Maxi Gómez,Uruguay,FW
+Sebastián Coates,Uruguay,DF
+Jonathan Urretaviscaya,Uruguay,FW
+Edinson Cavani,Uruguay,FW
+Martín Cáceres,Uruguay,DF
+Martín Silva,Uruguay,GK
+# Uruguay players : 23

@@ -1,18 +1,23 @@
+from collections import deque
+
 from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import smart_bytes
 
 import vmgame
 from vmgame.models import Team,Player,Pick,UserProfile
 
-
-
+"""
+class PickForm(forms.ModelForm): 
+    pass
+"""
 class PickForm(forms.ModelForm): 
     strikers = Player.objects.filter(position="Forwards").order_by("name","team__country")
     midfielders = Player.objects.filter(position="Midfielders").order_by("name","team__country")
     defenders = Player.objects.filter(position="Defenders").order_by("name","team__country")
     keepers = Player.objects.filter(position="Goal Keepers").order_by("name","team__country")
-    STRIKER_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in strikers]
+    STRIKER_CHOICES=[(p,'{0} ({1})'.format(p.name,p.team.country)) for p in strikers]
     MIDFIELD_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in midfielders]
     DEFENSE_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in defenders]
     GK_CHOICES=[(p,u"{0} ({1})".format(p,p.team.country)) for p in keepers]
@@ -30,6 +35,7 @@ class PickForm(forms.ModelForm):
                      GK_CHOICES
                   ),
               )
+
     #Striker fields
     striker1 = forms.CharField(max_length=80,
                                widget=forms.Select(choices=CHOICES),
@@ -46,10 +52,10 @@ class PickForm(forms.ModelForm):
         super(PickForm, self).__init__(*args, **kwargs)
 
         #Make the group fields
-        for group_letter in vmgame.GROUP_LETTERS:
+        for group_letter in vmgame.config.GROUP_LETTERS:
             group_teams = Team.objects.filter(group__name="Group {0}".format(group_letter)).order_by("country")
-            GROUP_TEAM_CHOICES = [(t,t) for t in group_teams]
-            for i,group_rank in enumerate(vmgame.GROUP_RANKS):
+            GROUP_TEAM_CHOICES = deque([(t.country,t.country) for t in group_teams])
+            for i,group_rank in enumerate(vmgame.config.GROUP_RANKS):
                 help_text = "The finishing order [1st, 2nd, 3rd, 4th] of Group {0}".format(group_letter)
                 help_text = (help_text if i==0 else "")
                 help_text = (help_text if i!=3 else "end")
@@ -57,8 +63,9 @@ class PickForm(forms.ModelForm):
                               forms.CharField(max_length=80,
                               widget=forms.Select(choices=GROUP_TEAM_CHOICES),
                               help_text=help_text))
+                GROUP_TEAM_CHOICES.rotate(1)
 
-        ALL_TEAM_CHOICES = [(t,t) for t in Team.objects.all().order_by("country")]
+        ALL_TEAM_CHOICES = [(t.country,t.country) for t in Team.objects.all().order_by("country")]
         #Quarterfinal teams
         for i in range(8):
             help_text = "8 teams to make the quarterfinals"
@@ -89,12 +96,13 @@ class PickForm(forms.ModelForm):
     class Meta:
         # Provide an association between the ModelForm and a model
         model = Pick
-        fields = ['pick_name','champion','defensive_team','striker1','striker2','striker3','total_goals']
-        #['pick_name','third_place_team','champion','defensive_team','striker1','striker2','striker3','total_goals']
+        #fields = ['pick_name','champion','defensive_team','striker1','striker2','striker3','total_goals']
+        fields = ['pick_name','third_place_team','champion','defensive_team','striker1','striker2','striker3','total_goals']
 
         help_texts = {
             'pick_name': _('Provide a name for this pick:'),
-            'champion': _('The winner of the 2016 european cup:'),#'third_place_team': _('The team that will finish in third place:'),
+            'champion': _('The winner of the 2018 world cup:'),
+            'third_place_team': _('The team that will finish in third place:'),
             'defensive_team': _('The team that will create the most shutouts:'),
             'total_goals': _('Enter the total number of goals that will be scored in the 2016 european cup:'),
         }

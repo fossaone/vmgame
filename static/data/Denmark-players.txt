@@ -1,0 +1,24 @@
+Kasper Schmeichel,Denmark,GK
+Michael Krohn-Dehli,Denmark,MF
+Jannik Vestergaard,Denmark,DF
+Simon Kjær,Denmark,DF
+Jonas Knudsen,Denmark,DF
+Andreas Christensen,Denmark,DF
+William Kvist,Denmark,MF
+Thomas Delaney,Denmark,MF
+Nicolai Jørgensen,Denmark,FW
+Christian Eriksen,Denmark,MF
+Martin Braithwaite,Denmark,FW
+Kasper Dolberg,Denmark,FW
+Mathias Jørgensen,Denmark,DF
+Henrik Dalsgaard,Denmark,DF
+Viktor Fischer,Denmark,FW
+Jonas Lössl,Denmark,GK
+Jens Stryger Larsen,Denmark,DF
+Lukas Lerager,Denmark,MF
+Lasse Schöne,Denmark,MF
+Yussuf Poulsen,Denmark,FW
+Andreas Cornelius,Denmark,FW
+Frederik Rønnow,Denmark,GK
+Pione Sisto,Denmark,FW
+# Denmark players : 23

@@ -1,0 +1,24 @@
+Mathew Ryan,Australia,GK
+Milos Degenek,Australia,DF
+James Meredith,Australia,DF
+Tim Cahill,Australia,FW
+Mark Milligan,Australia,DF
+Matthew Jurman,Australia,DF
+Mathew Leckie,Australia,FW
+Massimo Luongo,Australia,MF
+Tomi Juric,Australia,FW
+Robbie Kruse,Australia,FW
+Andrew Nabbout,Australia,FW
+Brad Jones,Australia,GK
+Aaron Mooy,Australia,MF
+Jamie Maclaren,Australia,FW
+Mile Jedinak,Australia,MF
+Aziz Behich,Australia,DF
+Daniel Arzani,Australia,FW
+Danny Vukovic,Australia,GK
+Josh Risdon,Australia,DF
+Trent Sainsbury,Australia,DF
+Dimitri Petratos,Australia,FW
+Jackson Irvine,Australia,MF
+Tom Rogic,Australia,MF
+# Australia players : 23

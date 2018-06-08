@@ -1,0 +1,24 @@
+Dominik Livaković,Croatia,GK
+Šime Vrsaljko,Croatia,DF
+Ivan Strinić,Croatia,DF
+Ivan Perišić,Croatia,FW
+Vedran Ćorluka,Croatia,DF
+Dejan Lovren,Croatia,DF
+Ivan Rakitić,Croatia,MF
+Mateo Kovačić,Croatia,MF
+Andrej Kramarić,Croatia,FW
+Luka Modrić,Croatia,MF
+Marcelo Brozović,Croatia,MF
+Lovre Kalinić,Croatia,GK
+Tin Jedvaj,Croatia,DF
+Filip Bradarić,Croatia,MF
+Duje Ćaleta-Car,Croatia,DF
+Nikola Kalinić,Croatia,FW
+Mario Mandžukić,Croatia,FW
+Ante Rebić,Croatia,FW
+Milan Badelj,Croatia,MF
+Marko Pjaca,Croatia,FW
+Domagoj Vida,Croatia,DF
+Josip Pivarić,Croatia,DF
+Danijel Subašić,Croatia,GK
+# Croatia players : 23

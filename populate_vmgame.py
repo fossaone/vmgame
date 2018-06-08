@@ -2,10 +2,14 @@
 
 import os
 import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 from unidecode import unidecode
+
+import django
+#from django.conf import settings
+#settings.configure(DEBUG=True)
+os.environ['DJANGO_SETTINGS_MODULE'] = 'vmgame_website.settings'
+django.setup()
 
 def populate_players_and_teams():
     #TODO: Make sure data is correct:
@@ -23,7 +27,7 @@ def populate_players_and_teams():
         Group.objects.all().delete()
     except: pass
 
-    for gr in ["A","B","C","D","E","F"]:
+    for gr in ["A","B","C","D","E","F", "G", "H"]:
         group_file = os.path.join(data_directory,"Group-{0}.txt".format(gr))
         with open(group_file,'r') as f:
             group_team_names = f.readline()
@@ -45,7 +49,7 @@ def populate_players_and_teams():
     team_files = [tf for tf in os.listdir(data_directory) if tf.endswith('-players.txt')]
     for tf in team_files:
         country_name = tf.replace('-players.txt','')
-        with open(os.path.join(data_directory,tf),'r') as f:
+        with open(os.path.join(data_directory,tf),'r',encoding="utf-8") as f:
             player_lines = f.readlines()
         for line in player_lines:
             if line.startswith("#"):
@@ -60,7 +64,7 @@ def populate_players_and_teams():
 
 # Start execution here!
 if __name__ == '__main__':
-    print "Starting VM Game population script..."
+    print("Starting VM Game population script...")
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vmgame_website.settings')
     from vmgame.models import Team,Player,Group,Scoring
     populate_players_and_teams()

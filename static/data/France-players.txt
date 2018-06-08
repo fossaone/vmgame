@@ -1,0 +1,24 @@
+Hugo Lloris,France,GK
+Benjamin Pavard,France,DF
+Presnel Kimpembe,France,DF
+Raphaël Varane,France,DF
+Samuel Umtiti,France,DF
+Paul Pogba,France,MF
+Antoine Griezmann,France,FW
+Thomas Lemar,France,FW
+Olivier Giroud,France,FW
+Kylian Mbappé,France,FW
+Ousmane Dembélé,France,FW
+Corentin Tolisso,France,MF
+N'Golo Kanté,France,MF
+Blaise Matuidi,France,MF
+Steven Nzonzi,France,MF
+Steve Mandanda,France,GK
+Adil Rami,France,DF
+Nabil Fekir,France,FW
+Djibril Sidibé,France,DF
+Florian Thauvin,France,FW
+Lucas Hernández,France,DF
+Benjamin Mendy,France,DF
+Alphonse Areola,France,GK
+# France players : 23
