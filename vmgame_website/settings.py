@@ -31,6 +31,7 @@ SECRET_KEY = '45kbxhst-@w7$jf&$n-crtv7%&aopuv_c0ms&cjpbjv0uq2y*k'
 DEBUG = True
 
 #ALLOWED_HOSTS = ['vmgame2018.diabolics.com']
+ALLOWED_HOSTS = ['vmgame2014.pythonanywhere.com']
 
 
 # Application definition
