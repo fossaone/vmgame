@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 class UserProfile(models.Model):
     # This line is required.  Links UserProfile to a User model instance.
+    #user = models.OneToOneField(User,on_delete=models.CASCADE)
     user = models.OneToOneField(User,on_delete=models.CASCADE)
 
     #These are additional attributes we wish to add
@@ -54,7 +55,7 @@ class Team(models.Model):
     country_regularized = models.CharField(max_length=80)
 #    abbr = models.CharField(max_length=3)
 #    alt_abbr = models.CharField(max_length=2)
-    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    group = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True)
     group_rank = models.IntegerField(default=4)
     furthest_round = models.IntegerField(default=0)
     shutouts = models.IntegerField(default=0)
@@ -68,7 +69,7 @@ class Team(models.Model):
 class Player(models.Model):
     name = models.CharField(max_length=80)
     name_regularized = models.CharField(max_length=80)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    team = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True)
     position = models.CharField(max_length=80)
     goals_scored = models.IntegerField(default=0)
     def __str__(self):
@@ -85,7 +86,7 @@ class Pick(models.Model):
     pick_name = models.CharField(max_length=80)
 
     #Choices
-    defensive_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='defensive_team')
+    defensive_team = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True, related_name='defensive_team')
     strikers = models.ManyToManyField(Player,related_name='strikers')
     group_winners = models.ManyToManyField(Team,related_name='group_winners')
     group_runners_up = models.ManyToManyField(Team,related_name='group_runners_up')
@@ -94,15 +95,15 @@ class Pick(models.Model):
     quarterfinal_teams = models.ManyToManyField(Team,related_name='quarterfinal_teams')
     semifinal_teams = models.ManyToManyField(Team,related_name='semifinal_teams')
     final_teams = models.ManyToManyField(Team,related_name='final_teams')
-    champion = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='champion')
-    third_place_team = models.ForeignKey(Team,on_delete=models.CASCADE, related_name='third_place_team')
+    champion = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True, related_name='champion')
+    third_place_team = models.ForeignKey(Team,on_delete=models.SET_NULL, null=True, related_name='third_place_team')
     total_goals = models.PositiveIntegerField(default=0)
 
     #Validation
     completed = models.BooleanField(default=False)
 
     #How many points for each selection
-    scoring = models.ForeignKey(Scoring, on_delete=models.CASCADE)
+    scoring = models.ForeignKey(Scoring, on_delete=models.SET_NULL, null=True)
 
     #The score for this pick
     score = models.PositiveIntegerField(default=0)
