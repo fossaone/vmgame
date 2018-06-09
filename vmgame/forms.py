@@ -9,10 +9,10 @@ import vmgame
 from vmgame.models import Team,Player,Pick,UserProfile
 
 """
-class PickForm(forms.ModelForm): 
+class PickForm(forms.ModelForm):
     pass
 """
-class PickForm(forms.ModelForm): 
+class PickForm(forms.ModelForm):
     strikers = Player.objects.filter(position="Forwards").order_by("name","team__country")
     midfielders = Player.objects.filter(position="Midfielders").order_by("name","team__country")
     defenders = Player.objects.filter(position="Defenders").order_by("name","team__country")
@@ -104,7 +104,7 @@ class PickForm(forms.ModelForm):
             'champion': _('The winner of the 2018 world cup:'),
             'third_place_team': _('The team that will finish in third place:'),
             'defensive_team': _('The team that will create the most shutouts:'),
-            'total_goals': _('Enter the total number of goals that will be scored in the 2016 european cup:'),
+            'total_goals': _('Enter the total number of goals that will be scored in the 2018 world cup:'),
         }
 
 

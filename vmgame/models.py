@@ -316,11 +316,12 @@ class Pick(models.Model):
           if ft.furthest_round > 4:
             f_score += self.scoring.f_points
         return f_score
-    '''
+
     def score_third_place(self):
         if self.third_place_team.is_third_place == True:
           return self.scoring.third_place_points
-        else: return 0 '''
+        else: return 0
+
     def score_champion(self):
         if self.champion.is_champion == True:
           return self.scoring.champ_points
@@ -345,7 +346,7 @@ class Pick(models.Model):
         score += self.score_quarterfinals()
         score += self.score_semifinals()
         score += self.score_finals()
-        #score += self.score_third_place()
+        score += self.score_third_place()
         score += self.score_champion()
         score += self.score_defense()
         score += self.score_strikers()
