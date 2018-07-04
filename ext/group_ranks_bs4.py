@@ -16,8 +16,8 @@ teams = teams[:-1]
 
 groups = main_soup.find_all('span',class_='mw-headline',id=re.compile(r'^Group_.$'))
 for group in groups:
-    print "#{0}".format(group.string)
+    print("#{0}".format(group.string))
     team_list = group.find_parent('h3').find_next_sibling('table').find_all('a',text=teams)
     for i,team in enumerate(team_list):
-        print u"{0},{1}".format(team.string,i+1)
+        print(u"{0},{1}".format(team.string,i+1))
 

@@ -24,11 +24,10 @@ result_dir=../static/data/results
 wget -q https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads -O 2018_FIFA_World_Cup_squads.html
 ./all_players_bs4.py > $result_dir/all_players.txt
 
-#./group_ranks_bs4.py > $result_dir/group_ranks.txt
+./group_ranks_bs4.py > $result_dir/group_ranks.txt
 
-#no goalscorers yet
 #./goalscorers_bs4.py > $result_dir/goalscorers.txt
-#./shutouts_bs4.py > $result_dir/shutouts.txt
+./shutouts_bs4.py > $result_dir/shutouts.txt
 #./knockout_stage_bs4.py > $result_dir/knockout_stage.txt
 
 #Old fixup code in case we need to update

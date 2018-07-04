@@ -9,7 +9,7 @@ with open('../static/data/all_teams.txt','r') as f:
   teams = f.read().split("\n")
 teams = teams[:-1]
 
-with open('UEFA_Euro_2016.html','r') as f:
+with open('2018_FIFA_World_Cup.html','r') as f:
   raw_html=f.read()
 
 main_soup = BeautifulSoup(raw_html,'html.parser')
@@ -41,7 +41,7 @@ for game in games_finished:
     if away_goals == 0:
         shutout_count[home_team] +=1
 
-print "# {0} games finished".format(len(games_finished)-false_positives)
+print("# {0} games finished".format(len(games_finished)-false_positives))
 for team in teams:
-    print "{0},{1}".format(team,shutout_count[team])
+    print("{0},{1}".format(team,shutout_count[team]))
 

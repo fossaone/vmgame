@@ -3,7 +3,7 @@
 import re
 from bs4 import BeautifulSoup
 
-with open('UEFA_Euro_2016.html','r') as f:
+with open('2018_FIFA_World_Cup.html','r') as f:
   raw_html=f.read()
 
 main_soup = BeautifulSoup(raw_html)
@@ -18,5 +18,5 @@ for goal_count in goal_dls:
         continue
     goals_scored=int(goal_count_dts[0].string.split()[0])
     for p in goal_count.find_next_sibling('div').find('ul').find_all('li'):
-        print u'{0},{1}'.format(p.find_all('a')[1].string, goals_scored)
+        print(u'{0},{1}'.format(p.find_all('a')[1].string, goals_scored))
 
