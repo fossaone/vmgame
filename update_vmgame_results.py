@@ -48,11 +48,11 @@ def update_vmgame_results():
                        player_first_name = player_name_regularized_list[0]
                        player_last_name = player_name_regularized_list[-1]
                        player = Player.objects.filter(name_regularized__contains=player_last_name).get(name_regularized__contains=player_first_name)
-                       print "WARNING: Did not find exact match for player with regularized name "+player_name_regularized
-                       print "         Using inexact match with regularized name "+player.name_regularized
+                       print("WARNING: Did not find exact match for player with regularized name "+player_name_regularized)
+                       print("         Using inexact match with regularized name "+player.name_regularized)
                    except Player.DoesNotExist:
-                       print "WARNING: Could not find player with regularized name "+player_name_regularized \
-                             + " ({0} goal(s))".format(goals_scored)
+                       print("WARNING: Could not find player with regularized name "+player_name_regularized \
+                             + " ({0} goal(s))".format(goals_scored))
                        continue
            player.goals_scored = goals_scored
            player.save()
@@ -93,24 +93,28 @@ def update_vmgame_results():
            record = record.split(u',')
            country_name_regularized = unidecode(record[0]).lower()
            furthest_round = int(record[1])
-#           is_third_place = int(record[2])
+           is_third_place = int(record[2])
            is_champion    = int(record[3])
            team = Team.objects.get(country_regularized=country_name_regularized)
            team.furthest_round = furthest_round
-#           if(is_third_place > 0): team.is_third_place = True
+           if(is_third_place > 0): team.is_third_place = True
            if(is_champion > 0):    team.is_champion    = True
            team.save()
 
 
 # Start execution here!
 if __name__ == '__main__':
-    print "Starting VM Game population script..."
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vmgame_website.settings')
+    print("Starting VM Game population script...")
+    #os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vmgame_website.settings')
+    import django
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'vmgame_website.settings'
+    django.setup()
 #    import django.utils.timezone
     from vmgame.models import Team,Player,Group,Scoring,Event,update_scores
     update_vmgame_results()
     update_scores()
-    last_score_update,created = Event.objects.get_or_create(name="LAST_SCORE_UPDATE")
+    last_score_update,created = Event.objects.get_or_create(name="LAST_SCORE_UPDATE",
+            defaults={'datetime': datetime.datetime.now()})
     last_score_update.datetime = datetime.datetime.now()
 #    last_score_update.datetime = django.utils.timezone.now()
     last_score_update.save()

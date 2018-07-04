@@ -26,9 +26,9 @@ wget -q https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads -O 2018_FIFA_Wo
 
 ./group_ranks_bs4.py > $result_dir/group_ranks.txt
 
-#./goalscorers_bs4.py > $result_dir/goalscorers.txt
+./goalscorers_bs4.py > $result_dir/goalscorers.txt
 ./shutouts_bs4.py > $result_dir/shutouts.txt
-#./knockout_stage_bs4.py > $result_dir/knockout_stage.txt
+./knockout_stage_bs4.py > $result_dir/knockout_stage.txt
 
 #Old fixup code in case we need to update
 #echo "Start fix-up country names"

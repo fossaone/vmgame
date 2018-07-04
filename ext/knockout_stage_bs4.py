@@ -9,7 +9,7 @@ with open('../static/data/all_teams.txt','r') as f:
   teams = f.read().split("\n")
 teams = teams[:-1]
 
-with open('UEFA_Euro_2016.html','r') as f:
+with open('2018_FIFA_World_Cup.html','r') as f:
   raw_html=f.read()
 
 main_soup = BeautifulSoup(raw_html,'html.parser')
@@ -24,7 +24,7 @@ for team in teams:
     is_third_place[team] = 0
     is_champion[team] = 0
 
-print "# Knockout disabled until Wikipedia starts updating match pages"
+print("# Knockout disabled until Wikipedia starts updating match pages")
 round_of_16_sect=main_soup.find('span',class_='mw-headline',id='Round_of_16',text='Round of 16').find_parent('h3')
 round_of_16_matches=round_of_16_sect.find_all_next('a',href=re.compile('_vs_'))#,text=re.compile(u'[0-9]*\u2013[0-9]*'))
 for match_num in range(8):
@@ -127,5 +127,5 @@ if len(finals_match) > 0:
 
 #print "# {0} games finished".format(len(games_finished))
 for team in teams:
-    print "{0},{1},{2},{3}".format(team,furthest_round[team],is_third_place[team],is_champion[team])
+    print("{0},{1},{2},{3}".format(team,furthest_round[team],is_third_place[team],is_champion[team]))
 
