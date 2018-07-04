@@ -28,7 +28,7 @@ PROJECT_PATH = os.path.abspath(PROJECT_PATH)
 SECRET_KEY = '45kbxhst-@w7$jf&$n-crtv7%&aopuv_c0ms&cjpbjv0uq2y*k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ['vmgame2018.diabolics.com']
 ALLOWED_HOSTS = ['vmgame2014.pythonanywhere.com']
@@ -82,6 +82,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'OPTIONS': {
+            'timeout': 20,
+        }
     }
 }
 

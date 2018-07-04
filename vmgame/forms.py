@@ -50,6 +50,9 @@ class PickForm(forms.ModelForm):
     #Some python/django kung-fu here.
     def __init__(self, *args, **kwargs):
         super(PickForm, self).__init__(*args, **kwargs)
+        self.fields['champion'].queryset = Team.objects.order_by('country')
+        self.fields['third_place_team'].queryset = Team.objects.order_by('country')
+        self.fields['defensive_team'].queryset = Team.objects.order_by('country')
 
         #Make the group fields
         for group_letter in vmgame.config.GROUP_LETTERS:
@@ -63,7 +66,7 @@ class PickForm(forms.ModelForm):
                               forms.CharField(max_length=80,
                               widget=forms.Select(choices=GROUP_TEAM_CHOICES),
                               help_text=help_text))
-                GROUP_TEAM_CHOICES.rotate(1)
+                GROUP_TEAM_CHOICES.rotate(-1)
 
         ALL_TEAM_CHOICES = [(t.country,t.country) for t in Team.objects.all().order_by("country")]
         #Quarterfinal teams

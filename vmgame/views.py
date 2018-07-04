@@ -24,7 +24,8 @@ logger = logging.getLogger(__name__)
 
 #global_context_dict is at file scope to have some app level info
 global_context_dict = {}
-global_context_dict['tournament_started'] = vmgame.config.TOURNAMENT_START < datetime.datetime.utcnow()
+#global_context_dict['tournament_started'] = vmgame.config.TOURNAMENT_START < datetime.datetime.utcnow()
+global_context_dict['tournament_started'] = True
 
 def register(request):
     logger.info('in register view')
@@ -180,7 +181,8 @@ def enterpick(request):
             pick.user = UserProfile.objects.get(user=request.user)
 
             #pick_date = models.DateTimeField('date entered')
-            pick.pick_date =  datetime.datetime.now()
+            #pick.pick_date =  datetime.datetime.now()
+            pick.pick_date =  django.utils.timezone.now()
 
 
             #pick.pick_name = models.CharField(max_length=80)

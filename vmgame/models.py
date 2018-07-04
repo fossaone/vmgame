@@ -115,6 +115,7 @@ class Pick(models.Model):
         return u"{0}'s pick".format(self.user)
 
     def print_detail(self):
+        print(self.user)
         detail_str = ""
         detail_str += "====================PICK START======================\n"
         detail_str += "User: {0}\n".format(self.user)
@@ -123,10 +124,10 @@ class Pick(models.Model):
 
         detail_str += "Groups :\n"
         for group_letter in vmgame.config.GROUP_LETTERS:
-            g1 = self.group_winners.get(group__name='Group {0}'.format(group_letter))
-            g2 = self.group_runners_up.get(group__name='Group {0}'.format(group_letter))
-            g3 = self.group_third.get(group__name='Group {0}'.format(group_letter))
-            g4 = self.group_fourth.get(group__name='Group {0}'.format(group_letter))
+            g1 = self.group_winners.all().get(group__name='Group {0}'.format(group_letter))
+            g2 = self.group_runners_up.all().get(group__name='Group {0}'.format(group_letter))
+            g3 = self.group_third.all().get(group__name='Group {0}'.format(group_letter))
+            g4 = self.group_fourth.all().get(group__name='Group {0}'.format(group_letter))
             detail_str += "   Group {0}\n".format(group_letter)
             detail_str += "    1 : {0}\n".format(g1)
             detail_str += "    2 : {0}\n".format(g2)
@@ -145,7 +146,7 @@ class Pick(models.Model):
         for ft in self.final_teams.all():
             detail_str += "    {0}\n".format(ft)
 
-        #detail_str += "   Third Place Team: {0}\n".format(self.third_place_team)
+        detail_str += "   Third Place Team: {0}\n".format(self.third_place_team)
         detail_str += "   Champion: {0}\n".format(self.champion)
         detail_str += "   Defensive Team: {0}\n".format(self.defensive_team)
         detail_str += "   Strikers:\n"
@@ -360,6 +361,10 @@ def update_scores():
         p.calculate_score()
         p.save()
 
+def print_all_picks():
+    for p in Pick.objects.filter(is_truth=False):
+        print(p.print_detail())
+
 #  MAKE TRUTH
 # N.B.  This doesn't work.  Need to properly initialize pick
 #       with all required fields.  Not using it so not fixing
@@ -410,7 +415,7 @@ class Event(models.Model):
     #Date of event, auto updated when event is
 #    datetime = models.DateTimeField(default=django.utils.timezone.now())
     #datetime = models.DateTimeField(default=datetime.datetime.now())
-    datetime = models.DateTimeField(django.utils.timezone.now)
+    datetime = models.DateTimeField(django.utils.timezone.now())
     def __str__(self):
         return self.name
 
